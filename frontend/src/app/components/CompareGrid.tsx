@@ -1,11 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import { Wheat, GraduationCap, Briefcase, Landmark, Factory, HardHat, HandCoins, Users, Palette, Scale, TrendingUp, MoreHorizontal } from "lucide-react";
-import { sectorData, TOTALS, allPoints } from "../manifestoData";
+import { sectorData, TOTALS } from "../manifestoData";
 import {
-  RadialBarChart, RadialBar, ResponsiveContainer, Tooltip,
-  Treemap, Cell,
-  ScatterChart, Scatter, XAxis, YAxis, ZAxis,
-  LabelList,
+  ResponsiveContainer, Tooltip,
+  Treemap,
 } from "recharts";
 
 const sans  = '"Inter Tight", sans-serif';
@@ -17,6 +15,14 @@ const border = "#d9d7d2";
 const admkColor = "#547c5b";
 const dmkColor  = "#c94d48";
 const tvkColor  = "#E5A000";
+
+type PartyKey = "admk" | "dmk" | "tvk";
+
+const PARTY_META: Record<PartyKey, { label: string; color: string }> = {
+  admk: { label: "ADMK", color: admkColor },
+  dmk:  { label: "DMK",  color: dmkColor  },
+  tvk:  { label: "TVK",  color: tvkColor  },
+};
 
 const topicIcons: Record<string, React.ReactNode> = {
   "Governance":             <Landmark size={14} strokeWidth={1.5} />,
@@ -33,68 +39,400 @@ const topicIcons: Record<string, React.ReactNode> = {
   "Other":                  <MoreHorizontal size={14} strokeWidth={1.5} />,
 };
 
-// ── View modes ────────────────────────────────────────────────────────────
+type ViewMode = "verdicts" | "priorities" | "duels" | "treemap";
 
-type ViewMode = "treemap" | "heatmap" | "radial" | "bubble";
+// ── Data helpers ────────────────────────────────────────────────────────────
 
-// ── Data prep ─────────────────────────────────────────────────────────────
-
-// Treemap: each party gets its own tile per theme
-function buildTreemapData() {
-  return Object.entries(sectorData).map(([name, d]) => ({
-    name,
-    admk: d.admk, dmk: d.dmk, tvk: d.tvk,
-    size: d.admk + d.dmk + d.tvk,
-  }));
+interface ThemeRow {
+  name: string;
+  admk: number;
+  dmk: number;
+  tvk: number;
+  total: number;
+  leader: PartyKey;
+  leaderPct: number; // leader share of theme total
+  leaderMargin: number; // leader - 2nd
 }
 
-// Heatmap: row = theme, col = party, cell = count
-function buildHeatmapData() {
-  const maxVal = Math.max(
-    ...Object.values(sectorData).flatMap(d => [d.admk, d.dmk, d.tvk])
-  );
-  return { rows: Object.entries(sectorData), maxVal };
-}
-
-// Radial: one radial chart per party showing theme breakdown
-function buildRadialData(party: "admk" | "dmk" | "tvk") {
-  const total = TOTALS[party];
-  return Object.entries(sectorData)
-    .filter(([, d]) => d[party] > 0)
-    .sort((a, b) => b[1][party] - a[1][party])
-    .map(([name, d], i) => ({
-      name,
-      value: d[party],
-      pct: total > 0 ? Math.round((d[party] / total) * 100) : 0,
-      fill: `hsl(${(i * 360) / 12}, 55%, 42%)`,
-    }));
-}
-
-// Bubble: x=ADMK count, y=DMK count, z=TVK count, label=theme
-function buildBubbleData() {
-  return Object.entries(sectorData).map(([name, d]) => ({
-    name,
-    admk: d.admk,
-    dmk:  d.dmk,
-    tvk:  d.tvk,
-  }));
-}
-
-// Feasibility scatter: x=overall feasibility avg, y=count of promises
-function buildFeasibilityScatter() {
-  return (["admk", "dmk", "tvk"] as const).map(party => {
-    const pts = allPoints.filter(p => p.party === party && p.feasibilityScore !== null);
-    const avg = pts.length ? pts.reduce((a, b) => a + (b.feasibilityScore ?? 0), 0) / pts.length : 0;
-    return {
-      party: party.toUpperCase(),
-      feasibility: +avg.toFixed(2),
-      promises: TOTALS[party],
-      color: party === "admk" ? admkColor : party === "dmk" ? dmkColor : tvkColor,
-    };
+function buildThemeRows(): ThemeRow[] {
+  return Object.entries(sectorData).map(([name, d]) => {
+    const total = d.admk + d.dmk + d.tvk;
+    const sorted = (["admk","dmk","tvk"] as const)
+      .map(k => ({ k, v: d[k] }))
+      .sort((a, b) => b.v - a.v);
+    const leader = sorted[0].k;
+    const leaderPct = total > 0 ? (sorted[0].v / total) * 100 : 0;
+    const leaderMargin = sorted[0].v - sorted[1].v;
+    return { name, admk: d.admk, dmk: d.dmk, tvk: d.tvk, total, leader, leaderPct, leaderMargin };
   });
 }
 
-// ── Treemap view ──────────────────────────────────────────────────────────
+// ── Verdicts view ───────────────────────────────────────────────────────────
+
+function buildVerdict(r: ThemeRow): string {
+  const parties = (["admk","dmk","tvk"] as const)
+    .map(k => ({ k, label: PARTY_META[k].label, v: r[k] }))
+    .sort((a, b) => b.v - a.v);
+  const [top, mid, bot] = parties;
+
+  if (top.v === 0) return `No party has made ${r.name.toLowerCase()} a focus.`;
+
+  if (mid.v === 0) {
+    return `${top.label} owns ${r.name.toLowerCase()} — ${top.v} promises. The others are silent.`;
+  }
+  if (top.v >= mid.v * 2) {
+    return `${top.label} dominates ${r.name.toLowerCase()} (${top.v}) — more than ${mid.label} (${mid.v}) and ${bot.label} (${bot.v}) combined.`;
+  }
+  if (top.v - mid.v <= Math.max(1, top.v * 0.15)) {
+    return `${top.label} (${top.v}) and ${mid.label} (${mid.v}) are neck-and-neck. ${bot.label} trails at ${bot.v}.`;
+  }
+  if (bot.v === 0) {
+    return `${top.label} leads with ${top.v}, ${mid.label} follows at ${mid.v}, ${bot.label} ignores the theme.`;
+  }
+  return `${top.label} leads (${top.v}), ${mid.label} (${mid.v}), ${bot.label} (${bot.v}).`;
+}
+
+function VerdictsView({ rows }: { rows: ThemeRow[] }) {
+  const maxTotal = Math.max(1, ...rows.map(r => r.total));
+  return (
+    <div style={{ display: "flex", flexDirection: "column" }}>
+      {rows.map((r, i) => {
+        const leaderMeta = PARTY_META[r.leader];
+        return (
+          <div key={r.name} style={{
+            display: "grid", gridTemplateColumns: "220px 1fr",
+            alignItems: "center", gap: 24,
+            padding: "22px 0",
+            borderTop: i === 0 ? `1px solid ${border}` : `1px solid #f0eeea`,
+          }}>
+            {/* Left: title + leader badge */}
+            <div>
+              <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 6 }}>
+                <span style={{ color: dark, display: "flex" }}>{topicIcons[r.name]}</span>
+                <span style={{
+                  fontFamily: serif, fontSize: 18, fontWeight: 500, color: dark,
+                }}>{r.name}</span>
+              </div>
+              <div style={{
+                display: "inline-flex", alignItems: "center", gap: 6,
+                padding: "3px 10px", borderRadius: 12,
+                background: leaderMeta.color + "18", border: `1px solid ${leaderMeta.color}55`,
+                fontFamily: sans, fontSize: 10, fontWeight: 700, letterSpacing: "0.1em",
+                textTransform: "uppercase" as const, color: leaderMeta.color,
+              }}>
+                ◆ {leaderMeta.label} · {Math.round(r.leaderPct)}%
+              </div>
+              <div style={{ fontFamily: mono, fontSize: 11, color: gray, marginTop: 6 }}>
+                {r.total} promises
+              </div>
+            </div>
+
+            {/* Right: stacked race bar + verdict */}
+            <div>
+              <div style={{
+                display: "flex", height: 28, width: `${(r.total / maxTotal) * 100}%`,
+                minWidth: "42%", borderRadius: 4, overflow: "hidden", background: "#f0eeea",
+                marginBottom: 10,
+              }}>
+                {(["admk","dmk","tvk"] as const).map(k => {
+                  const v = r[k];
+                  const pct = r.total > 0 ? (v / r.total) * 100 : 0;
+                  const meta = PARTY_META[k];
+                  return (
+                    <div key={k} title={`${meta.label}: ${v}`} style={{
+                      width: `${pct}%`, height: "100%",
+                      background: meta.color,
+                      display: "flex", alignItems: "center", justifyContent: "center",
+                      color: "#fff", fontFamily: mono, fontSize: 11, fontWeight: 700,
+                      textShadow: "0 1px 2px rgba(0,0,0,0.25)",
+                      minWidth: v > 0 ? 18 : 0,
+                    }}>
+                      {pct >= 9 ? v : ""}
+                    </div>
+                  );
+                })}
+              </div>
+              <div style={{
+                fontFamily: serif, fontSize: 14, color: "#2e2e2e", lineHeight: 1.55,
+                paddingLeft: 10, borderLeft: `3px solid ${leaderMeta.color}`,
+              }}>
+                {buildVerdict(r)}
+              </div>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
+// ── Party Priorities view ───────────────────────────────────────────────────
+
+interface PartyPriority {
+  party: PartyKey;
+  label: string;
+  color: string;
+  total: number;
+  themes: { name: string; count: number; pct: number }[];
+}
+
+function buildPriorities(rows: ThemeRow[]): PartyPriority[] {
+  return (["admk","dmk","tvk"] as const).map(party => {
+    const total = TOTALS[party];
+    const themes = rows
+      .map(r => ({ name: r.name, count: r[party], pct: total > 0 ? (r[party] / total) * 100 : 0 }))
+      .sort((a, b) => b.count - a.count);
+    return { party, label: PARTY_META[party].label, color: PARTY_META[party].color, total, themes };
+  });
+}
+
+function PrioritiesView({ rows }: { rows: ThemeRow[] }) {
+  const priorities = useMemo(() => buildPriorities(rows), [rows]);
+  // Max % across parties for consistent bar scale
+  const maxPct = Math.max(1, ...priorities.flatMap(p => p.themes.slice(0, 6).map(t => t.pct)));
+
+  return (
+    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 20 }}>
+      {priorities.map(p => {
+        const top3 = p.themes.slice(0, 3);
+        const top3Pct = top3.reduce((a, b) => a + b.pct, 0);
+        const rest = p.themes.slice(3).filter(t => t.count > 0);
+        return (
+          <div key={p.party} style={{
+            border: `1px solid ${border}`, borderRadius: 8, padding: "20px 22px",
+            display: "flex", flexDirection: "column", gap: 14,
+            background: "#fff",
+          }}>
+            <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between" }}>
+              <span style={{
+                fontFamily: sans, fontSize: 13, fontWeight: 700, letterSpacing: "0.14em",
+                textTransform: "uppercase" as const, color: p.color,
+              }}>{p.label}</span>
+              <span style={{ fontFamily: mono, fontSize: 11, color: gray }}>{p.total} total</span>
+            </div>
+
+            {/* Headline: what % of manifesto is the top 3 themes */}
+            <div style={{
+              fontFamily: serif, fontSize: 15, color: "#2e2e2e", lineHeight: 1.45,
+              paddingBottom: 10, borderBottom: `1px solid ${border}`,
+            }}>
+              Top three themes account for{" "}
+              <strong style={{ color: p.color, fontSize: 20 }}>{Math.round(top3Pct)}%</strong>
+              {" "}of this manifesto.
+            </div>
+
+            {/* Top themes as horizontal bars sized against maxPct */}
+            <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+              {p.themes.slice(0, 6).map((t, i) => (
+                <div key={t.name} style={{ display: "grid", gridTemplateColumns: "14px 1fr auto", gap: 8, alignItems: "center" }}>
+                  <span style={{ fontFamily: mono, fontSize: 10, color: gray, textAlign: "right" as const }}>
+                    {i + 1}
+                  </span>
+                  <div>
+                    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: 3 }}>
+                      <span style={{ fontFamily: sans, fontSize: 12, fontWeight: 500, color: dark, display: "flex", alignItems: "center", gap: 5 }}>
+                        <span style={{ color: gray, display: "flex" }}>{topicIcons[t.name]}</span>
+                        {t.name}
+                      </span>
+                      <span style={{ fontFamily: mono, fontSize: 11, color: gray }}>
+                        {t.count} · {t.pct.toFixed(0)}%
+                      </span>
+                    </div>
+                    <div style={{ height: 8, background: "#f0eeea", borderRadius: 4, overflow: "hidden" }}>
+                      <div style={{
+                        width: `${Math.min(100, (t.pct / maxPct) * 100)}%`,
+                        height: "100%", background: p.color, borderRadius: 4,
+                        minWidth: t.count > 0 ? 4 : 0,
+                        transition: "width 0.4s ease",
+                      }} />
+                    </div>
+                  </div>
+                  <span />
+                </div>
+              ))}
+            </div>
+
+            {/* What's ignored */}
+            {rest.filter(t => t.count === 0).length > 0 && (
+              <div style={{ marginTop: 4, paddingTop: 10, borderTop: `1px solid ${border}` }}>
+                <div style={{
+                  fontFamily: sans, fontSize: 10, fontWeight: 700, letterSpacing: "1px",
+                  textTransform: "uppercase" as const, color: gray, marginBottom: 6,
+                }}>Blind spots</div>
+                <div style={{ display: "flex", flexWrap: "wrap" as const, gap: 5 }}>
+                  {rest.filter(t => t.count === 0).map(t => (
+                    <span key={t.name} style={{
+                      fontFamily: sans, fontSize: 10, color: gray,
+                      padding: "2px 7px", borderRadius: 10,
+                      background: "#f5f3ee", border: `1px dashed ${border}`,
+                    }}>{t.name}</span>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
+// ── Head-to-Head Duels view ─────────────────────────────────────────────────
+
+type DuelPair = [PartyKey, PartyKey];
+
+function DuelsView({ rows }: { rows: ThemeRow[] }) {
+  const [pair, setPair] = useState<DuelPair>(["admk", "dmk"]);
+  const [a, b] = pair;
+  const metaA = PARTY_META[a];
+  const metaB = PARTY_META[b];
+
+  // Sort themes by magnitude of gap, biggest first
+  const sortedByGap = useMemo(() => {
+    return [...rows]
+      .map(r => ({
+        ...r,
+        gap: r[a] - r[b],
+        absGap: Math.abs(r[a] - r[b]),
+        pairTotal: r[a] + r[b],
+      }))
+      .filter(r => r.pairTotal > 0)
+      .sort((x, y) => y.absGap - x.absGap);
+  }, [rows, a, b]);
+
+  const maxAbs = Math.max(1, ...sortedByGap.map(r => r.absGap));
+
+  const pairs: DuelPair[] = [["admk","dmk"], ["dmk","tvk"], ["admk","tvk"]];
+
+  // Headline stats
+  const aWins = sortedByGap.filter(r => r.gap > 0).length;
+  const bWins = sortedByGap.filter(r => r.gap < 0).length;
+  const biggestForA = sortedByGap.find(r => r.gap > 0);
+  const biggestForB = sortedByGap.find(r => r.gap < 0);
+
+  return (
+    <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
+      {/* Pair picker */}
+      <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
+        <span style={{ fontFamily: sans, fontSize: 11, fontWeight: 700, letterSpacing: "1px", textTransform: "uppercase" as const, color: gray, marginRight: 2 }}>
+          Duel
+        </span>
+        {pairs.map(p => {
+          const active = p[0] === pair[0] && p[1] === pair[1];
+          const la = PARTY_META[p[0]];
+          const lb = PARTY_META[p[1]];
+          return (
+            <button key={p.join()} onClick={() => setPair(p)} style={{
+              padding: "6px 12px", borderRadius: 4, cursor: "pointer",
+              background: active ? dark : "transparent",
+              color: active ? "#fff" : dark,
+              border: `1px solid ${active ? dark : border}`,
+              fontFamily: sans, fontSize: 12, fontWeight: 600,
+              display: "flex", alignItems: "center", gap: 6,
+            }}>
+              <span style={{ width: 8, height: 8, borderRadius: 2, background: la.color }} />
+              {la.label} vs {lb.label}
+              <span style={{ width: 8, height: 8, borderRadius: 2, background: lb.color }} />
+            </button>
+          );
+        })}
+      </div>
+
+      {/* Headline */}
+      <div style={{
+        display: "grid", gridTemplateColumns: "1fr 1fr", gap: 0,
+        border: `1px solid ${border}`, borderRadius: 8, overflow: "hidden",
+      }}>
+        <div style={{ padding: "18px 22px", borderRight: `1px solid ${border}`, background: metaA.color + "0c" }}>
+          <div style={{ fontFamily: sans, fontSize: 11, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase" as const, color: metaA.color, marginBottom: 6 }}>
+            {metaA.label} leads in
+          </div>
+          <div style={{ fontFamily: serif, fontSize: 34, color: metaA.color, fontWeight: 500, lineHeight: 1 }}>
+            {aWins}<span style={{ fontSize: 16, color: gray, fontWeight: 400 }}> / {rows.length} themes</span>
+          </div>
+          {biggestForA && (
+            <div style={{ fontFamily: serif, fontSize: 13, color: "#2e2e2e", lineHeight: 1.5, marginTop: 8 }}>
+              Biggest gap: <strong>{biggestForA.name}</strong> — {biggestForA[a]} vs {biggestForA[b]}.
+            </div>
+          )}
+        </div>
+        <div style={{ padding: "18px 22px", background: metaB.color + "0c" }}>
+          <div style={{ fontFamily: sans, fontSize: 11, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase" as const, color: metaB.color, marginBottom: 6 }}>
+            {metaB.label} leads in
+          </div>
+          <div style={{ fontFamily: serif, fontSize: 34, color: metaB.color, fontWeight: 500, lineHeight: 1 }}>
+            {bWins}<span style={{ fontSize: 16, color: gray, fontWeight: 400 }}> / {rows.length} themes</span>
+          </div>
+          {biggestForB && (
+            <div style={{ fontFamily: serif, fontSize: 13, color: "#2e2e2e", lineHeight: 1.5, marginTop: 8 }}>
+              Biggest gap: <strong>{biggestForB.name}</strong> — {biggestForB[b]} vs {biggestForB[a]}.
+            </div>
+          )}
+        </div>
+      </div>
+
+      {/* Diverging bars: left = A advantage, right = B advantage */}
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 200px 1fr", columnGap: 12, rowGap: 4, alignItems: "center" }}>
+        <div style={{ textAlign: "right" as const, fontFamily: sans, fontSize: 11, fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase" as const, color: metaA.color }}>
+          {metaA.label} advantage →
+        </div>
+        <div />
+        <div style={{ fontFamily: sans, fontSize: 11, fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase" as const, color: metaB.color }}>
+          ← {metaB.label} advantage
+        </div>
+
+        {sortedByGap.map(r => {
+          const aVal = r[a];
+          const bVal = r[b];
+          const aPct = (aVal / maxAbs) * 100;
+          const bPct = (bVal / maxAbs) * 100;
+          return (
+            <React.Fragment key={r.name}>
+              {/* Left bar (A) */}
+              <div style={{ display: "flex", justifyContent: "flex-end", height: 18 }}>
+                <div style={{ width: `${Math.min(100, (r.gap > 0 ? aPct : 0))}%`, height: "100%",
+                  background: metaA.color, borderRadius: "3px 0 0 3px",
+                  opacity: r.gap > 0 ? 1 : 0.25,
+                  minWidth: aVal > 0 ? 4 : 0,
+                  display: "flex", alignItems: "center", justifyContent: "flex-start",
+                  paddingLeft: 6, color: "#fff", fontFamily: mono, fontSize: 10, fontWeight: 700,
+                }}>
+                  {aVal > 0 && aPct > 12 ? aVal : ""}
+                </div>
+              </div>
+              {/* Theme label */}
+              <div style={{
+                textAlign: "center" as const, fontFamily: sans, fontSize: 12, fontWeight: 500, color: dark,
+                display: "flex", alignItems: "center", justifyContent: "center", gap: 5,
+              }}>
+                <span style={{ color: gray, display: "flex" }}>{topicIcons[r.name]}</span>
+                {r.name}
+              </div>
+              {/* Right bar (B) */}
+              <div style={{ display: "flex", justifyContent: "flex-start", height: 18 }}>
+                <div style={{ width: `${Math.min(100, (r.gap < 0 ? bPct : 0))}%`, height: "100%",
+                  background: metaB.color, borderRadius: "0 3px 3px 0",
+                  opacity: r.gap < 0 ? 1 : 0.25,
+                  minWidth: bVal > 0 ? 4 : 0,
+                  display: "flex", alignItems: "center", justifyContent: "flex-end",
+                  paddingRight: 6, color: "#fff", fontFamily: mono, fontSize: 10, fontWeight: 700,
+                }}>
+                  {bVal > 0 && bPct > 12 ? bVal : ""}
+                </div>
+              </div>
+            </React.Fragment>
+          );
+        })}
+      </div>
+
+      <p style={{ fontFamily: serif, fontSize: 12, color: gray, fontStyle: "italic", margin: 0 }}>
+        Bar length = promise count for each party. Faded bars show the losing side of each duel so you see both numbers at once.
+      </p>
+    </div>
+  );
+}
+
+// ── Treemap ─────────────────────────────────────────────────────────────────
 
 const PARTY_COLORS = { admk: admkColor, dmk: dmkColor, tvk: tvkColor };
 
@@ -108,9 +446,7 @@ function TreemapContent(props: TreemapContentProps) {
   const { x = 0, y = 0, width = 0, height = 0, name = "", admk = 0, dmk = 0, tvk = 0 } = props;
   const total = admk + dmk + tvk;
   if (width < 10 || height < 10) return null;
-
-  // Split the rect into 3 horizontal bands
-  const parties: Array<{ key: "admk" | "dmk" | "tvk"; val: number }> = [
+  const parties: Array<{ key: PartyKey; val: number }> = [
     { key: "admk", val: admk },
     { key: "dmk",  val: dmk  },
     { key: "tvk",  val: tvk  },
@@ -139,308 +475,68 @@ function TreemapContent(props: TreemapContentProps) {
   );
 }
 
-// ── Heatmap view ──────────────────────────────────────────────────────────
-
-function HeatmapView() {
-  const { rows, maxVal } = buildHeatmapData();
-  const [hovered, setHovered] = useState<{ theme: string; party: string; val: number } | null>(null);
-
-  const cellColor = (val: number, party: "admk" | "dmk" | "tvk") => {
-    const intensity = maxVal > 0 ? val / maxVal : 0;
-    const base = party === "admk" ? [84, 124, 91] : party === "dmk" ? [201, 77, 72] : [229, 160, 0];
-    return `rgba(${base[0]},${base[1]},${base[2]},${0.08 + intensity * 0.92})`;
-  };
-
-  return (
-    <div style={{ overflowX: "auto" }}>
-      {hovered && (
-        <div style={{
-          marginBottom: 12, padding: "8px 14px", borderRadius: 4,
-          background: "#faf8f4", border: `1px solid ${border}`,
-          fontFamily: sans, fontSize: 13, color: dark, display: "inline-block",
-        }}>
-          <strong>{hovered.theme}</strong> · {hovered.party}: <span style={{ fontFamily: mono }}>{hovered.val}</span> promises
-        </div>
-      )}
-      <div style={{ display: "grid", gridTemplateColumns: "180px 1fr 1fr 1fr", gap: 2 }}>
-        {/* Header */}
-        <div />
-        {(["ADMK", "DMK", "TVK"] as const).map((p, i) => (
-          <div key={p} style={{
-            padding: "8px 12px", textAlign: "center" as const,
-            fontFamily: sans, fontSize: 12, fontWeight: 700, letterSpacing: "1px",
-            textTransform: "uppercase" as const,
-            color: [admkColor, dmkColor, tvkColor][i],
-          }}>{p}</div>
-        ))}
-        {/* Rows */}
-        {rows.map(([theme, d]) => (
-          <React.Fragment key={theme}>
-            <div style={{
-              padding: "10px 0", display: "flex", alignItems: "center", gap: 6,
-              fontFamily: sans, fontSize: 12, fontWeight: 500, color: dark,
-              borderBottom: `1px solid ${border}`,
-            }}>
-              <span style={{ color: gray, flexShrink: 0 }}>{topicIcons[theme]}</span>
-              {theme}
-            </div>
-            {(["admk", "dmk", "tvk"] as const).map(party => {
-              const val = d[party];
-              return (
-                <div
-                  key={party}
-                  onMouseEnter={() => setHovered({ theme, party: party.toUpperCase(), val })}
-                  onMouseLeave={() => setHovered(null)}
-                  style={{
-                    background: cellColor(val, party),
-                    borderRadius: 4,
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    fontFamily: mono,
-                    fontSize: val > 0 ? 14 : 11,
-                    fontWeight: 600,
-                    color: val > 0 ? dark : gray,
-                    cursor: "default",
-                    transition: "opacity 0.15s",
-                    border: hovered?.theme === theme && hovered?.party === party.toUpperCase() ? `2px solid ${dark}` : "2px solid transparent",
-                    margin: 2,
-                    borderBottom: `1px solid ${border}`,
-                  }}
-                >
-                  {val > 0 ? val : "—"}
-                </div>
-              );
-            })}
-          </React.Fragment>
-        ))}
-      </div>
-      <p style={{ fontFamily: serif, fontSize: 12, color: gray, fontStyle: "italic", marginTop: 16 }}>
-        Cell colour intensity = relative promise count. Counts are scaled from {allPoints.length} enriched points to full manifesto totals.
-      </p>
-    </div>
-  );
-}
-
-// ── Radial view ───────────────────────────────────────────────────────────
-
-const RADIAL_TOOLTIP = ({ active, payload }: { active?: boolean; payload?: Array<{ payload: { name: string; value: number; pct: number } }> }) => {
-  if (!active || !payload?.length) return null;
-  const d = payload[0].payload;
-  return (
-    <div style={{ background: "#fff", border: `1px solid ${border}`, borderRadius: 4, padding: "8px 12px", fontFamily: sans, fontSize: 12 }}>
-      <div style={{ fontWeight: 700, color: dark }}>{d.name}</div>
-      <div style={{ color: gray }}>{d.value} promises · {d.pct}%</div>
-    </div>
-  );
-};
-
-function RadialView() {
-  const parties = [
-    { key: "admk" as const, label: "ADMK", color: admkColor },
-    { key: "dmk"  as const, label: "DMK",  color: dmkColor  },
-    { key: "tvk"  as const, label: "TVK",  color: tvkColor  },
-  ];
-
-  return (
-    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 24 }}>
-      {parties.map(({ key, label, color }) => {
-        const data = buildRadialData(key);
-        return (
-          <div key={key}>
-            <div style={{ textAlign: "center" as const, marginBottom: 8 }}>
-              <span style={{ fontFamily: sans, fontSize: 12, fontWeight: 700, letterSpacing: "1px", textTransform: "uppercase" as const, color }}>{label}</span>
-              <span style={{ fontFamily: mono, fontSize: 11, color: gray, marginLeft: 8 }}>{TOTALS[key]} promises</span>
-            </div>
-            <div style={{ height: 260 }}>
-              <ResponsiveContainer width="100%" height="100%">
-                <RadialBarChart innerRadius="20%" outerRadius="90%" data={data} startAngle={90} endAngle={-270}>
-                  <RadialBar dataKey="value" cornerRadius={4} label={false} />
-                  <Tooltip content={<RADIAL_TOOLTIP />} />
-                </RadialBarChart>
-              </ResponsiveContainer>
-            </div>
-            {/* Top 4 legend */}
-            <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
-              {data.slice(0, 4).map(d => (
-                <div key={d.name} style={{ display: "flex", alignItems: "center", gap: 8 }}>
-                  <span style={{ width: 10, height: 10, borderRadius: 2, background: d.fill, flexShrink: 0 }} />
-                  <span style={{ fontFamily: sans, fontSize: 11, color: dark, flex: 1 }}>{d.name}</span>
-                  <span style={{ fontFamily: mono, fontSize: 11, color: gray }}>{d.pct}%</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        );
-      })}
-    </div>
-  );
-}
-
-// ── Bubble / scatter view ─────────────────────────────────────────────────
-
-const BUBBLE_TOOLTIP = ({ active, payload }: { active?: boolean; payload?: Array<{ payload: { name: string; admk: number; dmk: number; tvk: number } }> }) => {
-  if (!active || !payload?.length) return null;
-  const d = payload[0].payload;
-  return (
-    <div style={{ background: "#fff", border: `1px solid ${border}`, borderRadius: 4, padding: "8px 12px", fontFamily: sans, fontSize: 12 }}>
-      <div style={{ fontWeight: 700, color: dark, marginBottom: 4 }}>{d.name}</div>
-      <div style={{ color: admkColor }}>ADMK: {d.admk}</div>
-      <div style={{ color: dmkColor }}>DMK: {d.dmk}</div>
-      <div style={{ color: tvkColor }}>TVK: {d.tvk}</div>
-    </div>
-  );
-};
-
-function BubbleView() {
-  const bubbleData = buildBubbleData();
-
-  // Three scatter series: each party on (admk, dmk) plane, bubble size = tvk
+function TreemapView({ rows }: { rows: ThemeRow[] }) {
+  const data = rows.map(r => ({ name: r.name, admk: r.admk, dmk: r.dmk, tvk: r.tvk, size: r.total }));
   return (
     <div>
-      <p style={{ fontFamily: serif, fontSize: 14, color: gray, fontStyle: "italic", margin: "0 0 16px" }}>
-        X-axis = ADMK promises · Y-axis = DMK promises · Bubble size = TVK promises per theme.
-        Each bubble is a policy theme.
-      </p>
-      <div style={{ height: 400 }}>
+      <div style={{ height: 480 }}>
         <ResponsiveContainer width="100%" height="100%">
-          <ScatterChart margin={{ top: 10, right: 30, bottom: 20, left: 10 }}>
-            <XAxis
-              type="number" dataKey="admk" name="ADMK" label={{ value: "ADMK promises", position: "insideBottom", offset: -10, fontFamily: sans, fontSize: 11, fill: gray }}
-              tick={{ fontFamily: mono, fontSize: 10, fill: gray }} axisLine={false} tickLine={false}
-            />
-            <YAxis
-              type="number" dataKey="dmk" name="DMK" label={{ value: "DMK promises", angle: -90, position: "insideLeft", offset: 10, fontFamily: sans, fontSize: 11, fill: gray }}
-              tick={{ fontFamily: mono, fontSize: 10, fill: gray }} axisLine={false} tickLine={false}
-            />
-            <ZAxis type="number" dataKey="tvk" range={[40, 800]} name="TVK" />
-            <Tooltip content={<BUBBLE_TOOLTIP />} cursor={{ stroke: border }} />
-            <Scatter data={bubbleData} fillOpacity={0.65}>
-              {bubbleData.map((entry, index) => (
-                <Cell
-                  key={`cell-${index}`}
-                  fill={entry.admk > entry.dmk ? admkColor : entry.dmk > entry.admk ? dmkColor : tvkColor}
-                />
-              ))}
-              <LabelList
-                dataKey="name"
-                position="top"
-                offset={8}
-                style={{ fontFamily: sans, fontSize: 10, fontWeight: 600, fill: dark, pointerEvents: "none" }}
-              />
-            </Scatter>
-          </ScatterChart>
+          <Treemap data={data} dataKey="size" aspectRatio={4 / 3} content={<TreemapContent />}>
+            <Tooltip content={({ active, payload }) => {
+              if (!active || !payload?.length) return null;
+              const d = payload[0].payload as { name: string; admk: number; dmk: number; tvk: number };
+              return (
+                <div style={{ background: "#fff", border: `1px solid ${border}`, borderRadius: 4, padding: "8px 12px", fontFamily: sans, fontSize: 12 }}>
+                  <div style={{ fontWeight: 700, color: dark, marginBottom: 4 }}>{d.name}</div>
+                  <div style={{ color: admkColor }}>ADMK: {d.admk}</div>
+                  <div style={{ color: dmkColor }}>DMK: {d.dmk}</div>
+                  <div style={{ color: tvkColor }}>TVK: {d.tvk}</div>
+                </div>
+              );
+            }} />
+          </Treemap>
         </ResponsiveContainer>
       </div>
-
-      {/* Bubble legend */}
-      <div style={{ display: "flex", flexWrap: "wrap" as const, gap: 8, marginTop: 8 }}>
-        {bubbleData.map(d => (
-          <span key={d.name} style={{
-            fontFamily: sans, fontSize: 11, color: gray,
-            padding: "2px 8px", borderRadius: 12, background: "#f5f3ee",
-          }}>
-            {d.name}
-          </span>
-        ))}
-      </div>
-    </div>
-  );
-}
-
-// ── Stacked bar card (original, kept for Sectors view) ────────────────────
-
-function SectorCard({ label, data, isLeft }: {
-  label: string;
-  data: { admk: number; dmk: number; tvk: number };
-  isLeft: boolean;
-}) {
-  const [hovered, setHovered] = useState<string | null>(null);
-  const total = data.admk + data.dmk + data.tvk;
-  const maxVal = Math.max(data.admk, data.dmk, data.tvk, 1);
-  const parties = [
-    { name: "ADMK", val: data.admk, color: admkColor },
-    { name: "DMK",  val: data.dmk,  color: dmkColor  },
-    { name: "TVK",  val: data.tvk,  color: tvkColor  },
-  ];
-
-  return (
-    <div
-      style={{
-        padding: "18px 20px 14px",
-        borderTop: `1px solid ${border}`,
-        borderRight: isLeft ? `1px solid ${border}` : "none",
-        transition: "background 0.15s",
-        background: hovered ? "#faf8f4" : "transparent",
-      }}
-      onMouseEnter={() => setHovered(label)}
-      onMouseLeave={() => setHovered(null)}
-    >
-      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 14 }}>
-        <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
-          <span style={{ color: dark, display: "flex" }}>{topicIcons[label]}</span>
-          <span style={{ fontFamily: sans, fontSize: 12, fontWeight: 700, letterSpacing: "1px", textTransform: "uppercase" as const, color: dark }}>
-            {label}
-          </span>
-        </div>
-        <span style={{ fontFamily: mono, fontSize: 11, color: gray }}>{total} total</span>
-      </div>
-
-      {/* Stacked proportion bar */}
-      <div style={{ height: 8, borderRadius: 4, overflow: "hidden", display: "flex", marginBottom: 12 }}>
-        {parties.map(p => (
-          <div key={p.name} style={{
-            width: `${total > 0 ? (p.val / total) * 100 : 0}%`,
-            background: p.color,
-            minWidth: p.val > 0 ? 2 : 0,
-          }} />
-        ))}
-      </div>
-
-      {/* Party rows */}
-      {parties.map(p => (
-        <div key={p.name} style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 6 }}>
-          <span style={{ fontFamily: sans, fontSize: 10, fontWeight: 700, letterSpacing: "0.8px", textTransform: "uppercase" as const, color: p.color, minWidth: 40 }}>{p.name}</span>
-          <div style={{ flex: 1, height: 6, background: "#f2efe8", borderRadius: 3, overflow: "hidden" }}>
-            <div style={{ width: `${(p.val / maxVal) * 100}%`, height: "100%", background: p.color, borderRadius: 3, minWidth: p.val > 0 ? 2 : 0 }} />
+      <div style={{ display: "flex", gap: 20, marginTop: 12 }}>
+        {(["admk","dmk","tvk"] as const).map(k => (
+          <div key={k} style={{ display: "flex", alignItems: "center", gap: 6 }}>
+            <span style={{ width: 12, height: 12, borderRadius: 2, background: PARTY_META[k].color }} />
+            <span style={{ fontFamily: sans, fontSize: 12, color: gray }}>{PARTY_META[k].label} share</span>
           </div>
-          <span style={{ fontFamily: mono, fontSize: 11, color: dark, minWidth: 28, textAlign: "right" as const }}>{p.val}</span>
-          <span style={{ fontFamily: sans, fontSize: 10, color: gray, minWidth: 32 }}>{total > 0 ? Math.round((p.val / total) * 100) : 0}%</span>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 }
 
-// ── Main CompareGrid ──────────────────────────────────────────────────────
+// ── Main CompareGrid ────────────────────────────────────────────────────────
 
 const VIEW_MODES: { key: ViewMode; label: string; desc: string }[] = [
-  { key: "heatmap",  label: "Heat Map",   desc: "Intensity grid — which party dominates each theme" },
-  { key: "treemap",  label: "Treemap",    desc: "Area = promise count, colour split by party" },
-  { key: "radial",   label: "Radial",     desc: "Per-party theme breakdown as radial bars" },
-  { key: "bubble",   label: "Bubble",     desc: "ADMK vs DMK count, bubble size = TVK" },
+  { key: "verdicts",   label: "Verdicts",       desc: "One-line verdict per theme — who owns what" },
+  { key: "priorities", label: "Party Priorities", desc: "What each party actually cares about most" },
+  { key: "duels",      label: "Head-to-Head",   desc: "Pick two parties, see biggest gaps" },
+  { key: "treemap",    label: "Treemap",        desc: "Area = promise count, colour split by party" },
 ];
 
 export function CompareGrid() {
-  const [viewMode, setViewMode] = useState<ViewMode>("heatmap");
-  const entries = Object.entries(sectorData);
-  const treemapData = buildTreemapData();
+  const [viewMode, setViewMode] = useState<ViewMode>("verdicts");
+  const rows = useMemo(buildThemeRows, []);
 
   return (
     <div style={{ paddingBottom: 48 }}>
       {/* Header */}
-      <div style={{ paddingTop: 48, paddingBottom: 24 }}>
+      <div style={{ paddingTop: 48, paddingBottom: 20 }}>
         <h2 style={{ fontFamily: serif, fontSize: 34, fontWeight: 400, color: dark, margin: 0, lineHeight: 1.2 }}>
-          Compare promises by sector
+          Who promises what?
         </h2>
         <p style={{ fontFamily: serif, fontSize: 16, lineHeight: "30px", color: "#2e2e2e", marginTop: 4, marginBottom: 0 }}>
-          How ADMK, DMK and TVK distribute their {(TOTALS.admk + TOTALS.dmk + TOTALS.tvk).toLocaleString()} promises across policy themes.
-          Switch views to explore different angles.
+          {(TOTALS.admk + TOTALS.dmk + TOTALS.tvk).toLocaleString()} promises across 12 policy themes —
+          sorted four ways to tell different stories about ADMK, DMK and TVK.
         </p>
       </div>
 
       {/* View mode switcher */}
-      <div style={{ display: "flex", gap: 8, marginBottom: 32, flexWrap: "wrap" as const }}>
+      <div style={{ display: "flex", gap: 8, marginBottom: 28, flexWrap: "wrap" as const }}>
         {VIEW_MODES.map(v => (
           <button key={v.key} onClick={() => setViewMode(v.key)} style={{
             fontFamily: sans, fontSize: 12, fontWeight: 500, padding: "8px 16px",
@@ -449,74 +545,17 @@ export function CompareGrid() {
             color: viewMode === v.key ? "#fff" : dark,
             borderWidth: 1, borderStyle: "solid",
             borderColor: viewMode === v.key ? dark : border,
-          }}>
-            {v.label}
-          </button>
+          }}>{v.label}</button>
         ))}
         <span style={{ alignSelf: "center", fontFamily: serif, fontSize: 13, color: gray, fontStyle: "italic", marginLeft: 8 }}>
           {VIEW_MODES.find(v => v.key === viewMode)?.desc}
         </span>
       </div>
 
-      {/* Treemap */}
-      {viewMode === "treemap" && (
-        <div>
-          <div style={{ height: 480 }}>
-            <ResponsiveContainer width="100%" height="100%">
-              <Treemap
-                data={treemapData}
-                dataKey="size"
-                aspectRatio={4 / 3}
-                content={<TreemapContent />}
-              >
-                <Tooltip content={({ active, payload }) => {
-                  if (!active || !payload?.length) return null;
-                  const d = payload[0].payload;
-                  return (
-                    <div style={{ background: "#fff", border: `1px solid ${border}`, borderRadius: 4, padding: "8px 12px", fontFamily: sans, fontSize: 12 }}>
-                      <div style={{ fontWeight: 700, color: dark, marginBottom: 4 }}>{d.name}</div>
-                      <div style={{ color: admkColor }}>ADMK: {d.admk}</div>
-                      <div style={{ color: dmkColor }}>DMK: {d.dmk}</div>
-                      <div style={{ color: tvkColor }}>TVK: {d.tvk}</div>
-                    </div>
-                  );
-                }} />
-              </Treemap>
-            </ResponsiveContainer>
-          </div>
-          <div style={{ display: "flex", gap: 20, marginTop: 12 }}>
-            {[["ADMK", admkColor], ["DMK", dmkColor], ["TVK", tvkColor]].map(([lbl, col]) => (
-              <div key={lbl} style={{ display: "flex", alignItems: "center", gap: 6 }}>
-                <span style={{ width: 12, height: 12, borderRadius: 2, background: col }} />
-                <span style={{ fontFamily: sans, fontSize: 12, color: gray }}>{lbl} share</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
-
-      {/* Heatmap */}
-      {viewMode === "heatmap" && <HeatmapView />}
-
-      {/* Radial */}
-      {viewMode === "radial" && <RadialView />}
-
-      {/* Bubble */}
-      {viewMode === "bubble" && <BubbleView />}
-
-      {/* Always-visible sector grid below charts */}
-      {viewMode === "heatmap" && (
-        <div style={{ marginTop: 40, borderTop: `1px solid ${border}` }}>
-          <h3 style={{ fontFamily: sans, fontSize: 12, fontWeight: 700, letterSpacing: "1.2px", textTransform: "uppercase" as const, color: gray, margin: "24px 0 0" }}>
-            Detailed breakdown
-          </h3>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", width: "100%", marginTop: 16 }}>
-            {entries.map(([label, data], index) => (
-              <SectorCard key={label} label={label} data={data} isLeft={index % 2 === 0} />
-            ))}
-          </div>
-        </div>
-      )}
+      {viewMode === "verdicts"   && <VerdictsView rows={rows} />}
+      {viewMode === "priorities" && <PrioritiesView rows={rows} />}
+      {viewMode === "duels"      && <DuelsView rows={rows} />}
+      {viewMode === "treemap"    && <TreemapView rows={rows} />}
     </div>
   );
 }
