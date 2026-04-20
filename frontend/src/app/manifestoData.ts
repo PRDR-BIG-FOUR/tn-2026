@@ -358,12 +358,18 @@ export interface FactCheckEvidence {
 
 export interface FactCheck {
   party: string;
+  partyKey: "admk" | "dmk" | "tvk";
   color: string;
   num: string;
+  pointNumber: number;
   claim: string;
   analysis: string;
   verdict: string;
   verdictColor: string;
+  score: number | null;
+  theme: string;
+  themeLabel: string;
+  keyRisks: string[];
   evidence: FactCheckEvidence[];
 }
 
@@ -402,15 +408,22 @@ function buildFactChecks(): FactCheck[] {
         : `"${pt.text.slice(0, 120)}…"`;
 
       const { verdict, verdictColor } = scoreToVerdict(score);
+      const themeRaw = pt.analysis?.beneficiary?.primary_theme ?? "other";
 
       result.push({
         party: label,
+        partyKey: key,
         color,
         num: `#${pt.point_number}`,
+        pointNumber: pt.point_number,
         claim,
         analysis: analysisText,
         verdict,
         verdictColor,
+        score: score ?? null,
+        theme: themeRaw,
+        themeLabel: themeLabel(themeRaw),
+        keyRisks: Array.isArray(feas?.key_risks) ? feas!.key_risks! : [],
         evidence: evidence.map(e => ({
           title:   e.title   ?? "",
           url:     e.url     ?? "",

@@ -2,6 +2,7 @@ import React, { useState, useMemo } from "react";
 import { DonutChart } from "./components/DonutChart";
 import { CompareGrid } from "./components/CompareGrid";
 import { DemographyExplorer } from "./components/DemographyExplorer";
+import { FactCheckPanel } from "./components/FactCheckPanel";
 import imgHero from "figma:asset/1723a5f326a5277d54a9100e06a459502c93fd53.png";
 import {
   allPoints,
@@ -12,10 +13,7 @@ import {
   feasibilityRadarData,
   noveltyData,
   urbanRuralData,
-  factChecks,
   PARTY_LABELS,
-  type FactCheck,
-  type FactCheckEvidence,
 } from "./manifestoData";
 import {
   RadarChart, PolarGrid, PolarAngleAxis, Radar, ResponsiveContainer,
@@ -411,120 +409,6 @@ function DemographyTab() {
   );
 }
 
-// ── Fact Check Tab ────────────────────────────────────────────────────────
-
-function FactCheckTab() {
-  const [partyFilter, setPartyFilter] = useState<string | null>(null);
-  const filtered: FactCheck[] = partyFilter ? factChecks.filter(fc => fc.party === partyFilter) : factChecks;
-
-  const verdictCounts = useMemo(() => {
-    const counts: Record<string, number> = {};
-    filtered.forEach(fc => { counts[fc.verdict] = (counts[fc.verdict] || 0) + 1; });
-    return counts;
-  }, [filtered]);
-
-  const verdictColor = (v: string) =>
-    v === "Accurate" ? "#1C804C" : v === "Disputed" ? "rgb(176,90,42)" : v === "Unlikely" ? "#d43d51" : "rgb(138,117,32)";
-
-  return (
-    <section style={{ padding: "32px 0" }}>
-      <div style={{ paddingBottom: 24 }}>
-        <h2 style={{ fontFamily: serif, fontSize: 34, fontWeight: 400, color: dark, margin: 0, lineHeight: 1.2 }}>
-          Fact-checking the manifestos
-        </h2>
-        <p style={{ fontFamily: serif, fontSize: 16, lineHeight: "30px", color: "#2e2e2e", marginTop: 4 }}>
-          Key claims verified against available data, official records and legal texts — rated Accurate, Disputed, Aspirational or Unlikely.
-        </p>
-        <div style={{ display: "flex", gap: 16, marginTop: 16 }}>
-          {(["Accurate", "Aspirational", "Disputed", "Unlikely"] as const)
-            .filter(v => verdictCounts[v] !== undefined)
-            .map(verdict => ({ verdict, count: verdictCounts[verdict] }))
-            .map(({ verdict, count }) => (
-            <div key={verdict} style={{ display: "flex", alignItems: "center", gap: 8 }}>
-              <span style={{ width: 10, height: 10, borderRadius: "50%", background: verdictColor(verdict) }} />
-              <span style={{ fontFamily: sans, fontSize: 12, color: gray }}>
-                {count} <span style={{ fontWeight: 600, color: dark }}>{verdict}</span>
-              </span>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <div style={{ display: "flex", gap: 8, marginBottom: 24 }}>
-        {[{ label: "All", value: null as string | null }, ...PARTY_LABELS.map(l => ({ label: l, value: l }))].map(f => (
-          <button key={f.label} onClick={() => setPartyFilter(f.value)} style={{
-            fontFamily: sans, fontSize: 12, fontWeight: 500, padding: "7px 12px",
-            borderRadius: 4, cursor: "pointer",
-            background: partyFilter === f.value ? dark : "transparent",
-            color: partyFilter === f.value ? "#fff" : "#1a1a1a",
-            borderWidth: 1, borderStyle: "solid",
-            borderColor: partyFilter === f.value ? dark : border,
-          }}>{f.label}</button>
-        ))}
-      </div>
-
-      <div style={{ display: "flex", flexDirection: "column" }}>
-        {filtered.map((fc, i) => (
-          <div key={i} style={{ padding: "24px 0", borderTop: `1px solid ${border}` }}>
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 12 }}>
-              <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-                <span style={{ width: 12, height: 12, background: fc.color, borderRadius: 3 }} />
-                <span style={{ fontFamily: sans, fontSize: 13, fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase" as const, color: "#1a1a1a" }}>
-                  {fc.party}
-                </span>
-                <span style={{ fontFamily: mono, fontSize: 11, color: gray, marginLeft: 4 }}>Promise {fc.num}</span>
-              </div>
-              <div style={{
-                padding: "6px 12px", borderRadius: 4,
-                background: fc.verdict === "Accurate" ? "#1C804C" : fc.verdict === "Disputed" ? "#BA5C3B" : fc.verdict === "Unlikely" ? "#d43d51" : "#D76405",
-                color: "#fff", fontFamily: sans, fontSize: 10.5, fontWeight: 700,
-                letterSpacing: "0.12em", textTransform: "uppercase" as const,
-              }}>{fc.verdict}</div>
-            </div>
-            <div style={{ fontFamily: serif, fontSize: 20, color: dark, lineHeight: 1.5, marginBottom: 14 }}>{fc.claim}</div>
-            <div style={{ fontFamily: serif, fontSize: 15, color: "#6b6b6b", lineHeight: 1.65, fontStyle: "italic", borderLeft: `3px solid ${fc.verdictColor}`, paddingLeft: 16 }}>
-              <span style={{ fontWeight: 700, fontStyle: "normal", color: "#1a1a1a" }}>Fact: </span>
-              {fc.analysis}
-            </div>
-            {fc.evidence.length > 0 && (
-              <div style={{ marginTop: 14, display: "flex", flexDirection: "column", gap: 8 }}>
-                <span style={{ fontFamily: sans, fontSize: 11, fontWeight: 700, letterSpacing: "1px", textTransform: "uppercase" as const, color: gray }}>
-                  Sources
-                </span>
-                {fc.evidence.map((ev: FactCheckEvidence, j: number) => (
-                  <div key={j} style={{ display: "flex", flexDirection: "column", gap: 3, paddingLeft: 0 }}>
-                    {ev.url ? (
-                      <a href={ev.url} target="_blank" rel="noopener noreferrer" style={{
-                        fontFamily: sans, fontSize: 12, fontWeight: 600, color: fc.color,
-                        textDecoration: "none", lineHeight: 1.4,
-                      }}
-                        onMouseEnter={e => (e.currentTarget.style.textDecoration = "underline")}
-                        onMouseLeave={e => (e.currentTarget.style.textDecoration = "none")}
-                      >
-                        {ev.title}
-                        <svg style={{ marginLeft: 4, verticalAlign: "middle", opacity: 0.7 }} width="10" height="10" viewBox="0 0 10 10" fill="none">
-                          <path d="M1.5 8.5L8.5 1.5M8.5 1.5H3.5M8.5 1.5V6.5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
-                        </svg>
-                      </a>
-                    ) : (
-                      <span style={{ fontFamily: sans, fontSize: 12, fontWeight: 600, color: fc.color }}>{ev.title}</span>
-                    )}
-                    {ev.snippet && (
-                      <span style={{ fontFamily: serif, fontSize: 12, color: gray, lineHeight: 1.55, fontStyle: "italic" }}>
-                        "{ev.snippet}"
-                      </span>
-                    )}
-                  </div>
-                ))}
-              </div>
-            )}
-          </div>
-        ))}
-      </div>
-    </section>
-  );
-}
-
 // ── App Root ──────────────────────────────────────────────────────────────
 
 export default function App() {
@@ -539,7 +423,7 @@ export default function App() {
         {activeTab === "Dashboard"  && <DashboardTab />}
         {activeTab === "Compare"    && <section style={{ padding: "0px 0" }}><CompareGrid /></section>}
         {activeTab === "Demography" && <DemographyTab />}
-        {activeTab === "Fact Check" && <FactCheckTab />}
+        {activeTab === "Fact Check" && <FactCheckPanel />}
       </div>
     </div>
   );
