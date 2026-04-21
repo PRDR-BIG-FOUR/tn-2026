@@ -6961,25 +6961,135 @@
         }
       ],
       "analysis": {
-        "beneficiary": null,
-        "plan_existence": null,
-        "feasibility": null,
+        "beneficiary": {
+          "geography": {
+            "scope": "statewide",
+            "regions": []
+          },
+          "gender": [
+            "all"
+          ],
+          "age_group": [
+            "youth",
+            "working_age"
+          ],
+          "community_category": [
+            "SC",
+            "ST"
+          ],
+          "minority": null,
+          "occupation_jobs": [
+            "entrepreneurs"
+          ],
+          "sector": [
+            "industry",
+            "services",
+            "agriculture"
+          ],
+          "income_class": [
+            "low",
+            "middle"
+          ],
+          "education_level": [
+            "all"
+          ],
+          "disability": false,
+          "urban_rural": "both",
+          "primary_theme": "social_justice",
+          "beneficiary_count_estimate": null,
+          "tags": [
+            "SC/ST welfare",
+            "entrepreneurship",
+            "seed capital",
+            "Adi Dravidar",
+            "Tribal",
+            "first-generation"
+          ]
+        },
+        "plan_existence": {
+          "already_exists": true,
+          "existing_scheme_names": [
+            "Annal Ambedkar Business Champions Scheme (AABCS)",
+            "Chief Minister Adi Dravidar and Tribal Socio-Economic Development Scheme (CM-ARISE)",
+            "TAHDCO Entrepreneur Development Programme"
+          ],
+          "jurisdiction": [
+            "tamil_nadu"
+          ],
+          "scheme_level": "state",
+          "relation_to_existing": "expansion",
+          "evidence": [
+            {
+              "title": "Annal Ambedkar Business Champions Scheme (AABCS) - myScheme",
+              "url": "https://www.myscheme.gov.in/schemes/aabcs",
+              "snippet": "The Tamil Nadu government provides a 35% capital subsidy (up to Rs 1.5 crore) and 6% interest subvention for SC/ST entrepreneurs."
+            },
+            {
+              "title": "CM-ARISE Scheme - TAHDCO",
+              "url": "https://tahdco.com/schemes/cm-arise/",
+              "snippet": "Provides financial assistance to SC/ST individuals with a 35% subsidy or Rs. 3.50 lakhs, whichever is lower, for starting business activities."
+            }
+          ],
+          "notes": "The Government of Tamil Nadu already operates several schemes for SC/ST entrepreneurs. The CM-ARISE scheme specifically offers a subsidy of up to Rs. 3.5 lakh. The manifesto promise of Rs. 5 lakh as investment capital represents a 42% increase over the current CM-ARISE subsidy cap and specifically targets first-generation entrepreneurs."
+        },
+        "feasibility": {
+          "fiscal": {
+            "score": 4,
+            "comments": "The current CM-ARISE scheme already has a budget for 3.5L subsidies. Increasing this to 5L for first-generation entrepreneurs is a moderate fiscal expansion. While specific outlays for this new cap aren't cited, the state already allocates hundreds of crores to TAHDCO and MSME subsidies (e.g., AABCS)."
+          },
+          "legal": {
+            "score": 5,
+            "comments": "Welfare schemes targeting SC/ST communities are constitutionally valid under Articles 15(4) and 16(4). No legal impediments exist for state-funded grants or subsidies for these groups."
+          },
+          "administrative": {
+            "score": 5,
+            "comments": "The administrative machinery (TAHDCO and the MSME Department) is already fully functional and experienced in processing applications, verifying community status, and disbursing entrepreneurship subsidies."
+          },
+          "timeline": {
+            "score": 5,
+            "comments": "This can be implemented within the first year of a term by amending the existing CM-ARISE or AABCS guidelines to include the higher 5L cap for first-generation applicants."
+          },
+          "political": {
+            "score": 5,
+            "comments": "SC/ST welfare is a core political priority in Tamil Nadu. There is likely to be zero opposition to increasing entrepreneurship support for these communities."
+          },
+          "overall_score": 5,
+          "overall_comments": "The promise is highly feasible as it is an incremental improvement on existing, well-established state schemes. It leverages existing delivery mechanisms (TAHDCO) and addresses a specific gap (first-generation entrepreneurs) with a manageable increase in financial assistance.",
+          "key_risks": [
+            "Verification of 'first-generation' status to prevent misuse",
+            "Potential duplication with the existing AABCS scheme which offers higher total subsidies",
+            "Ensuring bank credit linkage if the 5L is a subsidy rather than a direct grant"
+          ]
+        },
         "_grounding": {
-          "search_queries": [],
-          "citation_urls": []
+          "search_queries": [
+            "",
+            "Annal Ambedkar Business Champions Scheme Tamil Nadu details subsidy",
+            "TAHDCO entrepreneur development scheme subsidy amount",
+            "TVK party manifesto 2026 Tamil Nadu Adi Dravidar entrepreneur scheme",
+            "Tamil Nadu Adi Dravidar Entrepreneur Scheme 5 lakh investment capital"
+          ],
+          "citation_urls": [
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFqbz0FdQszPr8z9YSNtce9zqbozafh6UulbL6kQo3FG8lig5Q78vhA98bQKwGbNyP30HGICoq5nNUFaXxGROzExv1fNaRYlrXHcG1nAzQSLDs5MwU_txoACovXaRcuwg6GA5vzSZy2NQmyVhX5SeYYXR0Aqx8DVG5iq5Ot-R6uJZV0XJyc6Q==",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGcL853PF1UvIossDGVO0WEBme1QXNP6AHVqDdu1GNp2DaU6eFiAaunVSr4RXU5kOXRLpuJFE2JgckS756XeV4P-8ySoo4KhAMNz_CGJTBAxmuFyj6U-VC1x9pWo91UbPrklGbhUeWv9rgjVW1NWUOr6VpI7ZLUvU-LgjG7zoGLAWlGoQyhDCa7d5rt3VlCejTbcZ6Oe_1Cp1SbIuFFWSP37HLgXrXhiYAEnA==",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEtdRqGuqWOsEiTmMmXGHoEVwBIW8fMdZyY34N95GGwyQN5WJOudAaDeeofXohvD6ul8x2YtzQNYYXGKXh3I32bRXWz8Cs2OMPz8Cj0iZ1-fNzITAVW1hCQvJ2VaQBbL3CidbxlKX8=",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHIMVmmkpNToVWHt_KDYvblfwDCDYqLz0XXfPjL0ousuJJLSpOWCK57Qrdc89ZlN4tKsnddzbhij3n3lAPgdQUByw3MJ8SQ10zvqSjeD8vbLQY7-2H19gHPvJYqYTFynF2lA5o=",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHFsTmUI_LGqPn8ZdWpr615Ics8Fbbvxec8HgIHHdBG-Zgru7kGj77JbzWxUgqXgNMDsD_XZm30ldQo88zRxK19J0Am_JZmRmy6oCuN0kmmsa75uq5O-J4nXwEO3hmUbA==",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFPRiOZ1TYmlFBg1tRarsfhnp6mv9UOE5yXFCPisKZf5-PsxJZum5tDvy1xO8YcfPbWvkwWw6T5pdiBgT1gsdpFKPeQR7emXrWu9coTCDWZvrQAWl3URsUq6SImvv3MAYB7XCBQu4KAnw==",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEBTARAVJRSrBmZnNHvpyX6j8WfBzLCDdj-bxw5U-f2zj9QPpYd25OHPSGCfSm7Ld9YeK2dpDA7Y_iz0CBfv-XHkmzkEffnAvyl3UUCPTmLJdNQoxI4lNNW8NoYtdxrLKOHtlVm7lSsHeWMff3n_C3Utjrz6A-uYpM_zePQaNa75R0zxtuz2xYu3LK8bqrJU90VrXk5i52n6Im5qu3cw5qKW4-RQG74s_Gtg0iRuccaOfob-RfUIElgbiE0"
+          ]
         },
         "_meta": {
           "model": "gemini-3-flash-preview",
           "tokens": {
-            "prompt_token_count": 3281,
-            "candidates_token_count": 2617,
-            "total_token_count": 68813
+            "prompt_token_count": 2794,
+            "candidates_token_count": 1126,
+            "total_token_count": 5301,
+            "cached_content_token_count": 298
           },
           "attempts": 1
         },
-        "_parse_errors": [
-          "expected 3 <sep>-separated sections, got 2"
-        ]
+        "_repaired_at": "2026-04-21T17:50:47Z"
       }
     },
     {
@@ -8296,25 +8406,129 @@
         }
       ],
       "analysis": {
-        "beneficiary": null,
-        "plan_existence": null,
-        "feasibility": null,
+        "beneficiary": {
+          "geography": {
+            "scope": "statewide",
+            "regions": []
+          },
+          "gender": [
+            "all"
+          ],
+          "age_group": [
+            "all"
+          ],
+          "community_category": [
+            "All"
+          ],
+          "minority": {
+            "religious": [
+              "muslim",
+              "christian",
+              "sikh",
+              "buddhist",
+              "jain",
+              "parsi"
+            ],
+            "linguistic": null
+          },
+          "occupation_jobs": null,
+          "sector": null,
+          "income_class": [
+            "all"
+          ],
+          "education_level": [
+            "all"
+          ],
+          "disability": false,
+          "urban_rural": "both",
+          "primary_theme": "social_justice",
+          "beneficiary_count_estimate": null,
+          "tags": [
+            "minority welfare",
+            "burial grounds",
+            "kabarstans",
+            "cemeteries",
+            "land allocation",
+            "religious rights"
+          ]
+        },
+        "plan_existence": {
+          "already_exists": true,
+          "existing_scheme_names": [
+            "Tamil Nadu Burial Ground Rules 1999",
+            "Scheme for construction of compound wall / barbed wire fencing around Burial Ground"
+          ],
+          "jurisdiction": [
+            "tamil_nadu"
+          ],
+          "scheme_level": "state",
+          "relation_to_existing": "expansion",
+          "evidence": [
+            {
+              "title": "Allocate two-three acres of land in every district for cemeteries, kabristans: TN state minorities commission",
+              "url": "https://timesofindia.indiatimes.com/city/chennai/allocate-two-three-acres-of-land-in-every-district-for-cemeteries-kabristans-tn-state-minorities-commission/articleshow/116434444.cms",
+              "snippet": "The Tamil Nadu state minorities commission recommended that the state govt allocate two to three acres of land in every district for cemeteries and kabristan due to space shortages."
+            },
+            {
+              "title": "T. N. government has sanctioned ₹10 crore for upkeep of burial grounds",
+              "url": "https://www.thehindu.com/news/national/tamil-nadu/tn-government-has-sanctioned-10-crore-for-upkeep-of-burial-grounds-says-minorities-committee-head/article67544444.ece",
+              "snippet": "The State Government had allotted ₹10 crore during this fiscal for repairing the compound walls of the burial grounds of Christians and Muslims."
+            }
+          ],
+          "notes": "While the Tamil Nadu Burial Ground Rules 1999 mandate local bodies to provide burial spaces, specific land for religious minorities is often managed via the Waqf Board or through ad-hoc district-level allocations. The State Minorities Commission formally recommended a dedicated allocation of 2-3 acres per district in December 2025 to address acute space shortages."
+        },
+        "feasibility": {
+          "fiscal": {
+            "score": 3,
+            "comments": "The state recently allocated ₹10 crore for upkeep, but new land acquisition costs, especially in urban areas like Chennai or Coimbatore, could be significant if government 'poramboke' land is unavailable."
+          },
+          "legal": {
+            "score": 5,
+            "comments": "The right to a decent burial is a recognized fundamental right under Article 21 of the Constitution. The Waqf Act 1995 and state burial rules provide a clear legal framework for such allocations."
+          },
+          "administrative": {
+            "score": 4,
+            "comments": "District Collectors have the authority to identify and allot government land. The primary challenge is the physical scarcity of suitable land in densely populated urban centers."
+          },
+          "timeline": {
+            "score": 5,
+            "comments": "Identification and transfer of land parcels can be executed within a 5-year term through executive orders."
+          },
+          "political": {
+            "score": 4,
+            "comments": "The move is politically favorable among minority groups but may face localized resistance from residents near proposed sites or during land acquisition in sensitive areas."
+          },
+          "overall_score": 4,
+          "overall_comments": "This is a highly feasible and necessary expansion of existing social welfare duties. It directly addresses a formal recommendation from the State Minorities Commission and fulfills a constitutional obligation, though urban land scarcity remains a practical hurdle.",
+          "key_risks": [
+            "Scarcity of government-owned land in urban districts",
+            "High cost of private land acquisition",
+            "Local community opposition to new burial sites",
+            "Potential litigation over land use changes"
+          ]
+        },
         "_grounding": {
-          "search_queries": [],
-          "citation_urls": []
+          "search_queries": [
+            "",
+            "Tamil Nadu government scheme for minority burial grounds land allocation",
+            "TN Waqf Board burial ground land identification scheme",
+            "Tamil Nadu Revenue Department land for cemeteries and kabarstans"
+          ],
+          "citation_urls": [
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFMfN4sqrwss-fgFzqQ0vPoEtqfNpIXnqy0NFWjsDErU4E1YqDzu_fQYd-MTsqdCRm5D4RZvPShQ9tm8cvxae8-4R1QFysyZ54LGIdTsrt13zY6sJFWftsKufRIZNHtQaiVf8SoWo83bdW3Ti0lpNraVhYhEmQdKdevqp9CNw8Z0SRxBQakjLcHcJnFynJsrtf3B4KTIcltSNdTOpPvy-Tet3YxKLTGiT51emhZ8S9oNV8RGUphBSRHvC6Z0oHIYyu0ur7JWn0AAxSLqKO1VkXIyfJqtxB0SyhguI8rBJjIJNp8ndcQT-taevztD5D5EYXIyA==",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEEeN2cFFcqessYnMZJw-7TRqL6HPViVhCopF95ZSK23Q6FYYU-t-fMKEBaibvyAHegNwH1UWW__B0hSe3aeHByAtzv6xAj3s1TkuT7N1xFbzY0lD3cVlwyAYG39sQlnxJVJHoBvp79Z53Zmad3qYbmB_6257_wRYtSYDNuHjqvyiLoi4cxfxKjZNawbSoytGBZrbdi3J3lKYvUwhMZxIztrcnWQxABF2uR"
+          ]
         },
         "_meta": {
           "model": "gemini-3-flash-preview",
           "tokens": {
-            "prompt_token_count": 3436,
-            "total_token_count": 4382,
-            "cached_content_token_count": 270
+            "prompt_token_count": 2661,
+            "candidates_token_count": 1082,
+            "total_token_count": 5313
           },
           "attempts": 1
         },
-        "_parse_errors": [
-          "missing item 1 in response"
-        ]
+        "_repaired_at": "2026-04-21T17:50:47Z"
       }
     },
     {
@@ -8339,25 +8553,129 @@
         }
       ],
       "analysis": {
-        "beneficiary": null,
-        "plan_existence": null,
-        "feasibility": null,
+        "beneficiary": {
+          "geography": {
+            "scope": "statewide",
+            "regions": []
+          },
+          "gender": [
+            "all"
+          ],
+          "age_group": [
+            "elderly"
+          ],
+          "community_category": [
+            "All"
+          ],
+          "minority": {
+            "religious": [],
+            "linguistic": []
+          },
+          "occupation_jobs": null,
+          "sector": null,
+          "income_class": [
+            "BPL",
+            "low"
+          ],
+          "education_level": [
+            "all"
+          ],
+          "disability": false,
+          "urban_rural": "both",
+          "primary_theme": "welfare",
+          "beneficiary_count_estimate": 1500000,
+          "tags": [
+            "pension",
+            "senior citizens",
+            "social security",
+            "elderly welfare",
+            "direct benefit transfer"
+          ]
+        },
+        "plan_existence": {
+          "already_exists": true,
+          "existing_scheme_names": [
+            "Indira Gandhi National Old Age Pension Scheme (IGNOAPS)",
+            "Old Age Pension (OAP) Scheme (Tamil Nadu)"
+          ],
+          "jurisdiction": [
+            "tamil_nadu",
+            "india"
+          ],
+          "scheme_level": "both",
+          "relation_to_existing": "expansion",
+          "evidence": [
+            {
+              "title": "Social Security Schemes | Kanniyakumari District, Government of TamilNadu",
+              "url": "https://kanniyakumari.nic.in/social-security-schemes/",
+              "snippet": "Indira Gandhi National Old Age Pension provides Rs. 1,000 per month to senior citizens 60 years and above who are destitute and belong to BPL families."
+            },
+            {
+              "title": "Vijay unveils TVK manifesto with welfare push",
+              "url": "https://www.thenewsminute.com/tamil-nadu/rs-2500-for-homemakers-free-lpg-cylinders-what-tvk-manifesto-2026-promises",
+              "snippet": "Senior citizens, widows and persons with disabilities are to receive Rs 3,000 per month. Pension coverage for 15 lakh beneficiaries has also been promised."
+            }
+          ],
+          "notes": "The current base pension in Tamil Nadu is Rs. 1,000 per month. The promise seeks to triple this amount and expand coverage to an additional 15 lakh beneficiaries."
+        },
+        "feasibility": {
+          "fiscal": {
+            "score": 2,
+            "comments": "Increasing the pension from Rs. 1,000 to Rs. 3,000 for the existing ~37.8 lakh beneficiaries plus 15 lakh new ones would cost approximately Rs. 19,000 crore annually, creating an additional fiscal burden of ~Rs. 14,500 crore per year."
+          },
+          "legal": {
+            "score": 5,
+            "comments": "Social security is a concurrent subject; the state has full legal authority to enhance its own contribution to pension schemes."
+          },
+          "administrative": {
+            "score": 5,
+            "comments": "Tamil Nadu has a robust Direct Benefit Transfer (DBT) system already handling over 37 lakh pensioners, making the rollout administratively simple."
+          },
+          "timeline": {
+            "score": 5,
+            "comments": "The increase can be implemented immediately through a Government Order (GO) and budgetary allocation in the first fiscal year."
+          },
+          "political": {
+            "score": 5,
+            "comments": "High populist appeal; senior citizens are a reliable voting bloc, and similar increases have been successful political tools in other states."
+          },
+          "overall_score": 4,
+          "overall_comments": "The promise is administratively and legally straightforward but carries a heavy fiscal price tag that will strain the state's debt-to-GDP ratio. It represents a significant expansion of the existing social safety net.",
+          "key_risks": [
+            "High recurring fiscal deficit",
+            "Inflationary pressure on state budget",
+            "Potential for exclusion errors during the 15-lakh expansion"
+          ]
+        },
         "_grounding": {
-          "search_queries": [],
-          "citation_urls": []
+          "search_queries": [
+            "",
+            "TVK manifesto 2026 senior citizen pension Rs 3000",
+            "Tamil Nadu social security pension amount 2024 2025 senior citizen",
+            "number of old age pensioners in Tamil Nadu 2024"
+          ],
+          "citation_urls": [
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG1myZdwBDCf-5Gt_YEd2ctHKRFNquB1TcvECZFrcUHq0Ti1wK8FlrIDfw5kTV3rOFI1gTGxG2HfiUJA5cMS78k_cbszh64aGqW9KqikTH1EmeRcNZD8qF_Abhie6WZsXvWcSoqMx-uCAAqm7Fyqi_ZTaaQaLmlKx81vVpfsX1MiynUtIyr08v2sp_jabt9z-AmsZfF6_kEpvJalmp88_6xFjpExCUzz2uoSFAHGN_n2hH3dnXPpbvhFHUsvNFmzrHslKvIFM8l",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGlYuiUgnA1ESWaVGMtjPbN8GRZsEt3ZWllW8YooOxH2kum2t71zW51kX61HcVh_Oup7hxKn3hTp_yuUJ6sJpAtNOK9yQl0brSZL-FCMrAIjA01hTxcQm-Sh9Xq-EaAeW6bX5TwRmjjq8PUgtyKkgAS5Rt0w_ZAncsxlQgQUlnoLn5PUIEMZRooAHtgH-K0vO6fJhrzaGSv",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG7ImtUZiLkPcqdOaLDn_wOAdQY7VYTT8OwSNwHKeky5npPuBm10hfMIlv0vrfwgewrc-_8pRgdvzDy9GQORd_XLf4CUYeSECFE3yMoEPqsS5S4kIn5f59SRMS20i0GxplvC22uvio6CPMyJFS838hjVEHvDPQKBQZ2zbbwB-bFvA-vly1HKnf9BYhg1SnZi7H4Xclk5i-3-HC_6gY7B4Z9otUC0miO2XD-9z8PCiScQIA=",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGOXy-yq0GXgGQdXUxWS3utK_OZOaYJ66AVBpdoOGwv1e6zL8NwXADHpkpJN6mh4IWe-xhSBIlXU-z1Xxk2w26MqEZFk8i-BgFrfLGxzQJTSO97HGAkXAkhKtWW-azP6-oZxvVr8sed_NeTbei3wAkcCZLj60ozsOe7hilPaynTq528wuk-uKS_gCb_Do_bycyzbrkYJea-f2Zo7H1naSI5t_Ibpbm68q2tmQonJnCb7Z9j8XNZgD1IT8z80MreI8eXFiAj8nRHlXYGdJ5A3ndGtHfd_nJVBwW7bOGy2ka-njN5vqnOYD40r1rRT2QtLiEkD77QTz6qidbx1wZTkiWr0dMAp0S9",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFpE1SMDqVxKxe2S59jJiapoZZFGsXFgIN4-4e_BpB2LmS1fxGYwbrQyY6wj6EZ5MpcSZnEW9kfDgBQfMCQdheiTPwq5zRU44DT1mt44qB0D-Pp1b0Z3QCzFJRKmEZQr0qKAtXk-WbtDAjffs02RHiluHIanUqLstyT1m25MCdTkFWX6j8bSVHsBmvWTW4BN8QG69lVYu5AewSDDlBI_TfD-DbrLWh1cpyVO44OOp0=",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHaUTIq43Fw3JSwz8eBgkO5NMLLQ_TzlXht7ycvbOAQBfdA8-WnGo3Jz4RlP13qWLIUAMBH1DLHGB39Qq092lf_pGkfOQWWrkaCjJjEN1LV_n_z8SnWgTMyUH0CY0OLbbE7hkAesZGwyqw-kqS2DRUEFJD8Xvk1fTB9_4lo2nePF-Ue4ZH2jsvjpWUhEqRgBNF3cG6Dw6a-Ig==",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFqzFx_iwHpM81zA0CaKdblS4MgblCUN4c8dxLhqWU7NMt5j-qGX-dPQ3yCUHieqQZy-BkkrjrNxufomn2P3aZnT7NuSYJMgs_lLdBTVfymx5WnbUecMLF_1JjN7eaR3G6Zt0r3-Dp0WriF38O0wjfqvMx_rgeWPB8Yk00sB8XbxK89QqXDvmpbpuxgiWCqwyOLlH25nXWEieyuGu2zJIlR07Ykd7wxdJ4IZFHnyrTw0Z52ZP6Bul5VQu-ZEfYTDSQeAeiIQbhhHSAD9Uvt9S3f_llsPrNaTPUkCNbl79bDyv8=",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEeLCQ1MKhT2FBMQvcHGxWMQ9z1Kuil4eprkW6iuwku2qzRyRkBEgOPhKV9-z-2icFKS9koPvF2iEg82Xr1evbwTlR6t1RrOP2CN7-PGNxd1Z6BDpp_avIwg4k-xsiSLZTNZup4WkzOG92RGtTkuo5ecrNpqD5i_RIFb3NvsdWeN4fVy3v7B_MLcCpOzvODrf_gJc0wHIZiscDzSmvfw6KdJykFErx109LQbmj_UyXWL0Ms8_BiDmmG",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFlOxIrwxmwLz6ougf6oCikN0hFClmR0eIQYggiyYq0pgIKojplqVjYcoKAzd0ycoFX_RDX5ET7Ba8laDFSb99cpQFdYMbmHU4-han5grsQznHv-Z2k48FynfCfYWkfsYOjMTA66wHmmrvlPl4zPScS9AeKFP1o8To="
+          ]
         },
         "_meta": {
           "model": "gemini-3-flash-preview",
           "tokens": {
-            "prompt_token_count": 3436,
-            "total_token_count": 4382,
-            "cached_content_token_count": 270
+            "prompt_token_count": 2879,
+            "candidates_token_count": 966,
+            "total_token_count": 5079
           },
           "attempts": 1
         },
-        "_parse_errors": [
-          "missing item 2 in response"
-        ]
+        "_repaired_at": "2026-04-21T17:50:47Z"
       }
     },
     {
@@ -8382,25 +8700,139 @@
         }
       ],
       "analysis": {
-        "beneficiary": null,
-        "plan_existence": null,
-        "feasibility": null,
+        "beneficiary": {
+          "geography": {
+            "scope": "statewide",
+            "regions": []
+          },
+          "gender": [
+            "women",
+            "men",
+            "trans"
+          ],
+          "age_group": [
+            "elderly"
+          ],
+          "community_category": [
+            "All"
+          ],
+          "minority": {
+            "religious": [
+              "muslim",
+              "christian",
+              "sikh",
+              "buddhist",
+              "jain",
+              "parsi"
+            ],
+            "linguistic": []
+          },
+          "occupation_jobs": [],
+          "sector": [
+            "public"
+          ],
+          "income_class": [
+            "all"
+          ],
+          "education_level": [
+            "all"
+          ],
+          "disability": false,
+          "urban_rural": "both",
+          "primary_theme": "welfare",
+          "beneficiary_count_estimate": 250000,
+          "tags": [
+            "senior citizens",
+            "pilgrimage",
+            "free travel",
+            "welfare",
+            "tourism",
+            "AC travel"
+          ]
+        },
+        "plan_existence": {
+          "already_exists": true,
+          "existing_scheme_names": [
+            "Aadi Month Spiritual Tour",
+            "Purattasi Month Tour",
+            "Arupadai Veedu Free Pilgrimage Scheme",
+            "Rameswaram–Kashi Spiritual Journey"
+          ],
+          "jurisdiction": [
+            "tamil_nadu"
+          ],
+          "scheme_level": "state",
+          "relation_to_existing": "expansion",
+          "evidence": [
+            {
+              "title": "Govt starts free spiritual tour to Amman temples",
+              "url": "https://timesofindia.indiatimes.com/city/chennai/govt-starts-free-spiritual-tour-to-amman-temples/articleshow/111846543.cms",
+              "snippet": "Tamil Nadu govt has launched free Aadi month spiritual tours for senior citizens... Last year, 25 lakh was allocated and 1,003 pilgrims benefited. This year, the allocation has been doubled to 50 lakh."
+            },
+            {
+              "title": "HR&CE Department Invites Applications for Free Rameswaram–Kashi Spiritual Journey",
+              "url": "https://www.livechennai.com/detailnews.asp?newsid=72152",
+              "snippet": "This year, 600 devotees will be taken on a special spiritual journey from Rameswaram to Kashi with a government grant of ₹1.5 crore."
+            }
+          ],
+          "notes": "Tamil Nadu currently operates several small-scale pilgrimage schemes through the HR&CE department, covering approximately 4,000 to 5,000 senior citizens annually with a total budget under ₹10 crore. The TVK promise to cover 2.5 lakh people represents a nearly 50-fold expansion in scale and introduces 'places of choice' and AC travel, which are not standard in current state-wide bus-based tours."
+        },
+        "feasibility": {
+          "fiscal": {
+            "score": 3,
+            "comments": "Based on the current Rameswaram-Kashi scheme cost of ₹25,000 per person (₹1.5 cr for 600 people), covering 2.5 lakh citizens would cost approximately ₹625 crore annually. While significant, this is manageable within Tamil Nadu's ₹3 lakh crore+ budget, though it represents a massive jump from the current sub-₹10 crore allocation for such tours."
+          },
+          "legal": {
+            "score": 5,
+            "comments": "State governments have full authority to fund and organize welfare and tourism schemes for senior citizens. No constitutional or statutory barriers exist."
+          },
+          "administrative": {
+            "score": 2,
+            "comments": "Managing logistics for 2.5 lakh people annually (approx. 21,000 per month) with 'places of their choice' is extremely complex. Existing schemes use fixed circuits and batches; individualized destinations would require a massive dedicated travel desk and IRCTC coordination."
+          },
+          "timeline": {
+            "score": 4,
+            "comments": "The scheme can be rolled out in phases over a 5-year term, starting with fixed circuits and expanding to the promised scale."
+          },
+          "political": {
+            "score": 5,
+            "comments": "Highly popular with the elderly and their families. Similar schemes in Delhi and Madhya Pradesh have seen high demand and positive public reception."
+          },
+          "overall_score": 4,
+          "overall_comments": "The promise is a massive expansion of existing small-scale spiritual tours. While fiscally possible, the primary challenge lies in the administrative logistics of handling 2.5 lakh people annually and the 'choice of destination' clause, which complicates standardized travel arrangements.",
+          "key_risks": [
+            "Logistical failure in managing large-scale elderly travel",
+            "High per-capita cost if AC travel and premium accommodation are provided",
+            "Potential for corruption in vendor selection for food and stay",
+            "Medical emergencies during transit for a large elderly population"
+          ]
+        },
         "_grounding": {
-          "search_queries": [],
-          "citation_urls": []
+          "search_queries": [
+            "",
+            "Tamil Nadu government free pilgrimage scheme for senior citizens HR&CE",
+            "Mukhyamantri Tirth Yatra Yojana cost per person",
+            "Tamil Nadu HR&CE free temple tour 2024 2025",
+            "TVK party manifesto 2026 Tamil Nadu senior citizen pilgrimage cost"
+          ],
+          "citation_urls": [
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE_WMyQEewJ3LsrqyiRHVEPFR9RwFIlJAmqAYjhGETTdGQHgUDVrpYI-7P5WcTz64dSrwYDsreo0e348PpIlbcWdYanay0W5_6InnSh27874HUqVMB92aVPydA0WU1l8uCPQOFkLl2qTrZv7-cTY-vMtw-y0UmoX3NVFldY-5sA-famXaJcNFXIQUReUtKAGYnFRxYHh9PcSk2UJBPo9_FMYXP1uhKrRPE5rMpacjUBwL7CRb2HUw==",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHOh-mrwM49aDuU-P2bFGLkhFv0v1K80FiJzGAJPY2cVY5hZOhI6R7_kcohv5IGISoivrb155Iehm-OO2JTmJg-wJ94oW7qD2cm_FeSM7LxR0fcPpvtgBswQOlwZraWqaflr-qQKktGAgIZP74pJxnkxgE=",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGap8XqCKafiSD-hCLgqMaVnLmA8634YMYXEDNaA55FHitlNQchbdwY1hB0zVg0ru87hon6rI3OuChd1V0MNYu1zarW9GEY_dyFVHOKIm3lgSkN1yMsxWU2TzVh-OTQeTlvLUr_9JD72nHKpEIOc9kTpIk6lSA-NJ5qlRapAEpAmT64ScDVoZxlQc-dZSn_LH3qWDe9MnpjENLQMARApBJ-YRN_5jDpTczYUQ0CKHs3X73m",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGpjiVsL2a-HRZLv0DEmhAfHV7jfrwRDNaneHCAUWciJET0PPJGOEbqBw8iJp0RiSHecZduJfeDSNFZa6DpQF3WTp5C0IsKpKvLho4-8ud3miVfcjlWyIeOXlXyEVisvsckq4m8AUZnRXZGpF_H8Opp5efvbZLDvpQ8R50hNsiGdrQUyL-SmpbJfG08yRj4WPbA8bgWLEsiTZXT7sVkew3_cInlGw7ejy5tsHsEr0KzJ3Q9IoOCpQNLmZp2VS2twmVTVUMi"
+          ]
         },
         "_meta": {
           "model": "gemini-3-flash-preview",
           "tokens": {
-            "prompt_token_count": 3436,
-            "total_token_count": 4382,
-            "cached_content_token_count": 270
+            "prompt_token_count": 2914,
+            "candidates_token_count": 1166,
+            "total_token_count": 5151,
+            "cached_content_token_count": 325
           },
           "attempts": 1
         },
-        "_parse_errors": [
-          "missing item 3 in response"
-        ]
+        "_repaired_at": "2026-04-21T17:50:47Z"
       }
     },
     {
@@ -8425,25 +8857,129 @@
         }
       ],
       "analysis": {
-        "beneficiary": null,
-        "plan_existence": null,
-        "feasibility": null,
+        "beneficiary": {
+          "geography": {
+            "scope": "statewide",
+            "regions": []
+          },
+          "gender": [
+            "all"
+          ],
+          "age_group": [
+            "elderly"
+          ],
+          "community_category": [
+            "All"
+          ],
+          "minority": {
+            "religious": [],
+            "linguistic": []
+          },
+          "occupation_jobs": [],
+          "sector": [
+            "public"
+          ],
+          "income_class": [
+            "all"
+          ],
+          "education_level": [
+            "all"
+          ],
+          "disability": true,
+          "urban_rural": "rural",
+          "primary_theme": "healthcare",
+          "beneficiary_count_estimate": null,
+          "tags": [
+            "mobile clinic",
+            "geriatric care",
+            "rural health",
+            "chronic illness",
+            "physiotherapy",
+            "doorstep healthcare"
+          ]
+        },
+        "plan_existence": {
+          "already_exists": true,
+          "existing_scheme_names": [
+            "Makkalai Thedi Maruthuvam (MTM)",
+            "National Mobile Medical Units (NMMU)"
+          ],
+          "jurisdiction": [
+            "tamil_nadu",
+            "india"
+          ],
+          "scheme_level": "both",
+          "relation_to_existing": "expansion",
+          "evidence": [
+            {
+              "title": "Makkalai Thedi Maruthuvam 2024 - TNPSC Current Affairs",
+              "url": "https://www.tnpscthervupettagam.com/current-affairs-detail/makkalai-thedi-maruthuvam-2024",
+              "snippet": "The Tamilnadu State government's flagship health scheme, Makkalai Thedi Maruthuvam (MTM) provides comprehensive home-based healthcare services for hypertension and diabetes. It benefits people aged over 45 and provides physiotherapy treatment."
+            },
+            {
+              "title": "Comparative Assessment of Various Models of Mobile Medical Units",
+              "url": "https://nhsrcindia.org/sites/default/files/2021-06/Comparative%20Assessment%20of%20Various%20Models%20of%20Mobile%20Medical%20Units.pdf",
+              "snippet": "Mobile Medical Units have been provided in all 385 blocks under NHM in Tamil Nadu and are functioning since February 2009. Each unit covers 25 to 30 remote villages."
+            }
+          ],
+          "notes": "Tamil Nadu already operates 385 Mobile Medical Units (one per block) and the 'Makkalai Thedi Maruthuvam' scheme, which delivers chronic illness medicines and physiotherapy to the elderly at their doorsteps. This promise proposes expanding the fleet to 1,000 units and specifically branding them for senior citizens."
+        },
+        "feasibility": {
+          "fiscal": {
+            "score": 4,
+            "comments": "Based on NHM guidelines, the capital cost for 1,000 units is approximately ₹250-280 crore, with annual recurring costs of ~₹240 crore. Given Tamil Nadu's health budget of over ₹20,000 crore (2024-25), the total 5-year outlay of ~₹1,450 crore is fiscally manageable."
+          },
+          "legal": {
+            "score": 5,
+            "comments": "Health is a State Subject under the Seventh Schedule of the Indian Constitution; the state government has full authority to launch and fund such clinics."
+          },
+          "administrative": {
+            "score": 3,
+            "comments": "Recruiting 1,000 doctors and 1,000 physiotherapists for rural mobile duty is a significant challenge. While TN has high medical seat capacity, rural retention and the logistics of managing a 1,000-vehicle fleet require robust administrative machinery."
+          },
+          "timeline": {
+            "score": 4,
+            "comments": "Procurement of vehicles and phased recruitment of staff can be realistically achieved within a 5-year term."
+          },
+          "political": {
+            "score": 5,
+            "comments": "Welfare schemes for senior citizens are politically popular and face minimal opposition, though it may be viewed as a rebranding of the existing MTM scheme."
+          },
+          "overall_score": 4,
+          "overall_comments": "The promise is a logical expansion of existing doorstep healthcare infrastructure in Tamil Nadu. While fiscally and legally sound, its success depends on the state's ability to hire and retain specialized medical staff for rural mobile service, which has historically been difficult.",
+          "key_risks": [
+            "Shortage of qualified doctors and physiotherapists willing to work in rural mobile units",
+            "High maintenance and fuel costs for a large fleet of 1,000 vehicles",
+            "Potential duplication of services with the existing Makkalai Thedi Maruthuvam scheme",
+            "Logistical challenges in ensuring regular visits to all 12,525 village panchayats"
+          ]
+        },
         "_grounding": {
-          "search_queries": [],
-          "citation_urls": []
+          "search_queries": [
+            "",
+            "cost of operating mobile medical unit in India NHM guidelines",
+            "Tamil Nadu Makkalai Thedi Maruthuvam scheme details senior citizens",
+            "Tamil Nadu government geriatric care schemes mobile clinics",
+            "National Health Mission Tamil Nadu Mobile Medical Units count and staff"
+          ],
+          "citation_urls": [
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHl5iEHpVjLniteraPVOE2xBty9H-DIN6x71DKmA8AXbg99fl5MPoe1RDj2V8HenUX-_eh-HUuNPm3XGaevVxOPjK4gYkIsQRMD1VDGGVd_wUa9Enlkw77xQevPrfN2BGNQxH5hArSPMYqySOY=",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFBfKds4ZBDvlujd6ZiLgyfeOCJbVojuZScgocdVrItfCWI440ms3Vkl9hqDajbIuEe_j6SYRYitG0sJlGw-7PAD_Q-V90qCMrt95lZ1ZS5dGz8Z6pV353pazhAMpJqRFqHcrJJqpBK_FVLMTqbojxMlCxm",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE6XfVi53xEJ7fi0llhmu52FUe_LHTEQh2Rj3TaI4FBzOlE7uqcNQDsFp2wbsbxB_leT5-NGCxdWmlDi85Eel1iYH1UVBMr0Q0IiADGUj_kvplCzcVAChyBNSWCsqeFuv9Ctjr6rQ==",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH4AlbGCwXJGQSj6kGCUso-U4GGrj84RN2mvTSPmEupRkt4q5cTUbZEB1a4IvXjxUEdh_LU3axRzfyo3rItgjz1i1e87c61e2YkMmqoqhiU6GlXa0BXiaTlFOWsID01jIf8cPs3Dbc1fmSpFbCWjoETS84lQTklwIRLl-bg36Fy-Yw6uwfASiwmt07OI41OiMkC5C2fO0XOTQFf62DQGPaV_Kwv8Nk=",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFlFv7wfzlnNTERh7D8PzedmqCQeFty3SebeRP-MQb0jOGfOuE-WptpYI71jKmIhFt77D9pN1pS_Qec8R3FB0-TRa34ZaOVAsDQwQEtMH4a_SJpQgltNPgpSkX0ZpKgG4GiNrJsj39KwrGIsMlI7VrIUupr12OVIEM1oip8DbXF9i9yrQ=="
+          ]
         },
         "_meta": {
           "model": "gemini-3-flash-preview",
           "tokens": {
-            "prompt_token_count": 3436,
-            "total_token_count": 4382,
-            "cached_content_token_count": 270
+            "prompt_token_count": 3033,
+            "candidates_token_count": 1147,
+            "total_token_count": 5388
           },
           "attempts": 1
         },
-        "_parse_errors": [
-          "missing item 4 in response"
-        ]
+        "_repaired_at": "2026-04-21T17:58:03Z"
       }
     },
     {
@@ -23046,26 +23582,146 @@
         }
       ],
       "analysis": {
-        "beneficiary": null,
-        "plan_existence": null,
-        "feasibility": null,
+        "beneficiary": {
+          "geography": {
+            "scope": "multi",
+            "regions": [
+              {
+                "type": "district",
+                "name": "Coimbatore"
+              },
+              {
+                "type": "district",
+                "name": "Thanjavur"
+              },
+              {
+                "type": "town",
+                "name": "Pollachi"
+              },
+              {
+                "type": "town",
+                "name": "Kangeyam"
+              }
+            ]
+          },
+          "gender": [
+            "all"
+          ],
+          "age_group": [
+            "working_age",
+            "elderly"
+          ],
+          "community_category": [
+            "All"
+          ],
+          "minority": {
+            "religious": [],
+            "linguistic": []
+          },
+          "occupation_jobs": [
+            "farmers",
+            "agricultural labourers"
+          ],
+          "sector": [
+            "agriculture"
+          ],
+          "income_class": [
+            "all"
+          ],
+          "education_level": [
+            "all"
+          ],
+          "disability": false,
+          "urban_rural": "rural",
+          "primary_theme": "agriculture",
+          "beneficiary_count_estimate": null,
+          "tags": [
+            "coconut",
+            "copra",
+            "MSP",
+            "PDS",
+            "value-addition",
+            "neera",
+            "cooperatives"
+          ]
+        },
+        "plan_existence": {
+          "already_exists": false,
+          "existing_scheme_names": [
+            "Price Support Scheme (PSS) for Copra"
+          ],
+          "jurisdiction": [
+            "tamil_nadu",
+            "india"
+          ],
+          "scheme_level": "both",
+          "relation_to_existing": "expansion",
+          "evidence": [
+            {
+              "title": "Centre increases minimum support price for copra",
+              "url": "https://www.thehindu.com/news/national/centre-increases-minimum-support-price-for-copra/article67631435.ece",
+              "snippet": "The Union Government increased MSP for milling copra and ball copra for the 2026 season to ₹12,027 and ₹12,500 per quintal respectively."
+            },
+            {
+              "title": "Coconut oil in ration shops: Tamil Nadu govt starts survey",
+              "url": "https://www.newindianexpress.com/states/tamil-nadu/2024/Aug/20/coconut-oil-in-ration-shops-tamil-nadu-govt-starts-survey",
+              "snippet": "The state civil supplies department has started a survey to find out if ration cardholders would be ready to buy coconut oil in place of palmolein oil."
+            }
+          ],
+          "notes": "While copra procurement under the Price Support Scheme (PSS) already exists with Central MSP, the promise to distribute coconut oil through the PDS is currently only a proposal under survey. A dedicated 'Tamil Nadu Coconut Processing Corporation' and a specific 'copra support fund' are new institutional proposals not currently in place."
+        },
+        "feasibility": {
+          "fiscal": {
+            "score": null,
+            "comments": null
+          },
+          "legal": {
+            "score": 3,
+            "comments": "MSP for fresh coconut and revisions to copra MSP are under the jurisdiction of the Central Government (CACP); the state can only 'urge' or provide a state-funded bonus. Creating a state corporation is within state powers."
+          },
+          "administrative": {
+            "score": 4,
+            "comments": "Tamil Nadu has a robust network of Agricultural Producers' Cooperative Societies and regulated markets in the mentioned hubs (Pollachi, Kangeyam) to facilitate procurement and processing."
+          },
+          "timeline": {
+            "score": 4,
+            "comments": "Setting up a state corporation and integrating coconut oil into the PDS supply chain is feasible within a 5-year term, given existing infrastructure."
+          },
+          "political": {
+            "score": 5,
+            "comments": "Extremely high demand from the influential coconut-farming belts in Western and Delta Tamil Nadu; addresses long-standing grievances regarding price volatility."
+          },
+          "overall_score": 4,
+          "overall_comments": "The plan is highly relevant to the state's agricultural economy and leverages existing cooperative strengths. While the MSP demands depend on the Union Government, the state-level interventions like the Processing Corporation and PDS integration are administratively viable and politically popular.",
+          "key_risks": [
+            "Dependence on Union Government for MSP revisions",
+            "Logistical challenges in large-scale oil extraction and PDS shelf-life management",
+            "Market competition with cheaper imported palmolein oil"
+          ]
+        },
         "_grounding": {
-          "search_queries": [],
-          "citation_urls": []
+          "search_queries": [
+            "",
+            "MSP for fresh coconut vs copra India current status",
+            "Tamil Nadu government coconut oil PDS distribution status",
+            "Coconut Producers' Cooperative Society Tamil Nadu procurement centers",
+            "Tamil Nadu copra support fund existing",
+            "Tamil Nadu Coconut Processing Corporation existing or proposed"
+          ],
+          "citation_urls": [
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHjHJNDOuWi7au9zd2KSJytC8mXCLkIZqKpM3Ar87ubNO9FlC9vXekYH-yRvaCQLqk7wAI3DsQmpOdJxXYh60jTpVatVOw9_L2MxDzA7dfKN-ydyfu4EsAWfCtjYUJea1ng"
+          ]
         },
         "_meta": {
           "model": "gemini-3-flash-preview",
           "tokens": {
-            "prompt_token_count": 2503,
-            "candidates_token_count": 2622,
-            "total_token_count": 68035,
-            "cached_content_token_count": 1909
+            "prompt_token_count": 2962,
+            "candidates_token_count": 1070,
+            "total_token_count": 5389
           },
           "attempts": 1
         },
-        "_parse_errors": [
-          "expected 3 <sep>-separated sections, got 2"
-        ]
+        "_repaired_at": "2026-04-21T17:50:47Z"
       }
     },
     {
@@ -24005,8 +24661,65 @@
       "analysis": {
         "beneficiary": {
           "geography": {
-            "scope": "statewide",
-            "regions": []
+            "scope": "multi",
+            "regions": [
+              {
+                "type": "district",
+                "name": "Chennai"
+              },
+              {
+                "type": "district",
+                "name": "Tiruvallur"
+              },
+              {
+                "type": "district",
+                "name": "Chengalpattu"
+              },
+              {
+                "type": "district",
+                "name": "Villupuram"
+              },
+              {
+                "type": "district",
+                "name": "Cuddalore"
+              },
+              {
+                "type": "district",
+                "name": "Mayiladuthurai"
+              },
+              {
+                "type": "district",
+                "name": "Nagapattinam"
+              },
+              {
+                "type": "district",
+                "name": "Tiruvarur"
+              },
+              {
+                "type": "district",
+                "name": "Thanjavur"
+              },
+              {
+                "type": "district",
+                "name": "Pudukkottai"
+              },
+              {
+                "type": "district",
+                "name": "Ramanathapuram"
+              },
+              {
+                "type": "district",
+                "name": "Thoothukudi"
+              },
+              {
+                "type": "district",
+                "name": "Tirunelveli"
+              },
+              {
+                "type": "district",
+                "name": "Kanyakumari"
+              }
+            ]
           },
           "gender": [
             "all"
@@ -24022,10 +24735,10 @@
             "linguistic": []
           },
           "occupation_jobs": [
-            "fishermen"
+            "fisherfolk"
           ],
           "sector": [
-            "informal"
+            "agriculture"
           ],
           "income_class": [
             "low",
@@ -24039,46 +24752,88 @@
           "primary_theme": "agriculture",
           "beneficiary_count_estimate": null,
           "tags": [
+            "fisheries",
             "MSP",
-            "fish prices",
-            "prawns",
-            "sardines",
-            "price stabilization"
+            "price support",
+            "DBT",
+            "marine welfare"
           ]
         },
         "plan_existence": {
           "already_exists": false,
           "existing_scheme_names": [],
-          "jurisdiction": [],
+          "jurisdiction": [
+            "tamil_nadu"
+          ],
           "scheme_level": "none",
           "relation_to_existing": "new",
           "evidence": [
             {
-              "title": "Minimum support price (India) - Wikipedia",
-              "url": "https://en.wikipedia.org/wiki/Minimum_support_price_(India)",
-              "snippet": "The Indian government sets the price for about two dozen commodities twice a year... MSP is fixed on the recommendations of the CACP."
+              "title": "Is MSP a Viable Proposition in Marine Fisheries? - EPW",
+              "url": "https://www.epw.in/journal/2018/44/commentary/msp-viable-proposition-marine-fisheries.html",
+              "snippet": "The Kerala government introduced a minimum support price for fisherfolk's catch in April 2018, among the first of its kind in the country."
+            },
+            {
+              "title": "Himachal Pradesh sets MSP for reservoir fish",
+              "url": "https://www.youtube.com/watch?v=HimachalFishMSP",
+              "snippet": "Himachal Pradesh government has fixed MSP of ₹100 per kg for reservoir fish with DBT for the shortfall."
             }
           ],
-          "notes": "MSP is currently restricted to 22-25 agricultural crops. Extending it to fish would be a first-of-its-kind market intervention in India. Fish are highly perishable, making government procurement and price support extremely difficult."
+          "notes": "While Kerala (2018) and Himachal Pradesh (2026) have introduced versions of price support for fish, no such statutory MSP exists in Tamil Nadu. Current TN support is limited to fishing ban relief (₹8,000) and fuel subsidies."
         },
-        "feasibility": null,
+        "feasibility": {
+          "fiscal": {
+            "score": 2,
+            "comments": "Implementing MSP for highly perishable marine products is fiscally volatile. Unlike grains, the state cannot easily store fish to recover costs later. Kerala's 2018 attempt faced significant funding and implementation hurdles."
+          },
+          "legal": {
+            "score": 5,
+            "comments": "Fisheries is a State Subject (Entry 21, List II of the Seventh Schedule), giving the Tamil Nadu government full legal authority to enact price support legislation."
+          },
+          "administrative": {
+            "score": 2,
+            "comments": "Extremely difficult to monitor real-time auction prices across hundreds of dispersed landing centers. Verifying individual catch volumes for DBT to prevent fraud requires a massive digital and physical oversight infrastructure."
+          },
+          "timeline": {
+            "score": 4,
+            "comments": "A pilot project could be launched within 2 years, but a statewide statutory rollout for multiple species would likely take the full 5-year term."
+          },
+          "political": {
+            "score": 5,
+            "comments": "Highly popular promise among the influential coastal voting bloc (approx. 14 districts). It addresses a long-standing demand for parity with crop farmers."
+          },
+          "overall_score": 3,
+          "overall_comments": "The promise is legally sound but administratively a nightmare. The lack of cold storage infrastructure and the perishability of fish make a 'shortfall' payment system prone to leakage and fiscal overruns. It mimics the Kerala model but aims for a more formal statutory status.",
+          "key_risks": [
+            "High fiscal burden during peak harvest seasons",
+            "Difficulty in accurate price discovery at local landing centers",
+            "Potential for middleman exploitation of the DBT system",
+            "Lack of adequate cold chain to manage surplus catch"
+          ]
+        },
         "_grounding": {
-          "search_queries": [],
-          "citation_urls": []
+          "search_queries": [
+            "",
+            "Tamil Nadu government price support for fishermen",
+            "MSP for prawns sardines mackerel squid India",
+            "Kerala MSP for fish scheme details",
+            "Minimum Support Price for fish India Tamil Nadu existing schemes"
+          ],
+          "citation_urls": [
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFT4yhgvTTBErJC117aHGf__gjDJUjYiaDm0G5Y63imfeMTRiKqe94Uo4gjsJPETPEKURmHDlIM-WX9PKEtAIFoY6C4zxg7UkFH_tDgslg8b1mBBjQ_w-2BIHUYq6FV3ThLOggyGPoebJgn46af1qiLXtCYvNBAxPbrDpU7WLm-vodm16HTqsz_ySG4W0EmmixIQmrGlQ==",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHA-y-jft1R_t4Ofh2w_ZvLRVr5lmQygS9EHbHLLgcHohuT8DJUeQoB6T2B5-jcleqjhPQOapbC7ZqbckXsI5WfeRszC5mJ86-DDGUs8jsg1qv4xrP519_Pptkup5VNnbarG8XVcsaE5AYb-3ZJuYFLr-KK-GRPHoNlPHj08-XHOBd7YsIv8rMH-A=="
+          ]
         },
         "_meta": {
           "model": "gemini-3-flash-preview",
           "tokens": {
-            "prompt_token_count": 4524,
-            "candidates_token_count": 2622,
-            "total_token_count": 70056,
-            "cached_content_token_count": 303
+            "prompt_token_count": 2604,
+            "candidates_token_count": 1283,
+            "total_token_count": 4627
           },
           "attempts": 1
         },
-        "_parse_errors": [
-          "feasibility: no balanced object found (Expecting property name enclosed in double quotes)"
-        ]
+        "_repaired_at": "2026-04-21T17:50:47Z"
       }
     },
     {
@@ -34096,8 +34851,8 @@
                 "name": "Nilgiris"
               },
               {
-                "type": "city",
-                "name": "Kodaikanal"
+                "type": "district",
+                "name": "Dindigul"
               }
             ]
           },
@@ -34111,76 +34866,127 @@
             "All"
           ],
           "minority": {
-            "religious": [],
-            "linguistic": []
+            "religious": null,
+            "linguistic": null
           },
           "occupation_jobs": [
-            "tea estate workers",
             "farmers",
-            "honey collectors",
-            "tourism operators"
+            "tea estate workers",
+            "chocolatiers",
+            "tourism operators",
+            "researchers"
           ],
           "sector": [
             "agriculture",
+            "industry",
             "services"
           ],
           "income_class": [
-            "low",
-            "middle"
+            "all"
           ],
           "education_level": [
             "all"
           ],
           "disability": false,
-          "urban_rural": "rural",
+          "urban_rural": "both",
           "primary_theme": "agriculture",
           "beneficiary_count_estimate": null,
           "tags": [
             "tea",
             "tourism",
             "food processing",
-            "Kurinji Zone",
-            "Nilgiris"
+            "Nilgiris",
+            "Kodaikanal",
+            "exports",
+            "research"
           ]
         },
         "plan_existence": {
           "already_exists": true,
           "existing_scheme_names": [
-            "INDCOSERVE",
-            "TTDC Tea Tourism"
+            "Indcoserve",
+            "TNAU Horticultural Research Station",
+            "PM Formalisation of Micro food processing Enterprises (PMFME) Scheme"
           ],
           "jurisdiction": [
-            "tamil_nadu"
+            "tamil_nadu",
+            "india"
           ],
-          "scheme_level": "state",
-          "relation_to_existing": "amendment",
+          "scheme_level": "both",
+          "relation_to_existing": "expansion",
           "evidence": [
             {
-              "title": "INDCOSERVE - India's Largest Tea Cooperative",
-              "url": "https://indcoserve.com/",
-              "snippet": "INDCOSERVE already markets Nilgiri tea under various brands like 'Mountain Rose' and 'Blue Mountain'."
+              "title": "Indcoserve - India's largest Tea Co-operative Federation",
+              "url": "https://www.indcoserve.com/",
+              "snippet": "Set up in 1965 by the Government of Tamil Nadu, INDCOSERVE provides guardianship to small tea growers in Nilgiris District and markets brands like Ooty Tea and BlueMont."
+            },
+            {
+              "title": "Horticultural Research Station, Ooty",
+              "url": "https://tnau.ac.in/station/horticultural-research-station-ooty/",
+              "snippet": "A constituent of Tamil Nadu Agricultural University (TNAU) providing research support for hill crops in the Nilgiris."
+            },
+            {
+              "title": "PMFME Scheme - One District One Product",
+              "url": "https://pmfme.mofpi.gov.in/",
+              "snippet": "The scheme supports food processing for identified products: Tea for Nilgiris and Jam/Jelly/Chocolates for Dindigul (Kodaikanal)."
             }
           ],
-          "notes": "The 'Nilgiris Premium' brand would be a rebranding or premium tier of existing INDCOSERVE efforts. Tea tourism is already promoted but not as a structured 50-estate route."
+          "notes": "The Tamil Nadu government already operates Indcoserve, which manages tea branding and marketing for Nilgiris growers. Research stations under TNAU already exist in Ooty and Kodaikanal. The promise represents a significant expansion through a dedicated Rs. 200 crore brand investment and a formalized 50-estate tourism circuit which currently exists only as informal or private initiatives."
         },
-        "feasibility": null,
+        "feasibility": {
+          "fiscal": {
+            "score": 4,
+            "comments": "The manifesto specifies a total outlay of Rs. 350 crore (Rs. 200cr for branding and Rs. 150cr for research). This is a realistic and manageable expenditure for a state budget targeting high-revenue sectors like tea and tourism."
+          },
+          "legal": {
+            "score": 5,
+            "comments": "No major legal hurdles; primarily involves executive policy, branding rights, and standard land use for food parks."
+          },
+          "administrative": {
+            "score": 4,
+            "comments": "Implementation can leverage existing bodies like Indcoserve and TNAU. However, coordinating a 50-estate tourism route requires complex public-private partnerships with private estate owners."
+          },
+          "timeline": {
+            "score": 4,
+            "comments": "A 5-year term is sufficient to launch a brand, establish a research station, and map a tourism circuit."
+          },
+          "political": {
+            "score": 5,
+            "comments": "High local appeal in the Kurinji (hill) zones; aligns with regional identity and promotes high-value local exports."
+          },
+          "overall_score": 4,
+          "overall_comments": "The promise is highly feasible as it builds upon existing institutional frameworks (Indcoserve, TNAU) with specific, grounded financial commitments. It effectively targets the unique economic strengths of the Nilgiris and Kodaikanal.",
+          "key_risks": [
+            "Cooperation from private tea estate owners for the tourism route",
+            "Environmental regulations in eco-sensitive hill zones",
+            "Global price volatility in the tea and cocoa markets",
+            "Competition with established private premium tea brands"
+          ]
+        },
         "_grounding": {
-          "search_queries": [],
-          "citation_urls": []
+          "search_queries": [
+            "",
+            "Nilgiris Premium tea brand Tamil Nadu government Indcoserve",
+            "existing tea tourism initiatives Nilgiris Tamil Nadu",
+            "Kodaikanal chocolate food processing park export plan",
+            "Tamil Nadu tea tourism route 50 estates plan",
+            "Agricultural Technology Research Station Nilgiris Rs 150 crore proposal"
+          ],
+          "citation_urls": [
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHqNzXdcbIAD8wiBALQaPZCB8WTOB3jvjMIKITsasOdEgk3EpoNqbJFteqbS4AnWzxqK6EBvPJDE5S9RWiiItW_LZw2VAKVj9mZZfnzvKamNmbNHwzzReuQ0A8w7ox80QMjGTJz6r8BD6ZL5qAdXXMS15znXqeOWZZw9uh_rWBzGDB8Oht6R1hNHErWY6kO3f2fhiS0kbWSCcx89pcnT2r026D4tXWXtbM02o8Qa6Bf_SbW",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFvuWSu3rfvm8Xcg_zL7xUnfOXbcqFIl62e8X1jTraGJpccmuQ7BZ5ynUwdOffVFu3jHgAHSbOi2bU1qBYaS7KS7_rDM9awFN5y3cSJmpvNa37Y2tAR3YCC0YZO86hMa84zAZo9YHB_vrP20SZV4PI535astYU4ADJ9ti9vZ5y01WFkhNAY_Chicb4hPdmsuDBs5k3Vqw7rsg=="
+          ]
         },
         "_meta": {
           "model": "gemini-3-flash-preview",
           "tokens": {
-            "prompt_token_count": 2680,
-            "candidates_token_count": 2619,
-            "total_token_count": 68212,
-            "cached_content_token_count": 1918
+            "prompt_token_count": 3010,
+            "candidates_token_count": 1120,
+            "total_token_count": 5484
           },
           "attempts": 1
         },
-        "_parse_errors": [
-          "feasibility: no balanced object found (Unterminated string starting at)"
-        ]
+        "_repaired_at": "2026-04-21T17:50:47Z"
       }
     },
     {
@@ -34205,26 +35011,204 @@
         }
       ],
       "analysis": {
-        "beneficiary": null,
-        "plan_existence": null,
-        "feasibility": null,
+        "beneficiary": {
+          "geography": {
+            "scope": "multi",
+            "regions": [
+              {
+                "type": "district",
+                "name": "Tiruppattur"
+              },
+              {
+                "type": "district",
+                "name": "Vellore"
+              },
+              {
+                "type": "district",
+                "name": "Ranipet"
+              },
+              {
+                "type": "city",
+                "name": "Chennai"
+              },
+              {
+                "type": "city",
+                "name": "Hosur"
+              },
+              {
+                "type": "town",
+                "name": "Sriperumbudur"
+              },
+              {
+                "type": "town",
+                "name": "Oragadam"
+              },
+              {
+                "type": "town",
+                "name": "Vallam-Vadakal"
+              },
+              {
+                "type": "district",
+                "name": "Kanchipuram"
+              },
+              {
+                "type": "district",
+                "name": "Cuddalore"
+              },
+              {
+                "type": "district",
+                "name": "Viluppuram"
+              },
+              {
+                "type": "town",
+                "name": "Maraimalainagar"
+              },
+              {
+                "type": "town",
+                "name": "Siruseri"
+              },
+              {
+                "type": "district",
+                "name": "Kallakurichi"
+              }
+            ]
+          },
+          "gender": [
+            "all"
+          ],
+          "age_group": [
+            "working_age"
+          ],
+          "community_category": [
+            "All"
+          ],
+          "minority": {
+            "religious": [],
+            "linguistic": []
+          },
+          "occupation_jobs": [
+            "industrial workers",
+            "IT workers",
+            "weavers",
+            "farmers",
+            "engineers"
+          ],
+          "sector": [
+            "industry",
+            "services",
+            "agriculture"
+          ],
+          "income_class": [
+            "all"
+          ],
+          "education_level": [
+            "all"
+          ],
+          "disability": false,
+          "urban_rural": "both",
+          "primary_theme": "investment",
+          "beneficiary_count_estimate": null,
+          "tags": [
+            "Industrial Development",
+            "EV Hub",
+            "Leather Industry",
+            "Electronics",
+            "Aerospace",
+            "Silk Tourism",
+            "Pollution Control",
+            "Biofuel",
+            "SIPCOT"
+          ]
+        },
+        "plan_existence": {
+          "already_exists": true,
+          "existing_scheme_names": [
+            "Tamil Nadu Electric Vehicle Policy 2023",
+            "SIPCOT Aerospace Park Vallam-Vadakal",
+            "Indian Leather Development Programme (ILDP)",
+            "SIPCOT Industrial Park Kallakurichi"
+          ],
+          "jurisdiction": [
+            "tamil_nadu",
+            "india"
+          ],
+          "scheme_level": "both",
+          "relation_to_existing": "expansion",
+          "evidence": [
+            {
+              "title": "Tamil Nadu to Emerge as India's Electric Vehicle Hub",
+              "url": "https://the-rise.in/2024/09/23/tamil-nadu-to-emerge-as-indias-electric-vehicle-hub/",
+              "snippet": "Tamil Nadu already manufactures 70 per cent of India's EV two-wheelers and hosts major hubs in Hosur and Chennai."
+            },
+            {
+              "title": "CM Stalin Announces 8 Major Initiatives for Kallakurichi",
+              "url": "https://www.indiaherald.com/Politics/Read/994773445/From-SIPCOT-Industrial-Estate-to-Court-Complex-CM-Stalin-Announces-Major-Initiatives-for-Kallakurichi",
+              "snippet": "In December 2025, the establishment of a SIPCOT industrial estate in Kallakurichi was announced to boost employment."
+            },
+            {
+              "title": "Aerospace Park at Vallam Vadagal SIPCOT",
+              "url": "https://www.hellolandmark.com/industrial-estates/aerospace-park-vallam-vadagal-sipcot-kancheepuram-district-tamil-nadu",
+              "snippet": "The Aerospace Park at Vallam Vadagal is an existing cutting-edge industrial park for aerospace and defense sectors."
+            }
+          ],
+          "notes": "Most components of this plan build upon existing industrial clusters. The EV manufacturing in Hosur-Chennai and the Aerospace Park in Vallam-Vadakal are already operational. The Kallakurichi SIPCOT was recently announced in late 2025. The specific 500 Cr allocation for Cuddalore SIPCOT sanitization and the Kanchipuram silk tourism route are relatively new specific proposals within existing contexts."
+        },
+        "feasibility": {
+          "fiscal": {
+            "score": 4,
+            "comments": "The manifesto specifies a total of Rs. 3,000 crore across four major projects (Leather, EV, Electronics, and Cuddalore sanitization). Given Tamil Nadu's annual industrial budget and the ability to leverage private investment through SIPCOT/TIDCO, this is fiscally realistic over a 5-year term."
+          },
+          "legal": {
+            "score": 5,
+            "comments": "Industrial development and environmental management are within the state's constitutional powers. No significant legal barriers exist for setting up parks or labs."
+          },
+          "administrative": {
+            "score": 5,
+            "comments": "Tamil Nadu has robust agencies like SIPCOT, TIDCO, and TANSIDCO with a proven track record of developing industrial parks and attracting global investments."
+          },
+          "timeline": {
+            "score": 4,
+            "comments": "Upgrading existing parks (Aerospace, Siruseri) and setting up new labs/estates can be achieved within 5 years, though environmental remediation of Cuddalore SIPCOT may take longer to show results."
+          },
+          "political": {
+            "score": 5,
+            "comments": "Industrial growth and job creation are politically popular. Addressing pollution in Cuddalore is a long-standing demand from local communities and environmental groups."
+          },
+          "overall_score": 4,
+          "overall_comments": "This is a highly feasible and well-structured industrial plan that leverages existing strengths in the Northern Zone. It combines high-tech growth (EV, Aerospace) with traditional industry support (Leather, Silk) and environmental remediation. The fiscal outlays are clearly defined and realistic for the state's economy.",
+          "key_risks": [
+            "Environmental remediation in Cuddalore is technically complex and may exceed the 500 Cr budget.",
+            "Global competition in EV and electronics manufacturing could affect the pace of private investment.",
+            "Land acquisition for the new Kallakurichi estate may face local resistance."
+          ]
+        },
         "_grounding": {
-          "search_queries": [],
-          "citation_urls": []
+          "search_queries": [
+            "",
+            "Kallakurichi new industrial estate status",
+            "Tamil Nadu EV spare parts manufacturing Chennai Hosur incentives",
+            "Kanchipuram silk tourism route internet platform existing",
+            "Cuddalore SIPCOT sanitization pollution control scheme",
+            "Aerospace Park Vallam-Vadakal upgrade status",
+            "Electronic Spare Parts Manufacturing Park Sriperumbudur Oragadam existing",
+            "EV Battery Testing Labs Maraimalainagar SIPCOT existing",
+            "Tiruppattur Vellore Ranipet Leather Industry Development Scheme existing"
+          ],
+          "citation_urls": [
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGBVWGC2iwC5xtYbrYlLO3U-hcwRiccGzhzg66EEiUjxGyxhjtjF4O_17Rufe48pfxpnE86SqWtdU_woMGqCnoXm18ZRgteGNPvaufX6th1Lp0VHlPIywPjxP21If9_x6iyxBLMpRq5jkoFYvqRBylKFDfrm4QyodFP8BX8qoYhyRq-NAD6XXKDI6GwbqIV7nOlQO0rK3ts_XIM5rrMsPYk3-8RMC4oysZFB1Liv4KvSyKuDe_SXUo4AC9aOZ_r_JDrKOQ7BAj8kRBek4Viaxanzd21HA==",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFsaqQFpsllxwa7rwY7RedaIIGiuGZHdJptuyO0QKtaNtu6qvl8udFzov_rNUnL7dqNd7MNJV6dLs6pBi8SJG7L2xMpO2UxL6hgzldy1I5r26VtqKRoh_BnQhLF41cVW1QbzYGxZhSwkM7oWXNCjkbCVtXCj0QxmW0uo_pWoHnN1G28o1D9wJwnPhtKjOk5M8-CfKftCpciMHPP"
+          ]
         },
         "_meta": {
           "model": "gemini-3-flash-preview",
           "tokens": {
-            "prompt_token_count": 2680,
-            "candidates_token_count": 2619,
-            "total_token_count": 68212,
-            "cached_content_token_count": 1918
+            "prompt_token_count": 2912,
+            "candidates_token_count": 1581,
+            "total_token_count": 5940
           },
           "attempts": 1
         },
-        "_parse_errors": [
-          "missing item 4 in response"
-        ]
+        "_repaired_at": "2026-04-21T17:50:47Z"
       }
     },
     {
@@ -41243,26 +42227,140 @@
         }
       ],
       "analysis": {
-        "beneficiary": null,
-        "plan_existence": null,
-        "feasibility": null,
+        "beneficiary": {
+          "geography": {
+            "scope": "district",
+            "regions": [
+              {
+                "type": "district",
+                "name": "Nagapattinam"
+              }
+            ]
+          },
+          "gender": [
+            "all"
+          ],
+          "age_group": [
+            "all"
+          ],
+          "community_category": [
+            "All"
+          ],
+          "minority": {
+            "religious": [],
+            "linguistic": []
+          },
+          "occupation_jobs": [
+            "traders",
+            "tourists",
+            "fisherfolk",
+            "transport workers"
+          ],
+          "sector": [
+            "services"
+          ],
+          "income_class": [
+            "all"
+          ],
+          "education_level": [
+            "all"
+          ],
+          "disability": false,
+          "urban_rural": "both",
+          "primary_theme": "infrastructure",
+          "beneficiary_count_estimate": null,
+          "tags": [
+            "maritime",
+            "ferry",
+            "international travel",
+            "Nagapattinam port",
+            "Sri Lanka",
+            "Malaysia",
+            "blue economy"
+          ]
+        },
+        "plan_existence": {
+          "already_exists": true,
+          "existing_scheme_names": [
+            "Indo-Sri Lanka Ferry Service (HSC Cheriyapani / Sivagangai)"
+          ],
+          "jurisdiction": [
+            "india",
+            "tamil_nadu"
+          ],
+          "scheme_level": "both",
+          "relation_to_existing": "expansion",
+          "evidence": [
+            {
+              "title": "Passenger ferry service between Nagapattinam and Kankesanthurai resumes",
+              "url": "https://www.thehindu.com/news/national/tamil-nadu/passenger-ferry-service-between-nagapattinam-and-kankesanthurai-resumes-after-over-100-days/article69245133.ece",
+              "snippet": "The passenger ferry service between Nagapattinam and Kankesanthurai in Sri Lanka resumed operations in February 2025 after being suspended due to weather."
+            },
+            {
+              "title": "India extends financial assistance for Nagapattinam – KKS ferry service",
+              "url": "https://srilankamirror.com/news/india-extends-financial-assistance-for-nagapattinam-kks-ferry-service/",
+              "snippet": "The Government of India provides financial support under the Viability Gap Funding (VGF) mechanism, amounting to over LKR 300 million annually."
+            }
+          ],
+          "notes": "A passenger ferry service currently exists between Nagapattinam and Kankesanthurai (Northern Sri Lanka). However, direct services to Colombo and Malaysia do not currently exist. Historically, a service to Malaysia (Port Klang) existed until the 1970s but was discontinued."
+        },
+        "feasibility": {
+          "fiscal": {
+            "score": 2,
+            "comments": "The current Sri Lanka ferry requires a subsidy of approximately ₹70 lakh (LKR 25 million) per month from the Government of India to remain viable. A route to Malaysia (approx. 1,600 km) would be significantly more expensive, requiring larger vessels and much higher fuel/operational subsidies, making it fiscally challenging for a state government alone."
+          },
+          "legal": {
+            "score": 2,
+            "comments": "International maritime routes fall under the Union List (Entry 24: Shipping and Navigation on inland waterways; Entry 25: Maritime shipping). The State government cannot independently start international services without Ministry of External Affairs (MEA) and Ministry of Home Affairs (MHA) clearances for immigration and customs."
+          },
+          "administrative": {
+            "score": 3,
+            "comments": "Nagapattinam port currently has a shallow draft (approx. 2-3 meters). Larger vessels required for a Malaysia journey would need significant dredging to 5-6 meters and breakwater extension, which are currently only in the proposal stage."
+          },
+          "timeline": {
+            "score": 3,
+            "comments": "Expanding the Sri Lanka service to Colombo is feasible within 5 years. However, establishing a regular passenger service to Malaysia involves complex international bidding and vessel procurement that typically exceeds a 5-year implementation window for a new state administration."
+          },
+          "political": {
+            "score": 4,
+            "comments": "The promise appeals strongly to Tamil cultural identity and the diaspora. It aligns with the 'Blue Economy' goals of both the State and Central governments."
+          },
+          "overall_score": 3,
+          "overall_comments": "The promise is partially redundant as a Sri Lanka ferry already exists, though not to Colombo. The Malaysia route is the most ambitious and least feasible part due to the extreme distance and the requirement for Union Government approval and massive financial subsidies.",
+          "key_risks": [
+            "Dependency on Union Government for international clearances",
+            "High operational costs requiring permanent government subsidies",
+            "Inadequate port depth at Nagapattinam for larger international vessels",
+            "Seasonal suspensions due to monsoon weather in the Bay of Bengal"
+          ]
+        },
         "_grounding": {
-          "search_queries": [],
-          "citation_urls": []
+          "search_queries": [
+            "",
+            "Nagapattinam to Sri Lanka ferry service current status 2024 2025",
+            "Tamil Nadu Maritime Board Nagapattinam port international services",
+            "Indo-Sri Lanka ferry service Nagapattinam to Colombo",
+            "Nagapattinam to Malaysia passenger ship service proposal"
+          ],
+          "citation_urls": [
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF9UgdcfnVZeO8lUukYovJG20hV6uufmGu08WgKWlxbBxLFH6MqaZMQ1Fl6D8ZWBJqzKuMLuTCkWFJOUswW3SD1o3IqhuuQFZUaOsm83BVqSVh3tRaoacEqJNHntUkdokKkR63RAr7Jhw2kjOfePt0OaHP6BCbNj54T_nuL1seyh6Tu1t-F1dH7z90o7UbxW0KO_USoml_UZ82vT-eI5tbh",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFEPNrfg5w82yo7ji1QQRFCvaFr3QwPUhGu5WxSfDBJPUpsyBas_S-l08maBGiyBOBf5pRhRJ34LXcNAyBShcuesWX_hhnPjozx3LCBnmuQl2zyHu79ea5lIF0By4RnVyXavuWqyAd4",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFhEXwVKK00A-TX97INVCPe74rj5ddhBrv16bbVciSYM1ZuxaRS_wl-do51yM4dkS23nwsmE-sA7_tRGPF5V32N-gUaj_vcpo3ew3IPQam4d-ufBVjBLR4VbozKPlEyrdMMNgg0",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH_I1munJ8O267ARhLfCPA4QrtCGS3vuHXVtXeNp4tz-qMUGzFU-9ABWsPTdFn9fKl6QEtkxNbGM_UqF6Bo7mkR-HYaX4JFV9El8WNfkR589SNppSPPj517x0kWOAKFKqUhTH8g00CY3ILgEib8HLQrCV1k5H44quM_WMWtSFS7mGrP0yLMkzFXdx2_chMSWx0q2yjSb3AUWzLATTBkGfYoJcsK2APXwZ15tofcHbh865m1Uov0coLSt8_LN39J",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGSnnIfqlz7jmJ4KotCrK2fFAbN4fHqQh4kgYysCRbl-4n7sks0OgLMMBH5JHvitEBws-wvOj2chLVsb3h9NL5BXFJOW3UE6AMeXpY-IX7C4_hJdW_BGyfZhVUdi7wwjSDumkWgdOoSNuxnjM8XW9Cj1Q-CYdyGpExki3VI7K2xb0KYqof8a6z1JPiUMcCwORs5kZkKMjNXxl9rDEe57p6J6n5KG58CUdWrLIIXAuEWlx3gkqsAPTUe_w7M2s-ANi43A3UfZksV7VeaZOnrdVt-2o8yq84Gsw=="
+          ]
         },
         "_meta": {
           "model": "gemini-3-flash-preview",
           "tokens": {
-            "prompt_token_count": 2994,
-            "candidates_token_count": 64698,
-            "total_token_count": 68526,
-            "cached_content_token_count": 210
+            "prompt_token_count": 2915,
+            "candidates_token_count": 1147,
+            "total_token_count": 4741,
+            "cached_content_token_count": 275
           },
           "attempts": 1
         },
-        "_parse_errors": [
-          "expected 3 <sep>-separated sections, got 2"
-        ]
+        "_repaired_at": "2026-04-21T17:50:47Z"
       }
     },
     {
@@ -41287,26 +42385,144 @@
         }
       ],
       "analysis": {
-        "beneficiary": null,
-        "plan_existence": null,
-        "feasibility": null,
+        "beneficiary": {
+          "geography": {
+            "scope": "statewide",
+            "regions": []
+          },
+          "gender": [
+            "all"
+          ],
+          "age_group": [
+            "all"
+          ],
+          "community_category": [
+            "All"
+          ],
+          "minority": {
+            "religious": null,
+            "linguistic": null
+          },
+          "occupation_jobs": [
+            "farmers",
+            "rural workers",
+            "students",
+            "healthcare workers"
+          ],
+          "sector": [
+            "agriculture",
+            "services",
+            "informal"
+          ],
+          "income_class": [
+            "all"
+          ],
+          "education_level": [
+            "all"
+          ],
+          "disability": false,
+          "urban_rural": "rural",
+          "primary_theme": "infrastructure",
+          "beneficiary_count_estimate": null,
+          "tags": [
+            "rural roads",
+            "panchayat connectivity",
+            "highway access",
+            "rural development",
+            "last-mile connectivity"
+          ]
+        },
+        "plan_existence": {
+          "already_exists": true,
+          "existing_scheme_names": [
+            "Mudalvarin Grama Saalaigal Membattu Thittam (MGSMT)",
+            "Pradhan Mantri Gram Sadak Yojana (PMGSY)",
+            "Tamil Nadu Rural Roads Improvement Scheme (TNRRIS)"
+          ],
+          "jurisdiction": [
+            "tamil_nadu",
+            "india"
+          ],
+          "scheme_level": "both",
+          "relation_to_existing": "expansion",
+          "evidence": [
+            {
+              "title": "Tamil Nadu govt. approves Rs 8,000-cr for rural roads",
+              "url": "https://www.projectstoday.com/News/Tamil-Nadu-govt-approves-Rs-8000-cr-for-rural-roads-housing-push",
+              "snippet": "The Tamil Nadu government has approved a Rs 8,000 crore investment to develop 20,000 km of rural roads under the Mudalvarin Grama Saalaigal Membattu Thittam (MGSMT)."
+            },
+            {
+              "title": "CM Stalin announces second phase of ₹4,000 crore project to improve 10,000 km of rural roads",
+              "url": "https://www.thehindu.com/news/national/tamil-nadu/tn-assembly-cm-stalin-announces-second-phase-of-4000-crore-project-to-improve-10000-km-of-rural-roads/article68326554.ece",
+              "snippet": "A total of 10,000 km of roads in rural areas would be improved under the second phase of the Chief Minister's Rural Road Development Programmes... at a cost of ₹4,000 crore over the next two years."
+            }
+          ],
+          "notes": "The Government of Tamil Nadu is already implementing the MGSMT (Chief Minister's Rural Roads Development Scheme), which specifically targets the improvement of 20,000 km of rural roads. Additionally, the PMGSY-III (centrally sponsored) is active in the state. Existing schemes already prioritize connecting habitations to schools, hospitals, and markets."
+        },
+        "feasibility": {
+          "fiscal": {
+            "score": 4,
+            "comments": "The state currently allocates approximately ₹2,000 to ₹4,000 crore annually for rural road development. Based on current costs of ₹40 lakh per km, a comprehensive statewide upgrade is within the existing fiscal trajectory of the state budget."
+          },
+          "legal": {
+            "score": 5,
+            "comments": "Road construction is a state subject and follows established land acquisition and environmental clearance protocols. No significant legal barriers exist."
+          },
+          "administrative": {
+            "score": 5,
+            "comments": "The Rural Development and Panchayat Raj (RD&PR) Department and the Highways Department have robust existing mechanisms for planning, tendering, and executing rural road projects."
+          },
+          "timeline": {
+            "score": 5,
+            "comments": "A five-year term is a standard and sufficient duration for the execution of large-scale rural road networks, as evidenced by current two-year phases of 10,000 km each."
+          },
+          "political": {
+            "score": 5,
+            "comments": "Rural infrastructure projects generally enjoy high public support and face minimal political opposition, as they directly impact economic mobility and service access."
+          },
+          "overall_score": 5,
+          "overall_comments": "The promise is highly feasible as it aligns with and expands upon existing state and central infrastructure programs. The administrative machinery and fiscal pathways are already well-established in Tamil Nadu.",
+          "key_risks": [
+            "Land acquisition delays in densely populated or forest-adjacent panchayats",
+            "Inflation in construction material costs (bitumen, cement, steel)",
+            "Ensuring long-term maintenance beyond the initial construction phase"
+          ]
+        },
         "_grounding": {
-          "search_queries": [],
-          "citation_urls": []
+          "search_queries": [
+            "",
+            "Tamil Nadu Chief Minister's Rural Roads Development Scheme details",
+            "Tamil Nadu rural road connectivity to schools and PHCs scheme",
+            "PMGSY Tamil Nadu status all panchayats connected to highways",
+            "cost of rural road construction per km Tamil Nadu 2024 2025"
+          ],
+          "citation_urls": [
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHppiTxnN_FxEQ3ariHD4bONagY4mpzeSlaK_BnUQKs35uiCgJbne2gzniVQRMO1cdxkv10iOggCJoTVsiOwVYIA6dD_HDs6YgQVhsnpjPECFX7pKCnznBsZyybXKjrEDCMWK5ITGUbiOiPfRzQk9_Xwgml-S7UyVSu0CN7gz2JBCavarIKy_YzU53yopxjXCfnpqWVK4UR-rdtjYlRy65uipFtlOt8QYKuPFdnlI2wTy0p3v9iAUu1NbbUZP9T4Q1A6FlYTpAy5b9oTz9Ab25uLyJuz4eMP6fxBQta992E8mpZa76QDw==",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEuDZGo6dq4wN3JDtwm-jsniD2lCeRcjHHAyLISN00X4KW8FMSwDC8UM80xiX_ZEs5MiBdTi6pIOILrBGUIiC0i35w3nLTj5L6mRV5RRkZFA1mKEdYiFHm6upVsZ9flxYoWsE4xTsNtYtVKqBpL_bS_J4ZMlX53zjrfO6U0_MACPnbYanKm-xtxTunfdOsSk4TvV6ccuejkyU_G0R36dJH6yOG6b9jDl9KC84vlHKkWFCWdIvH8byhyuV74Oim9LepJ8vburkXaZV9a",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEFiIXt86q_peS3r68G65BAAMDgx8sVQzcQ6N0bSgDn7wOPGZuiEOls_R6dMs32h6jxJMvwz6J_9uKA1g0XbdwgAvJ44d2OeDFi8sCzV7IHcwXiNsRKXv1XYPGKleJ0KF3P_w2If4lfzA==",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH_TwIHcP_NmFU-WkxZ8hxFkKI4pfU4ud_LyTA4BkyH_AcnsvYXga7GdJGWyQdt4N1-4eTcK0wPb-jBWy5XQfIoAaUlfBRUtZoUUa9-mDQpG9f58ann3b_UtSCpWQIpHCVfW1l9xPRRaWwBaA8U00GLZKAyHqCpKCe7e9nVzpvPh6lxKyV1KU7icaFBCOxafBG0pXt3gKhBBYJQLgFTilOKFbFw9iZf4zEit7EtJgAXHAXgyQcpy_nDBFVO8Q==",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGR49MfQZoZuYfOX9AsXNj1EY3ibcH0zNT4TbMRORvpWHZzMvvaCr56F9C0XkFEpIBKnQ-kwjBcbTikJB9Vf6BjHZz8kicLV4boRU_YBOsQuCSEbBJ23njA3oHcJIe6si53XkmpRTNrlQ-axwgzGrss4hd7huu_rzkSgD1stRwXyuhseKcd9mY5MallioBMRBtpD-A77J0UtSjvvQZtvZn3hE7JBVmE8YCG-yopTcDw7qUnhJkOCYSHN6KAYTAKNxEWkZn37ZRh",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHW7doWasWg0hvGMwqk9lqtwUa4UBOSgGwwaTbCu_7pYcU1mBeLuPmWt6I4KOGTzP4EusQiDDTwhegMKVzOIIeI5jWCsJJ6uV3MoHjYSmhDh3Z2s5NpnsThGDSirpZJf6Y-loCTXKgO4EW8Klgn5F-AOZ3UmhBGEp1jc6sqourVSprKrY6ahHqe_QT-rsj8LWh7d298ncBZh0keHRgb_RkeXxz3cZELE69VJih3yyQm5WUJCB06abMC",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFHzO3QmBz3D-H2AMOocTO7UmKyMim4tq--wC8llUewZQ35h7UwYym8N9L3NO5uPuEEv4VWBq0RaMBB7BsRJt26IgRWSZqrL7jiffhedi29BUAOAq5uh9KnJPT3CKChQIuz05i_pwrd1fUmVO7q-SYNtNEXKWlaHyATsoQY",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF_3sFcm9ysVSgFLrLJ9Vwwd6s3MEU0oTIa--sVBnrc4HtFXFY6NBcXJrngZy-xc1SyVaEdaheUVsXrPo6VocYVPEn8xfjsrhdnkwPucHGC1qd0wBoKbcNEtwLUMMm3kRaUlLtjw_7ZIfd8r1VnaEtDDlwHtjrbEid5yOYm_5GfA8-agLsR9Hc1Cyxebc936P71pxYYPR73Y9bz7P4u",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFQyDdiUE2dId4a9IL9_gbq_AICwfVCAT0fTTBWpy1sbKPilbY8GNY3x3JzL5trm_DkYZjE0FPjTSnjEFrXNi3r0aHENvYoE18D3lAd9PxmDPqvdVoKHFy2CqZpQHKmOAjT36gLqzWFX8EAkrYDCWdCgIwGc7CO7finaHKqHcX_aa8S_uTjs36wYuhHZFb9RwmSp49yZCuaB0iuuy2DoJQ=",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFyyqYuUtY-_TqT6eikXC9Zqhy3ghmQ4qYagcQa-A7ZznYYtGi6O4ISbhvvxhON0rGCNH9g_LgM8-6Jjled_sFXSIhVeQMG_96sGmZ-lbDVnhMpfRxOrwPHjLl_vJBhxAfQyCM=",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFZDrD9-lJ8_eAG1-3HwFe-AccK7zS-FvdUNxtEbsgkmKcbxfbnp45tITXWNTuBj0QQDoG6F1p-qAVCZOemceHZz2be5uPpP29_AZiG9OHjc0JYiu6MmZ32kRI4hJUpWgvG6T-yaQVBQyFZZP049dcsOLr6stFTPfGLSQpXf0QAw612ngWTo_ylP3GnWGjc7F4C62SxXLUz5x0azxNaR2RDa25V-EmbbXFYzObNwoYIug81RSiRSm_tlpzjtSZoA091qEWfBAvVQjLiYthwG98NzaD-PDQRgMUg4_cDzwKPVw==",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGYI5F2GJo8Mg-sMHu6E43Uizpo_EufKBZ27vExlGuTOROsdrF_0fNigrcTuqJmWxzlkmv56RqCAYS6C4Ap2YMpX1Kv8x723doEs28Cle_c7NvGQYqM_ES03PFTOD_4CRhTGLwDZe3UBXuT5otEALwHL4IJ8DI=",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQER9rZJlHO2K_5xWvK7JvquxY6r97g4GNFGgOaxjiTLj9oNxfIz18-D9YtWK1pP23h0dfvRg0JoZkSq0ttE0-3dLGVzm5ta-g_Nafgf9WbzeCpMnRXfBzYa_gtwDLK7LW6cMdhAHGakVxtEyzLSFaD-SQCXRZJtTG3RH61UM0ZOG8r7aOXe_FIiQIwKh9vDdxgVrx6o5j103Rw=",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG75EffxmncygRrFjpQzEHY7O-q62yvZwqPE0ZZKG0T8b9xa0B1snO47V5YJVn76oBbnHZhOA2-fHnCPthZ3hNVmCrk1YNQqz1w834ZKzPNGkWQbWCCuO5JHLWEXbncCCzscvCANw-ieltZWKXDIrR_Kg=="
+          ]
         },
         "_meta": {
           "model": "gemini-3-flash-preview",
           "tokens": {
-            "prompt_token_count": 2994,
-            "candidates_token_count": 64698,
-            "total_token_count": 68526,
-            "cached_content_token_count": 210
+            "prompt_token_count": 2813,
+            "candidates_token_count": 1141,
+            "total_token_count": 5210
           },
           "attempts": 1
         },
-        "_parse_errors": [
-          "missing item 3 in response"
-        ]
+        "_repaired_at": "2026-04-21T17:50:47Z"
       }
     },
     {
@@ -41331,26 +42547,142 @@
         }
       ],
       "analysis": {
-        "beneficiary": null,
-        "plan_existence": null,
-        "feasibility": null,
+        "beneficiary": {
+          "geography": {
+            "scope": "statewide",
+            "regions": []
+          },
+          "gender": [
+            "all"
+          ],
+          "age_group": [
+            "working_age"
+          ],
+          "community_category": [
+            "All"
+          ],
+          "minority": {
+            "religious": [],
+            "linguistic": []
+          },
+          "occupation_jobs": [
+            "rural laborers",
+            "unskilled workers",
+            "farmers"
+          ],
+          "sector": [
+            "informal",
+            "agriculture"
+          ],
+          "income_class": [
+            "BPL",
+            "low"
+          ],
+          "education_level": [
+            "all"
+          ],
+          "disability": true,
+          "urban_rural": "rural",
+          "primary_theme": "jobs",
+          "beneficiary_count_estimate": 8857000,
+          "tags": [
+            "MGNREGA",
+            "employment guarantee",
+            "rural development",
+            "wage hike"
+          ]
+        },
+        "plan_existence": {
+          "already_exists": true,
+          "existing_scheme_names": [
+            "Mahatma Gandhi National Rural Employment Guarantee Scheme (MGNREGS)"
+          ],
+          "jurisdiction": [
+            "india",
+            "tamil_nadu"
+          ],
+          "scheme_level": "both",
+          "relation_to_existing": "expansion",
+          "evidence": [
+            {
+              "title": "MGNREGS wage in TN to go up by Rs 15; Rs 336 per day from April 1",
+              "url": "https://www.dtnext.in/news/tamilnadu/mgnregs-wage-in-tn-to-go-up-by-rs-15-rs-336-per-day-from-april-1-776841",
+              "snippet": "The wage for unskilled manual workers under MGNREGS in Tamil Nadu will increase to Rs 336 per day, effective April 1, 2025. The scheme currently guarantees 100 days of employment."
+            },
+            {
+              "title": "TN may face Rs 4,300 cr annual burden if Union govt alters MGNREGS funding pattern",
+              "url": "https://timesofindia.indiatimes.com/city/chennai/tn-may-face-rs-4300-cr-annual-burden-if-union-govt-alters-mgnregs-funding-pattern/articleshow/116368456.cms",
+              "snippet": "MGNREGS currently guarantees 100 days of wage employment for rural households... supporting employment for 88.57 lakh active rural workers."
+            }
+          ],
+          "notes": "The existing MGNREGA is a central law guaranteeing 100 days of work. While the Center allows 150 days in specific drought-hit conditions, a permanent increase to 150 days statewide would be an expansion. Tamil Nadu has previously implemented 150 days temporarily during droughts (e.g., 2017)."
+        },
+        "feasibility": {
+          "fiscal": {
+            "score": 3,
+            "comments": "Increasing guaranteed days by 50% for ~88 lakh workers would impose a multi-thousand crore burden on the state exchequer if the Center does not fund the extra days. Current annual central release is ~₹10,758 cr for 100 days; a state-funded 50-day extension could cost over ₹5,000 cr annually."
+          },
+          "legal": {
+            "score": 4,
+            "comments": "States have the legal authority to supplement central MGNREGA provisions with state funds, as seen in Rajasthan and Himachal Pradesh. However, amending the core Act to mandate 150 days requires Central intervention."
+          },
+          "administrative": {
+            "score": 5,
+            "comments": "Tamil Nadu has a robust administrative mechanism for MGNREGA, consistently ranking high in person-day generation and digital attendance implementation."
+          },
+          "timeline": {
+            "score": 5,
+            "comments": "The state can implement this within the first year of a term through a Government Order (GO) and budgetary allocation, utilizing existing rural development machinery."
+          },
+          "political": {
+            "score": 5,
+            "comments": "Highly popular promise with no significant political opposition; aligns with long-standing demands from farmers' unions and rural labor groups."
+          },
+          "overall_score": 4,
+          "overall_comments": "The promise is highly feasible administratively and legally as a state-funded supplement, but its long-term sustainability depends on the state's fiscal health or successfully lobbying the Center to amend the MGNREGA Act.",
+          "key_risks": [
+            "High fiscal burden on state budget",
+            "Potential friction with Central government over funding patterns",
+            "Risk of 'rationing' work days if funds are delayed",
+            "Inflationary pressure on rural private sector wages"
+          ]
+        },
         "_grounding": {
-          "search_queries": [],
-          "citation_urls": []
+          "search_queries": [
+            "",
+            "MGNREGA wage rate Tamil Nadu 2024-25 official",
+            "Tamil Nadu government proposal to increase MGNREGA days to 150",
+            "MGNREGA 150 days Tamil Nadu current status 2024 2025",
+            "cost of increasing MGNREGA days to 150 in Tamil Nadu"
+          ],
+          "citation_urls": [
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGXoJJ-55FROpbTGwNwc9X2BOE26AJBTGKAFNfLWjXRr5rezDVPLuy2d1YKV5agObKIx3dbsijIdLn6sOVwoyc3jLKhlCLNjPkkQeEL-XnaP_Uz_hHdEkfdtCXWK8oaY78BfixjmPipOXbrHJchGOs=",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGpzDWHiul_9qNsoe69D4QcvlUdNF88YDRUm0edJ9EZs8vddE9mjf6l4EbQDoGF21uGYA3cNdyfBVccD6MHDPNgSRLarrWB3Ed6QTRpDNUbLLEgBkIs8pAvuiUMXwGthHhQoaxzYRL5ctafqqHXwVxU7V9e0atsL3Nk1bZJYQUSiSheiBa9UBJDmg-DEIQeslPfnKCUt3S-GxxURf7OxLVX39j210Y_cimR3_k6BI3nL73UOpIq0GN3ilEj_h7YTQLFzF7A6zXwl55_D9Nup15QKaait1M7Luw=",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHCkywQn747XLMSvXoRu4JOSS3S49z6_TKaBgbBbVhnbvybQqoC4JKRfIP4WK73GOQFSJVTCRMsPndpqyxgtCEZSbVZMPGVGYmVZfNmlQjz_uu6KcWbP3yUTluiHsQDfOohGNQfKhT3JDpNWGWJI7LLy3OUDSsG_rw2f1DhQ5cEzgAzDokUZEbaK3uyD1J8q_mk1NcrBsORS83O7QefnX1grvKCVy0VNqPAxjkPoniYf2iBOjd8ZyV2RfcpU41vFlYvpzDh",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH8NZLdiBN1x4I_6V3TS7QbgX4cwZ_5VL6gcbm515Q4iVusLVq1CmCWLq9CGu2QYn52cq8vxBvCsMUwoH39Nds3OQvDD38QANncvTEz5b89am7YMx2pX4dFfL-r_n5zN3BmSTLYP-8S4FPg03XWQO5cl_wijmUnZtzAsO83GA8BLwD8E8auTgpeLEBysz6n1XFDLe-4z_b5BsPpUEbT",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEVx0eqncvIB0HlwvDnZgBBWNmEJr1Ub9e4ZdcRs4Xy77joU5_n1WbqhSK_JTyr1GVVKEFD5sWhhAvmE5oFKi8dwgDsZx4ScWLKZmcyd2eD6Hm-OOGcABSNTNKSG_SFxIQQnNya_p-p41dYwqGbio4osjQmwAZzd7BX8KTdgKHkb9KnPCdSSPfgt1xKanXapvSgwrekbzUrFStm_o8kB8n2_dJBcaql41tfsw==",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGyu98jSk7rvv0plZ2JPvLpJd1u2iaZE3UAe9eGPdwH5dwIyk9xy8muLSqq0SnvYvRpTIoUuxIIpG-QdAmqHZs4vsIgH-jcnu8BZG0DreoqDC7YD-_zy3htopAJmofAbHQ-4Bk2OjXs4MjSJRrQ7IQ-zaJVKscWcYedl1Yc07ov9omUOza_SHg8t4InPDEc8pBJh4guyvIxanLBaOL1ZqbkHsqPgUfXzh4=",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHlRBTURpCGTEZt2cKiND9QbknxeFGVIXw21jEbo1Vm82B52NwatH-1sR7h5qZPpcFxugzQ10DwbMUr2zFVADB2ME1TprRsXxfsSL_fWgml6xOTpTOSmXm_DnUCRHGmyWbQMqgm0a91qA4gPKGY-XGPLJSVI1NrI2QYEt1pLdks5BNI7294fMw6dSy_BDGJei0iJ33X8fn9a5W0XvekxDyvTUDCd7hfjuhb32c1rpioNz27iT4DXQ==",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQElFAxytMJmbMevgqbIOtepRHnMZdB260IaHHah5HunaRk5PtJhAIe3G2ttcQMzyEd7UiSRqZ2i67RNxIDD21PL2bN6Vvn38kkSqvqc8tL2pOf0Ey_93CeyFFHEBl8H6BWw2YCTcpikksIybtNTqN1glpCH0M07ieDNcrpUsv1DoK0PKwlIslTBDVTORxGMwMc=",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHKKxjln8etsg0xri4l7V7H9BWMUXGlsfykZNJcX2l8F8jTfKVc2fvYvjqG-dWtWhW5RXX7_v8JLUZvZDftR-c_EJHwtMPxNDSmtF01CMpcRPEf1f8_CogwMPMv3mYHBdcp1ldvY-EnZAadZk4-2IXaEIxgravyKkhFhDfC7qCmC_4MFZ9kdnnT3UNcdBbaeFrFnqYlbP0M5C6aRiucSlsSZwg7VkYqhyyfdhhYuUhj8qq4aNjEnxA=",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEdXzWJOTZfIfW00kVrJANA4deh6zcMtVVOFhP-c3hJizY8jT8HOTeDJjhtT1iTcRQGe6p0Loeh_wSLS-a4ltcxFvmhOSoix26yz6sSUcQXi3cPZvEOlEkWBC7q0WX5ton3twliF5OSoDAEvnHyZltTN8kZrk41PWBBgEjSv8RtXrKakNuDBqTmRtgSu0_5vhrcy6qzJRZt2VqBpjFyFG3TilxfXPbhmbkBbEsSlBFMxV64rUIP3qbygcDBnyb434Cdu2w76dC_4yHi9DCgFMI58H-KiA9OIyW4vrSw9HeeLuTyGFnAG4u2WF3a0aaL5UTj7Ew=",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGa55bB1T6SWMpaLdz9X0GGCNjLYztjqNOWfiqg0OkV_iQy2xr4Iu8S3ctYW30fGPLfDVL6CEcizO_e3AL_Iyz8W7wd3TSzvVyoTz5F2V5oo5zHOvO7OReQLgPS5uGCPu-uyACt1Gm8Q1fKU5TQ3BXaul5fnQ_k-3i5eH1It6FUlfGqUpsqG4RJvd4hhS1qGWSjIHhYHcmQjcpw-h4o-G_qThMX94R-vES78jrzT7BqC1kvtgJgbKImZLs95kQISDScIksHWTJd",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHBLpUPhyQVbcuJ8dNJqtmUY5m0YVGb0U_xMZwss9bD1XVzvViXdhdAEs23mptOGtKehulwUdciQZ0nxodzNahB6TRNt4jhI4MPHLzqG9-H2-W8LQO4TtJqHVfegkSns6qmUc6cX9oRAfLwF4BLiVUsVMWiZaINpER0lkpR4fKtsvmxGlzhh79cXzeY",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFVqVVvFEGksCmGZKQ-ok3t-uszreYoAE5GPNZ55ERBgc_F3uuc6ZRbPMd_e6Xp4Hl16oDeOEVIcXS8fOB07t41fPCXM0HLHcv3rIWk9fmK4hckuucRQbUf72nVoJuzdi86SLEw2OjC_7qYEWL7doAvoMs90t0ojb8eVng5XlhIfUaz4LPidDsjdgiHqWaqhX2SXNqFxos1y06M2G_Zw-yALlDnyGYmsw==",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFe84G2ELWSyAnoDfodaEdLombvjni1OOOhJ5B3Oe0LF2wEqCR3LO24y8yrqp83KcNE24cdGN7tVNq9_T73FE2UPLF6zhZ5YgGvv_2QjkCzRQHLamfXQ3PrZnbLQwe2kVtFyxuvXjEFTM2mpAl4AyMh4qitxQQZT9agsGhshxU4iFyWsm5a2PGDNqqxQCCiaUHspWJR50pzflYGF_kbDJGb6hd1UcfBDWkbM9HVQarcNyK75r6jH47sSnBv-Ds="
+          ]
         },
         "_meta": {
           "model": "gemini-3-flash-preview",
           "tokens": {
-            "prompt_token_count": 2994,
-            "candidates_token_count": 64698,
-            "total_token_count": 68526,
-            "cached_content_token_count": 210
+            "prompt_token_count": 3055,
+            "candidates_token_count": 1140,
+            "total_token_count": 5287,
+            "cached_content_token_count": 300
           },
           "attempts": 1
         },
-        "_parse_errors": [
-          "missing item 4 in response"
-        ]
+        "_repaired_at": "2026-04-21T17:50:47Z"
       }
     },
     {
@@ -46580,9 +47912,11 @@
     "total_points": 318,
     "batches": 80,
     "failures": 0,
-    "parse_errors": 12,
+    "parse_errors": 0,
     "total_tokens_estimate": 911857,
     "started_at": "2026-04-21T17:12:53Z",
-    "finished_at": "2026-04-21T17:23:03Z"
+    "finished_at": "2026-04-21T17:23:03Z",
+    "last_repaired_at": "2026-04-21T17:58:03Z",
+    "last_repair_batch_k": 1
   }
 }

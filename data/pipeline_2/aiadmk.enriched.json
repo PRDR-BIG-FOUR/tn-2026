@@ -4484,9 +4484,102 @@
         }
       ],
       "analysis": {
-        "beneficiary": null,
-        "plan_existence": null,
-        "feasibility": null,
+        "beneficiary": {
+          "geography": {
+            "scope": "statewide",
+            "regions": []
+          },
+          "gender": [
+            "all"
+          ],
+          "age_group": [
+            "all"
+          ],
+          "community_category": [
+            "All"
+          ],
+          "minority": {
+            "religious": [],
+            "linguistic": []
+          },
+          "occupation_jobs": [],
+          "sector": [
+            "informal"
+          ],
+          "income_class": [
+            "BPL",
+            "low",
+            "middle"
+          ],
+          "education_level": [
+            "all"
+          ],
+          "disability": false,
+          "urban_rural": "both",
+          "primary_theme": "welfare",
+          "beneficiary_count_estimate": null,
+          "tags": [
+            "land patta",
+            "housing",
+            "regularization",
+            "revenue",
+            "land rights"
+          ]
+        },
+        "plan_existence": {
+          "already_exists": true,
+          "existing_scheme_names": [
+            "Regularization of Encroachments on Unobjectionable Government Poramboke Lands",
+            "Pattas for All"
+          ],
+          "jurisdiction": [
+            "tamil_nadu"
+          ],
+          "scheme_level": "state",
+          "relation_to_existing": "continuation",
+          "evidence": [
+            {
+              "title": "Tamil Nadu Revenue and Disaster Management Department - Land Administration",
+              "url": "https://www.tn.gov.in/dept/26",
+              "snippet": "The department facilitates the assignment of house site pattas to landless poor and the regularization of residential encroachments in unobjectionable poramboke lands."
+            },
+            {
+              "title": "G.O. (Ms) No. 318 Revenue and Disaster Management - Regularisation",
+              "url": "https://cms.tn.gov.in/sites/default/files/go/rev_e_318_2019.pdf",
+              "snippet": "Government order issued in 2019 to regularize residential encroachments in unobjectionable poramboke lands for those residing for over 5 years."
+            }
+          ],
+          "notes": "The issuance of pattas for long-term residents on unobjectionable government land is a standard administrative procedure in Tamil Nadu, governed by various Government Orders (G.O.s) and the Revenue Standing Orders. The current DMK government and previous AIADMK governments have both implemented similar schemes, often through special drives."
+        },
+        "feasibility": {
+          "fiscal": {
+            "score": 4,
+            "comments": "The promise specifies that residents will pay an 'amount fixed by the government,' making the scheme potentially revenue-neutral or revenue-generating for the state treasury, covering administrative and survey costs."
+          },
+          "legal": {
+            "score": 4,
+            "comments": "The state has clear legal authority under the Tamil Nadu Board of Revenue Standing Orders (BSO) to alienate 'unobjectionable' land. Legal risks are low as it excludes protected lands like water bodies or forests."
+          },
+          "administrative": {
+            "score": 3,
+            "comments": "Implementation requires extensive field surveys and verification by the Revenue Department. While the mechanism exists, it is often slowed by bureaucratic backlog and the need for precise land classification."
+          },
+          "timeline": {
+            "score": 4,
+            "comments": "The process can be executed within a 5-year term through dedicated 'Pattas for All' camps and digital land records integration."
+          },
+          "political": {
+            "score": 5,
+            "comments": "Land ownership is a high-impact political issue in Tamil Nadu with broad public support and minimal opposition for 'unobjectionable' land settlements."
+          },
+          "overall_score": 4,
+          "overall_comments": "This is a highly feasible promise that continues an established administrative practice. It leverages existing legal frameworks and includes a payment model that mitigates fiscal strain. The primary challenge remains administrative efficiency and preventing corruption at the local level.",
+          "key_risks": [
+            "Corruption in the verification of residence duration",
+            "Disputes over land classification as 'unobjectionable'",
+            "Administrative delays in the survey and issuance process"
+          ]
+        },
         "_grounding": {
           "search_queries": [],
           "citation_urls": []
@@ -4494,15 +4587,13 @@
         "_meta": {
           "model": "gemini-3-flash-preview",
           "tokens": {
-            "prompt_token_count": 3242,
-            "total_token_count": 4690,
-            "cached_content_token_count": 293
+            "prompt_token_count": 2096,
+            "candidates_token_count": 959,
+            "total_token_count": 4933
           },
           "attempts": 1
         },
-        "_parse_errors": [
-          "missing item 1 in response"
-        ]
+        "_repaired_at": "2026-04-21T18:06:55Z"
       }
     },
     {
@@ -4529,25 +4620,134 @@
         }
       ],
       "analysis": {
-        "beneficiary": null,
-        "plan_existence": null,
-        "feasibility": null,
+        "beneficiary": {
+          "geography": {
+            "scope": "statewide",
+            "regions": []
+          },
+          "gender": [
+            "all"
+          ],
+          "age_group": [
+            "working_age",
+            "elderly"
+          ],
+          "community_category": [
+            "All"
+          ],
+          "minority": {
+            "religious": null,
+            "linguistic": null
+          },
+          "occupation_jobs": [
+            "farmers"
+          ],
+          "sector": [
+            "agriculture"
+          ],
+          "income_class": [
+            "low",
+            "middle"
+          ],
+          "education_level": [
+            "all"
+          ],
+          "disability": false,
+          "urban_rural": "rural",
+          "primary_theme": "agriculture",
+          "beneficiary_count_estimate": null,
+          "tags": [
+            "MSP",
+            "Paddy",
+            "Farmers",
+            "Agriculture",
+            "Price Support",
+            "AIADMK 2026"
+          ]
+        },
+        "plan_existence": {
+          "already_exists": true,
+          "existing_scheme_names": [
+            "Paddy Procurement Incentive Scheme",
+            "Decentralised Procurement System (DCP)"
+          ],
+          "jurisdiction": [
+            "tamil_nadu",
+            "india"
+          ],
+          "scheme_level": "both",
+          "relation_to_existing": "expansion",
+          "evidence": [
+            {
+              "title": "Tamil Nadu fixes MSP for paddy; procurement to begin September 1",
+              "url": "https://www.dtnext.in/news/tamilnadu/tamil-nadu-fixes-msp-for-paddy-procurement-to-begin-september-1-801085",
+              "snippet": "The effective procurement rates stand at Rs 2,545 per quintal for Grade 'A' and Rs 2,500 per quintal for the common variety, including a state incentive of Rs 156 and Rs 131 respectively."
+            },
+            {
+              "title": "Effect minimum support price hike sans delay, TN delta farmers urge parties",
+              "url": "https://www.newindianexpress.com/states/tamil-nadu/2026/Apr/01/effect-minimum-support-price-hike-sans-delay-tn-delta-farmers-urge-parties",
+              "snippet": "The AIADMK, in its manifesto, has promised to fix MSP for paddy at Rs 3,500 a quintal and sugarcane at Rs 4,500 a quintal."
+            }
+          ],
+          "notes": "The Government of India fixes the national MSP, while the Tamil Nadu government provides an additional state incentive. As of the 2025-26 season, the total payout is approximately Rs 2,500-2,545. The promise to 'fix' it at Rs 3,500 represents a nearly 40% increase in the total procurement price, which would be achieved by significantly increasing the state-funded incentive component."
+        },
+        "feasibility": {
+          "fiscal": {
+            "score": null,
+            "comments": "While annual procurement volumes are grounded (approx. 42-47 lakh metric tonnes), no specific total budget outlay for this price hike is provided in the manifesto or cited sources. However, increasing the payout by ~Rs 1,000 per quintal across 4.2 million tonnes suggests a multi-thousand crore annual commitment."
+          },
+          "legal": {
+            "score": 5,
+            "comments": "State governments have established legal authority to provide 'State Advisory Prices' or additional incentives/bonuses over and above the Central MSP."
+          },
+          "administrative": {
+            "score": 5,
+            "comments": "The Tamil Nadu Civil Supplies Corporation (TNCSC) operates a robust network of over 3,000 Direct Procurement Centres (DPCs) and an established digital payment system for direct benefit transfer to farmers."
+          },
+          "timeline": {
+            "score": 5,
+            "comments": "The price hike can be implemented immediately at the start of the next procurement season (typically September 1) via a Government Order."
+          },
+          "political": {
+            "score": 5,
+            "comments": "There is strong bipartisan support for increasing farmer income; both major Dravidian parties have included similar hikes in their 2026 platforms, making it highly popular and politically safe."
+          },
+          "overall_score": 4,
+          "overall_comments": "The promise is highly feasible from administrative, legal, and political perspectives. The primary challenge is the significant fiscal burden it places on the state exchequer to fund the gap between the Central MSP and the promised Rs 3,500 target.",
+          "key_risks": [
+            "Significant increase in state fiscal deficit",
+            "Potential for food price inflation if market prices follow procurement rates",
+            "Dependence on Central Government MSP revisions to mitigate state incentive costs"
+          ]
+        },
         "_grounding": {
-          "search_queries": [],
-          "citation_urls": []
+          "search_queries": [
+            "",
+            "AIADMK manifesto 2026 paddy MSP 3500 promise",
+            "Tamil Nadu paddy procurement volume per year",
+            "current paddy MSP Tamil Nadu 2024-25 incentive",
+            "cost of increasing paddy MSP to 3500 in Tamil Nadu"
+          ],
+          "citation_urls": [
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEmjmHnrDUoyOBQFOceO5VS7a6WobEHHl_LOzdVUGhKbU3hrx-q4gWovtBvleVQMEGkFefJADreq4-b5GJgg2okmK1ZQApLeunqRjHEqVS6j5MRSD7Z_c2B0YXQq7jD6hpmVJgsh_SSNRcwthYgvorppB0gsdLo7jpD_6_tyr6wpP0SS7o2iV-ygoQMdcZIYHoFJR4IIoqhQSCYG3i0K2A0yAtYvHIqOVql6l1IhCLttDCzFf56h3S6DV4L_nWo4BUa6_78FA==",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGPJRB3ZgIcXkXBMaCGZnpUCUre9lNbw6_qLk0o4T-rD4tKA95aPV3c6omLWbSKavqVz9kq87QR03sJTWFldQ1P5YOzqcr6RjqGaXShjTlstVnVrMQAd-ebYREQFp21XvNWeeEViySmO8LJ7Nrk3_MwlSrHQzIvAwNgt5kz4KgbH8CusYjgf_82ZRqPjPBt3ahWeVqAHUS3o8V1oUe_dvYAgW2t2_nkG14S",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFzhdxKwR4MOBw6dsIprsbHCl5VI75PtRuE8QqqOagtnJJIACdYB-8wrxZr2p5jJBLBvCwlH0Wjmc_OD5uCKpNSYHpDJuKGTt-TBC5EpdXqQRiCmr_aRob7alw45iayESdFzqAeTA1H_EHmCOGVSi6kfEbG9I7H5kRBrDViTX0sL9Bfu3Q2fzTQO2_-3lU5J0KL3KTALiuWWYRr2NiA1nO96LfTS1KYNnkmtjClFaqIaodjGCX7mqY3aUrNB28ePXXCNZs2HAqz-3ces7_GyvQr9cUn6wUqB8iXof7dncxNDIacOaWogqe6djXSyNx5hnB6E1raIQ==",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHNyf78vFVRXYwqYOx5lh_wq8u-JmoOdakysdW4v1LdYdcO6K8FN04yy0J8BluMf7FMJsIFP2fYCESVtDR6VBuaxReQBNJJA-04a3l_DEQ-yg2ef-bVrzZRzkETOGh6JK9UFVL1bk3cy_hKffMUZRalGPVleA_4pzkOTtawsOtyiIipIAR1ZKKfjT0=",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFQOKKX7-aLjjlmiXUdeNYVdRmIf5AB3BtGneer_9DCH7FYZLskD2KZVawWLbZOdb-2lrJSs03qZdj4-Y5hIUuZhCvyynnN_3PCrsC-kf4HSfjaQ4cWunX3a9H5bKjJWS_3zF1SiVG_HgeIJZeks_cVMRrnNAeKit_WJQA57cJgtBUVoHGWK7gvOXwOCIzKg9uekv1ygsGmNwoOJHx_pbnxNsnXYyQT",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFVBXwtajXRTZNv6KzIxZninxrDwQ5kB5YsBqwwJx-kRzg8j7KIvdeznz_AmWRRlVeD6wPRRkrIvWySHTIrycr7Vw4TzZ16U4rj7KHReiyShczBGKoxPZ6Tj4Pj1xeyUmX-ttONVX_JbUedI7Zy_CjyHV825paT0-hAcRTyafpdFBKKdp7enYA73tKpXPiv-k66u0UAFBrms5FQ8J5r-x8xP1Cc1i6Uo_a-lfcpJg-mc5b5eQ==",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEILLmLa9mIMatWp-6gh8qyKJGNn5XkMHZh8_1_AwfdieT7B00GME-CAj313K4D-eGYPZB7lu_EIdwq4tK-MGFE1jx-G6FF791cIgaaO-U_z-pjX_d3vENQ-uyLBcDu48H27t_-o8imeCyyxQJ9v52nitmhVwWR_OUUuJc2U_gLMhyErLfMSm-U7Zj2aeafqA=="
+          ]
         },
         "_meta": {
           "model": "gemini-3-flash-preview",
           "tokens": {
-            "prompt_token_count": 3242,
-            "total_token_count": 4690,
-            "cached_content_token_count": 293
+            "prompt_token_count": 2784,
+            "candidates_token_count": 1113,
+            "total_token_count": 6816
           },
           "attempts": 1
         },
-        "_parse_errors": [
-          "missing item 2 in response"
-        ]
+        "_repaired_at": "2026-04-21T17:47:47Z"
       }
     },
     {
@@ -4574,25 +4774,130 @@
         }
       ],
       "analysis": {
-        "beneficiary": null,
-        "plan_existence": null,
-        "feasibility": null,
+        "beneficiary": {
+          "geography": {
+            "scope": "statewide",
+            "regions": []
+          },
+          "gender": [
+            "all"
+          ],
+          "age_group": [
+            "working_age",
+            "elderly"
+          ],
+          "community_category": [
+            "All"
+          ],
+          "minority": {
+            "religious": [],
+            "linguistic": []
+          },
+          "occupation_jobs": [
+            "sugarcane farmers"
+          ],
+          "sector": [
+            "agriculture"
+          ],
+          "income_class": [
+            "low",
+            "middle"
+          ],
+          "education_level": [
+            "all"
+          ],
+          "disability": false,
+          "urban_rural": "rural",
+          "primary_theme": "agriculture",
+          "beneficiary_count_estimate": 130000,
+          "tags": [
+            "sugarcane",
+            "FRP",
+            "SAP",
+            "price support",
+            "farmer welfare",
+            "AIADMK 2026"
+          ]
+        },
+        "plan_existence": {
+          "already_exists": true,
+          "existing_scheme_names": [
+            "Fair and Remunerative Price (FRP)",
+            "Sugarcane Special Incentive Scheme"
+          ],
+          "jurisdiction": [
+            "tamil_nadu",
+            "india"
+          ],
+          "scheme_level": "both",
+          "relation_to_existing": "expansion",
+          "evidence": [
+            {
+              "title": "Tamil Nadu: Minister announces special incentive of Rs 349 per MT for sugarcane",
+              "url": "https://www.chinimandi.com/tamil-nadu-minister-announces-special-incentive-of-rs-349-per-mt-for-sugarcane/",
+              "snippet": "Agriculture Minister MRK Panneerselvam announced a special incentive of Rs 349 per Metric Tonne for the 2024-25 season, benefiting 1.30 lakh farmers with an allocation of Rs 297 crore."
+            },
+            {
+              "title": "Cane farmers press TN government to hike incentive",
+              "url": "https://www.newindianexpress.com/states/tamil-nadu/2026/Jan/09/cane-farmers-press-tn-government-to-hike-incentive-as-promise-not-met",
+              "snippet": "For the 2025-26 season, the FRP is Rs 3,550/tonne at a basic recovery rate of 10.25%. Farmers are demanding a realized price of Rs 4,000 to Rs 4,500 per tonne."
+            }
+          ],
+          "notes": "The Central Government fixes the FRP (Fair and Remunerative Price), while the Tamil Nadu government currently provides a 'Special Incentive' to bridge the gap. The promise to fix the price at Rs 4,500 is an expansion of this existing incentive mechanism to meet long-standing farmer demands."
+        },
+        "feasibility": {
+          "fiscal": {
+            "score": 4,
+            "comments": "Current incentives of Rs 349/tonne cost the state ~Rs 297 crore. Increasing the total payout to Rs 4,500 (an additional ~Rs 600-1,000 over current levels) would likely require an annual outlay of Rs 700-1,000 crore, which is manageable within the state's agriculture budget."
+          },
+          "legal": {
+            "score": 5,
+            "comments": "The Supreme Court (2020) and Madras High Court (2023) have upheld the authority of state governments to provide State Advised Prices (SAP) or incentives above the Central FRP."
+          },
+          "administrative": {
+            "score": 5,
+            "comments": "The mechanism for Direct Benefit Transfer (DBT) to registered sugarcane farmers through sugar mills is already well-established in Tamil Nadu."
+          },
+          "timeline": {
+            "score": 5,
+            "comments": "This can be implemented immediately in the first crushing season following the election through a budget notification."
+          },
+          "political": {
+            "score": 5,
+            "comments": "High political feasibility as it addresses a core demand of the influential farming lobby and matches similar promises made by rivals DMK and TVK."
+          },
+          "overall_score": 5,
+          "overall_comments": "The promise is highly feasible as it leverages existing administrative machinery and falls within reasonable fiscal limits. It is a standard price-support expansion that has clear legal backing and strong political necessity.",
+          "key_risks": [
+            "Fiscal strain if sugarcane production/crushing volumes increase significantly",
+            "Fluctuations in sugar recovery rates affecting the base Central FRP calculation",
+            "Potential pressure on private sugar mills if the state mandates they share the cost"
+          ]
+        },
         "_grounding": {
-          "search_queries": [],
-          "citation_urls": []
+          "search_queries": [
+            "",
+            "Tamil Nadu sugarcane production statistics 2023-24",
+            "current sugarcane FRP and state incentive Tamil Nadu 2024-25",
+            "legal validity of State Advisory Price sugarcane Tamil Nadu",
+            "AIADMK manifesto 2026 sugarcane price 4500 crore cost"
+          ],
+          "citation_urls": [
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF3n1X8H_0juCZ13QSfdkH5CoGJRBvIDAVh6ua95oOly5Un_me3jQQum3-Ie_6vSmO1kwNNEdrY9V-JbBNO44Z9wSpQLFu6qrKJCQlhlB-FWQdWs-b1NtdfOtTbB2ewjmBLkOv6EJ7WWmcjkUc0rDi7reHH-A_JBjKzVxSh1f1IvfA-7kQTcoEeC7sEjye7_6cowqhlkowCvdBaxNuEWUDPFui6cTYoTiEmmsf3R7AYUHKuWagNrqDaI59eFvOk1w==",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE-2pNzbSSaEShhuJ018i_mG2wnrneeIvibq3t3CQuERUMRhz0aXZyW0cLlOZWd1uLpMgzMZWN00R0BGpwjKlseln_Y-5yIm2X6xRUdcoQLtm1-sQlhfSEJ-tt6xDn5FIAsuqF5zWBYZBuVG_xjO0Syi8IkrSCV-tnQAASqkOcxeTjyQnDfZ-TiCwYoGVv4i81u4ni4V0EpTAbVs0O-y0hON6fUiJEU8DuWZTuqdSXeka5YK96nznEVm_K3g6ukSnTh9ORQcBDm0Hh2K2NszDeUAgTWdz8Pa9M8qPZwyE_GoJfqBsX9gseFmU-OJ9E6Rjrtkwvw4A==",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHsWOnY_ibn5xDD6zJmJ3g3tN_nGTfU-6RDxySNd0uKc7LjWulkPNKKA4xCrrkoKr9eJBMwYubwkD5m5jO08znWMSU5fF6EnENiyjD-BwU3IyuG_OTpE3hX_Qvjr6-58r8SNh_jlulMw8s3EH1feBARBcLQpl5-4_JXNDKNI7pPleWB7xDUuAhC"
+          ]
         },
         "_meta": {
           "model": "gemini-3-flash-preview",
           "tokens": {
-            "prompt_token_count": 3242,
-            "total_token_count": 4690,
-            "cached_content_token_count": 293
+            "prompt_token_count": 2958,
+            "candidates_token_count": 1102,
+            "total_token_count": 5524
           },
           "attempts": 1
         },
-        "_parse_errors": [
-          "missing item 3 in response"
-        ]
+        "_repaired_at": "2026-04-21T17:47:47Z"
       }
     },
     {
@@ -4619,25 +4924,130 @@
         }
       ],
       "analysis": {
-        "beneficiary": null,
-        "plan_existence": null,
-        "feasibility": null,
+        "beneficiary": {
+          "geography": {
+            "scope": "statewide",
+            "regions": []
+          },
+          "gender": [
+            "all"
+          ],
+          "age_group": [
+            "working_age"
+          ],
+          "community_category": [
+            "All"
+          ],
+          "minority": {
+            "religious": [],
+            "linguistic": []
+          },
+          "occupation_jobs": [
+            "farmers",
+            "small and marginal farmers"
+          ],
+          "sector": [
+            "agriculture"
+          ],
+          "income_class": [
+            "low",
+            "middle"
+          ],
+          "education_level": [
+            "all"
+          ],
+          "disability": false,
+          "urban_rural": "rural",
+          "primary_theme": "agriculture",
+          "beneficiary_count_estimate": null,
+          "tags": [
+            "FPO",
+            "FPC",
+            "Farmer Producer Groups",
+            "GST Exemption",
+            "Agri-Marketing",
+            "Federations",
+            "Small Farmers"
+          ]
+        },
+        "plan_existence": {
+          "already_exists": true,
+          "existing_scheme_names": [
+            "Central Sector Scheme for Formation and Promotion of 10,000 FPOs",
+            "Tamil Nadu Small Farmers Agribusiness Consortium (TNSFAC)",
+            "State Agriculture Development Scheme"
+          ],
+          "jurisdiction": [
+            "tamil_nadu",
+            "india"
+          ],
+          "scheme_level": "both",
+          "relation_to_existing": "expansion",
+          "evidence": [
+            {
+              "title": "Agriculture Budget 2024-2025 - TNAU Agritech Portal",
+              "url": "https://agritech.tnau.ac.in/pdf/2024/Agri_Budget_Speech_2024_25_English.pdf",
+              "snippet": "The Government of Tamil Nadu implements the State Agriculture Development Scheme to benefit farmers and Farmer Producer Organizations (FPOs) with subsidies and infrastructure support."
+            },
+            {
+              "title": "State Level Consortium of Farmer Producer Organizations - SFAC",
+              "url": "https://sfacindia.com/State-Level-Consortium-of-Farmer-Producer-Organizations.aspx",
+              "snippet": "Initiatives have been taken to establish State Level Federations of FPOs to create an umbrella support for member FPOs in states including Tamil Nadu."
+            }
+          ],
+          "notes": "FPO formation and financial assistance already exist under both Central (PM-FPO) and State (TNSFAC) schemes. A state-level consortium (TN Consortium of FPCL) already exists. The promise to 'get GST exemption' is a policy advocacy point as GST is governed by the GST Council, not the state alone."
+        },
+        "feasibility": {
+          "fiscal": {
+            "score": 3,
+            "comments": "Tamil Nadu already allocates significant funds (e.g., Rs. 45 crore in 2024-25 for agri development) for FPO support. However, the fiscal impact of a 5-year GST exemption depends on GST Council approval and would result in revenue loss for both state and center."
+          },
+          "legal": {
+            "score": 2,
+            "comments": "The state government cannot unilaterally grant GST exemptions. Under Article 279A of the Constitution, only the GST Council can recommend exemptions. The promise correctly phrases this as 'steps will be taken to get exemption'."
+          },
+          "administrative": {
+            "score": 4,
+            "comments": "Existing institutional frameworks like TNSFAC and NABARD are well-equipped to handle the federation and strengthening of FPOs."
+          },
+          "timeline": {
+            "score": 5,
+            "comments": "Federating existing FPCs and providing financial assistance can be achieved within a 5-year term."
+          },
+          "political": {
+            "score": 4,
+            "comments": "Strengthening farmer collectives is a popular policy with high public reception and minimal opposition risk."
+          },
+          "overall_score": 3,
+          "overall_comments": "The promise is largely an expansion of existing state and central schemes. The most significant hurdle is the GST exemption, which is outside the state's direct legal jurisdiction and requires federal consensus.",
+          "key_risks": [
+            "Dependency on GST Council for tax exemptions",
+            "Operational sustainability of FPOs after financial assistance ends",
+            "Inter-departmental coordination for state-level federation"
+          ]
+        },
         "_grounding": {
-          "search_queries": [],
-          "citation_urls": []
+          "search_queries": [
+            "",
+            "GST exemption for Farmer Producer Organizations India current status",
+            "Tamil Nadu government schemes for Farmer Producer Organizations FPOs 2024 2025",
+            "Tamil Nadu Small Farmers Agribusiness Consortium TNSFAC FPO support",
+            "Tamil Nadu state level FPO federation status"
+          ],
+          "citation_urls": [
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHPyTUiSXH-MKaEiS1n91x5B7CkU6-fg3yC6i10Nn_HYuofyphVAKqKlNhKiRceOEclkRZBFF_yXjr3b_29koPJ9ldfj5KkRVAvXftLyWR1kAvmJiJEJsGpPZxBjQFAaNVQLeJNySGw832jAh5e8lys0PhpnMum394Fwm3sRNF_xTz0FOgDc3i7IbVN0b3ahth-"
+          ]
         },
         "_meta": {
           "model": "gemini-3-flash-preview",
           "tokens": {
-            "prompt_token_count": 3242,
-            "total_token_count": 4690,
-            "cached_content_token_count": 293
+            "prompt_token_count": 2958,
+            "candidates_token_count": 1005,
+            "total_token_count": 4703
           },
           "attempts": 1
         },
-        "_parse_errors": [
-          "missing item 4 in response"
-        ]
+        "_repaired_at": "2026-04-21T17:47:47Z"
       }
     },
     {
@@ -19619,25 +20029,133 @@
         }
       ],
       "analysis": {
-        "beneficiary": null,
-        "plan_existence": null,
-        "feasibility": null,
+        "beneficiary": {
+          "geography": {
+            "scope": "statewide",
+            "regions": []
+          },
+          "gender": [
+            "women"
+          ],
+          "age_group": [
+            "working_age"
+          ],
+          "community_category": [
+            "All"
+          ],
+          "minority": {
+            "religious": null,
+            "linguistic": null
+          },
+          "occupation_jobs": [
+            "informal workers",
+            "unorganized sector"
+          ],
+          "sector": [
+            "informal"
+          ],
+          "income_class": [
+            "BPL",
+            "low"
+          ],
+          "education_level": [
+            "all"
+          ],
+          "disability": false,
+          "urban_rural": "both",
+          "primary_theme": "women",
+          "beneficiary_count_estimate": null,
+          "tags": [
+            "maternity benefit",
+            "cash transfer",
+            "women's welfare",
+            "nutrition",
+            "maternal health"
+          ]
+        },
+        "plan_existence": {
+          "already_exists": true,
+          "existing_scheme_names": [
+            "Dr. Muthulakshmi Reddy Maternity Benefit Scheme",
+            "Pradhan Mantri Matru Vandana Yojana (PMMVY)"
+          ],
+          "jurisdiction": [
+            "tamil_nadu",
+            "india"
+          ],
+          "scheme_level": "both",
+          "relation_to_existing": "expansion",
+          "evidence": [
+            {
+              "title": "Dr. Muthulakshmi Reddy Maternity Benefit Scheme | Vikaspedia",
+              "url": "https://vikaspedia.in/social-welfare/women-and-child-development/women-development-1/schemes-for-women-in-tamil-nadu/dr-muthulakshmi-reddy-maternity-benefit-scheme",
+              "snippet": "Currently Rs. 18,000/- will be provided under Dr Muthulakshmi Reddy Maternity Benefit Scheme out of which Rs. 14,000/- is cash assistance in 3 installments and 2 nutrition kit worth Rs. 4,000/-."
+            },
+            {
+              "title": "Maternity scheme benefits to be paid in three installments: Ma Subramanian",
+              "url": "https://www.newindianexpress.com/states/tamil-nadu/2023/nov/08/maternity-scheme-benefits-to-be-paid-in-three-installments-ma-subramanian-2631047.html",
+              "snippet": "The financial assistance of Rs 18,000 to pregnant women under the Dr Muthulakshmi Reddy Maternity Benefit Scheme and Pradhan Mandri Matru Vandana Yojana will now be given in three installments."
+            }
+          ],
+          "notes": "The scheme is a long-standing pillar of Tamil Nadu's maternal health policy, originally launched in 1987. It currently provides a total benefit of ₹18,000, which includes ₹14,000 in cash and ₹4,000 in the form of two nutrition kits. The AIADMK previously increased the amount from ₹12,000 to ₹18,000 during its 2016-2021 tenure."
+        },
+        "feasibility": {
+          "fiscal": {
+            "score": 4,
+            "comments": "The scheme has a projected budget of ₹1,092 crore for 2025-26. Increasing the benefit amount (e.g., to ₹24,000) would require an additional outlay of approximately ₹300-500 crore annually depending on the increment, which is manageable within the state's welfare budget."
+          },
+          "legal": {
+            "score": 5,
+            "comments": "Purely a policy decision; no legal or constitutional barriers exist as it expands an existing executive scheme."
+          },
+          "administrative": {
+            "score": 5,
+            "comments": "Highly feasible as the delivery mechanism (PICME portal and Health Department infrastructure) is mature and already handles over 6-8 lakh beneficiaries annually."
+          },
+          "timeline": {
+            "score": 5,
+            "comments": "Can be implemented immediately upon taking office through a Government Order (G.O.)."
+          },
+          "political": {
+            "score": 5,
+            "comments": "High public reception expected; maternity benefits are a core competitive welfare area between major Dravidian parties."
+          },
+          "overall_score": 5,
+          "overall_comments": "This is a highly feasible and standard expansion of a successful existing scheme. The administrative machinery is already in place, and the fiscal impact, while significant, is predictable and historically prioritized by Tamil Nadu governments.",
+          "key_risks": [
+            "Fiscal pressure if the increment is exceptionally high",
+            "Ensuring timely disbursal to prevent backlogs in the PICME system",
+            "Coordination with Central PMMVY funds to avoid duplication or funding gaps"
+          ]
+        },
         "_grounding": {
-          "search_queries": [],
-          "citation_urls": []
+          "search_queries": [
+            "",
+            "cost of Dr. Muthulakshmi Reddy Maternity Benefit Scheme Tamil Nadu budget",
+            "Dr. Muthulakshmi Reddy Maternity Benefit Scheme current amount 2024 2025 Tamil Nadu",
+            "AIADMK manifesto 2026 Dr. Muthulakshmi Reddy Maternity Benefit increase"
+          ],
+          "citation_urls": [
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE_HxzGmZgBFCw9q0ZsAw5azv-hTElTV6EsNBVQ5GEwMZGmfkUXf33vtdOCv52Z8BqVZiUoleFbSCfLGnZx-01RJDguL5b8pMs9A3UgxuIgZn5tiu51AZG615q7yT0jSKdcBrQHS-og9c2D",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHE5X7JHixhT1gVpZgU9p9HEGV8PTsdRLBqKXbjQBDij6EpmYyxScRTZ2T02_OIy5aSTaJP9O9jCc3x03ERpQEMwON8GkCn-5_R_PFCHpKvrhckdOUTUd_9_9g7vab34J5i7SbFY0kQbUr1DpWFkx52-pAdD-5xELR_467ZYJKTxsnvcL80XUGMXyYiZCBjj4f8SqYxItYpZr20z-1-MC-v9cfSst1X32m94jW0-sCDysjW",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGaYMJmA1pAaWtTAIaDd2GT6tr7NJuAhEXMvEExxE8vzcFfzDwuWTG0w5Ff52W_5fk2_0Zk5tGpJ68iYUpEAVudCwH_-RHJNzsymb6OfUY-SE66CDWolVkEJU2mJ7XgdCr6YxmwZOmEuQ==",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHKKc6-JKGOjMYdmcwcqS0FUwZI8GZrShEdVfwc7IfzL7PdK7PuWLhQvrS3Mqv6l_DIEp2kl5u2bCZUYrI1-Qa6p8XxY2OxBz2Lh9feYoUPOUe91YjWIVBjpA7vPIYmgekvUUwFH-P0U_sOHbXGjrIS0EYdU8kLoSJupk88ZmEBRPo_IR3KZQlfn_fylhkcC8x9-LDbI_ZbXqQIXJNrASxgpqIQuXjQI3vG3QoxwC_Lvj7z6Z9pGvsSHhXpZhvN67JK5Y4B6C_PDnoHljtptKyDk67xocrEncSfUq8=",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGLpVYESBHxoQkj3Z9r24wK6Zb8kFxRuoa3w02oF5WasJ72ZtflOUaM5Oej3TDO7lFyIRn4xN0mxRyQWFPiK5lQg7B16UtuNnT2_BVjgQmDq7nN-b-ldvPCoZxaAWe4ZQAr90ScOKY7IbFnU-E5uIgckV6cByFY6_0tLv-6BXOUaw0lTmyiskzzX9gMUmjJfuYb8ikFSYmBsYxXf_lm4Edue23X8g2iwu1OXimViER_pxw2EDuuDOreqbKrDjqwjN3Wu5VnDGQjHATCk1gnono=",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEEKHt8M3S4y58PXjsP9lUVt0uUDwDj4UD1DsvjX_7ByPg-_lavtJGNawTjjgQdPBlqiEPnD8lFUVBJTlADMPzFouryfWlY4AC6Qpx8rEXoUpWApbA-7A_-dJ1JuuqF_Tt-X3mO4ok-vdY8U9wWhZWx6s3hMpKkLxKbNAJde84bYNQKpoIk_LAkU0NDn-T5YWKpShJ0hhDqpuyCoIR6rVubkANGP67FtDTnhK0-tCKwfnRpsG5i5NK8m4sEN3uCrhnZ3czE-m7KuWAW0XHMpLzQS6fYpU8Q78IAR6A=",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFzLgDZwYmbIgiZpX8S-D-2ocSiBAlx0uQgOLx9kgZeUoYgzHv156KrTO5a0GsDJ4PeFVNOTD8it7FPI0R48UueuI3Z-K10SvqLP5nuKpwKAE7Wb8efqC5MyJmpTNyLUqNv-8BXKzBpn3adIrtoakecUNkvngoQKWpaXsPaRTtjRwNINphCMwpfPB90Ra1Ulw==",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE44LAbNuZsuKDrlJ3-x1thvKZ2qmNH074yY7oY9wnBipOJB2Q3F-Omt_C3TRyikd5fiKZdGnKvVNliRibdogMV3KcGopxUO0KnLFF0anVuIC6lO2q7i9GKLjAiBQmniwu1jFz_3ZmP1UQtfU6lIfzNVxn3AfK7-tAViOdPzVEd0l_bCzJYRD-JqYZwjyRMsExPXl8ZeOiRrVXX_Fgdw63MgTzaFUzaZEPfwLG3gdF8hCX-30yDlPF4ZBY5xLZfdedEa_XAMTdZoM4e2JyU251uRd0ihlKD"
+          ]
         },
         "_meta": {
           "model": "gemini-3-flash-preview",
           "tokens": {
-            "prompt_token_count": 2797,
-            "total_token_count": 4550,
-            "cached_content_token_count": 292
+            "prompt_token_count": 2687,
+            "candidates_token_count": 1125,
+            "total_token_count": 4723
           },
           "attempts": 1
         },
-        "_parse_errors": [
-          "missing item 1 in response"
-        ]
+        "_repaired_at": "2026-04-21T17:47:47Z"
       }
     },
     {
@@ -19664,25 +20182,121 @@
         }
       ],
       "analysis": {
-        "beneficiary": null,
-        "plan_existence": null,
-        "feasibility": null,
+        "beneficiary": {
+          "geography": {
+            "scope": "statewide",
+            "regions": []
+          },
+          "gender": [
+            "women"
+          ],
+          "age_group": [
+            "children"
+          ],
+          "community_category": [
+            "All"
+          ],
+          "minority": {
+            "religious": [],
+            "linguistic": []
+          },
+          "occupation_jobs": [],
+          "sector": [],
+          "income_class": [
+            "BPL",
+            "low"
+          ],
+          "education_level": [
+            "primary",
+            "secondary"
+          ],
+          "disability": false,
+          "urban_rural": "both",
+          "primary_theme": "women",
+          "beneficiary_count_estimate": null,
+          "tags": [
+            "Girl Child Protection",
+            "Fixed Deposit",
+            "AIADMK",
+            "Women Welfare",
+            "Financial Assistance"
+          ]
+        },
+        "plan_existence": {
+          "already_exists": true,
+          "existing_scheme_names": [
+            "Chief Minister's Girl Child Protection Scheme (CMGCPS)"
+          ],
+          "jurisdiction": [
+            "tamil_nadu"
+          ],
+          "scheme_level": "state",
+          "relation_to_existing": "expansion",
+          "evidence": [
+            {
+              "title": "Tamil Nadu Chief Minister's Girl Child Protection Scheme: Know eligibility, how to apply, and other details",
+              "url": "https://indianexpress.com/article/cities/chennai/tamil-nadu-chief-ministers-girl-child-protection-scheme-eligibility-how-to-apply-9637841/",
+              "snippet": "Under Scheme-I, families with only one girl child receive a deposit of Rs 50,000 in her name as a fixed deposit... Families with two girl children are covered under Scheme-II, where each girl receives Rs 25,000."
+            }
+          ],
+          "notes": "The scheme, launched in 1992, currently provides a fixed deposit of ₹50,000 for families with one girl child (Scheme I) or ₹25,000 each for families with two girl children (Scheme II). The AIADMK promise proposes to double the investment amount to ₹1,00,000."
+        },
+        "feasibility": {
+          "fiscal": {
+            "score": null,
+            "comments": null
+          },
+          "legal": {
+            "score": 5,
+            "comments": "The state government has full statutory authority to create or modify social welfare and financial assistance schemes."
+          },
+          "administrative": {
+            "score": 5,
+            "comments": "The scheme has a robust, existing delivery mechanism through the Social Welfare and Women Empowerment Department and the Tamil Nadu Power Finance and Infrastructure Development Corporation."
+          },
+          "timeline": {
+            "score": 5,
+            "comments": "The increase can be implemented immediately in the first budget cycle through a Government Order (GO)."
+          },
+          "political": {
+            "score": 5,
+            "comments": "Welfare measures for girl children are highly popular and align with the state's long-standing focus on social justice and gender equality."
+          },
+          "overall_score": 5,
+          "overall_comments": "The promise is highly feasible as it leverages a 30-year-old administrative framework. While doubling the deposit amount increases the fiscal outlay, the implementation risk is minimal due to the established infrastructure.",
+          "key_risks": [
+            "Increased long-term fiscal liability for the state",
+            "Ensuring timely issuance of updated deposit receipts to new beneficiaries",
+            "Maintaining the real value of the deposit against inflation over the 18-year maturity period"
+          ]
+        },
         "_grounding": {
-          "search_queries": [],
-          "citation_urls": []
+          "search_queries": [
+            "",
+            "Chief Minister's Girl Child Protection Scheme Tamil Nadu current deposit amount 2024 2025",
+            "Tamil Nadu Girl Child Protection Scheme eligibility and benefits 2024",
+            "AIADMK manifesto 2026 girl child protection scheme 1 lakh"
+          ],
+          "citation_urls": [
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFuGbkvfM3FO1nnOpBKE9LwXmVAUzyGLiaxcVv-Au0cL-5Mmuyi0S89xScFHKv3frA7qmfYdK0vw5DRfYRq-4dr6Z7VfhlXdXWXsgm4D5KObJLZItZGXO9CMid7SuKyzmEBZa-LN5_58R2SwIoN3iwBUl-GTRLfmbk463-eX1A=",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEjQ_wU3ThQzaQgHPeW_PLa5c8fiNKlzp31h7h11WwEtb5y9Xrbohi8ChAqANqWoDMCOxEJfVhqdypNyfGPPSFUHZm1irXEnSqEohkLZLSt8kClqJc7P61nrb-_Sb4UFSX_GL3DUpbBDICX1fOHGCAShcNpo2CUcbDSr7v14cGxSmGq",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF6EUjT6OKhGGkaoGIES3v8xke3AjlsQf9BI6sZ6n8T0CsLZyKMpEFfO5AlxylXAmNoXsrRUruAaODz62GRCtC7E5Jq22kBU7TyR6YRQbl4U_wvyHTo28YNoSfPrEy2vrKgCOYZEeQfE1p-lKM8TVL-NBGuM11K9jjosNQA8D8-OlIfMSuRxpUuokrBk-QF56BIXHE8CyhBgyNlRuWUJ1XIlAzi-6R1WLqYCSEgm4VjB6c=",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHebNACyxTjSsSRiR5IBjuoxuVcqQ0rbIyBduK7piZK415DwEwYysMFsSGBrRLfe5uPNPkxzkDcnbS8bPh0mnR2Bb_RV4FviM3RrI3X9onI19-sxxK7F190c3jFqpAkyl8DgrF-2xU=",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH32_f8Oyt2Tdoor9B_KhkeifLbFTqk9ZbRi7tpAsEbkaO1oVhFRhwp-0f8DwbCnzWZS0iIaOlpT7hmWjIuCLs3ROBKoU8woyKxPUJKQEO3gi9Nx6GYfWkgzvqKIFIHT0IDEF-HPuRx8OZpwmuzGRt4fOVN5oEa6oIo50QlyxTmOG96HJnQa0rHUb2SLI6s6BrNWg==",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEAGrCSyTtl2ZBO86qRoG6IuCJuX9rC3JxLVHQdmhywloKXfALO6iEZEIq58Gvk-yjZOUpm64cCYbsdiyJuHu2n5_g4WRuVTRXvavZzJdO_zcsjBuigTb4MvoeGaaXd3KelfnzDGCOMuoBF1YM76JjgwXeQvuY85kZ_AyXVnM0FcwjGE1kwqYyV1EjdBv0msu701Xjd4U7GjV74sq7e0nfWmSnm4BwKlykx4WddqzvYkOmxBIjKm2pLeZ0nGHBBQI_BRxGWiTof3nToIfdHT8cwvQ=="
+          ]
         },
         "_meta": {
           "model": "gemini-3-flash-preview",
           "tokens": {
-            "prompt_token_count": 2797,
-            "total_token_count": 4550,
-            "cached_content_token_count": 292
+            "prompt_token_count": 2732,
+            "candidates_token_count": 845,
+            "total_token_count": 5801,
+            "cached_content_token_count": 385
           },
           "attempts": 1
         },
-        "_parse_errors": [
-          "missing item 2 in response"
-        ]
+        "_repaired_at": "2026-04-21T17:47:47Z"
       }
     },
     {
@@ -19709,25 +20323,133 @@
         }
       ],
       "analysis": {
-        "beneficiary": null,
-        "plan_existence": null,
-        "feasibility": null,
+        "beneficiary": {
+          "geography": {
+            "scope": "multi",
+            "regions": []
+          },
+          "gender": [
+            "women"
+          ],
+          "age_group": [
+            "all"
+          ],
+          "community_category": [
+            "All"
+          ],
+          "minority": {
+            "religious": [],
+            "linguistic": []
+          },
+          "occupation_jobs": [],
+          "sector": [],
+          "income_class": [
+            "all"
+          ],
+          "education_level": [
+            "all"
+          ],
+          "disability": false,
+          "urban_rural": "urban",
+          "primary_theme": "women",
+          "beneficiary_count_estimate": null,
+          "tags": [
+            "women safety",
+            "SOS app",
+            "police",
+            "emergency response",
+            "AIADMK"
+          ]
+        },
+        "plan_existence": {
+          "already_exists": true,
+          "existing_scheme_names": [
+            "Kavalan SOS App",
+            "Kaaval Uthavi"
+          ],
+          "jurisdiction": [
+            "tamil_nadu"
+          ],
+          "scheme_level": "state",
+          "relation_to_existing": "expansion",
+          "evidence": [
+            {
+              "title": "Explained: The Tamil Nadu police's Kavalan SOS app",
+              "url": "https://www.thehindu.com/news/cities/chennai/explained-the-tamil-nadu-polices-kavalan-sos-app/article30759191.ece",
+              "snippet": "Residents of Tamil Nadu can download the app. The police especially encourage women and the elderly to use the app... The service is available 24x7."
+            },
+            {
+              "title": "AIADMK offers free fridge in full manifesto",
+              "url": "https://www.dtnext.in/news/tamilnadu/2026-tn-elections-aiadmk-offers-free-fridge-in-full-manifesto-804561",
+              "snippet": "Measures to enhance women's safety include expansion of the Kavalan app and Amma patrol vehicles from Chennai to other cities."
+            }
+          ],
+          "notes": "The Kavalan SOS app was launched by the AIADMK government in 2018 and is technically available for download and use throughout Tamil Nadu. However, the dedicated 'Amma Patrol' (Pink Patrol) response infrastructure and high-density police integration are currently most robust in Chennai. The promise aims to scale this operational model and response efficiency to other major cities in the state."
+        },
+        "feasibility": {
+          "fiscal": {
+            "score": 4,
+            "comments": "Expanding the digital backend of an existing app is low-cost. However, the associated expansion of patrol vehicles and personnel to ensure rapid response in other cities will require moderate capital and recurring expenditure."
+          },
+          "legal": {
+            "score": 5,
+            "comments": "Police and public order are State subjects under the Seventh Schedule of the Constitution. No legal hurdles exist for expanding police services."
+          },
+          "administrative": {
+            "score": 4,
+            "comments": "The Tamil Nadu Police already operates a Master Control Room for this app. Expansion requires replicating the Chennai response model (GPS-integrated patrols) in other district headquarters."
+          },
+          "timeline": {
+            "score": 5,
+            "comments": "The technology is already mature and deployed; scaling to other cities can be completed well within a 5-year term."
+          },
+          "political": {
+            "score": 5,
+            "comments": "Women's safety is a high-priority issue with universal public support and no significant political opposition."
+          },
+          "overall_score": 4,
+          "overall_comments": "The promise is highly feasible as it builds on an existing, functional platform. While the app itself is already state-wide, the 'expansion' refers to the physical response infrastructure which is currently Chennai-centric. It represents a logical and necessary scaling of a proven safety mechanism.",
+          "key_risks": [
+            "Ensuring consistent response times in tier-2 and tier-3 cities compared to Chennai",
+            "Potential redundancy or integration challenges with the 'Kaaval Uthavi' app launched by the DMK government",
+            "Maintaining high-quality GPS and communication hardware across a larger fleet of patrol vehicles"
+          ]
+        },
         "_grounding": {
-          "search_queries": [],
-          "citation_urls": []
+          "search_queries": [
+            "",
+            "AIADMK manifesto 2026 Kavalan app expansion",
+            "is Kavalan SOS app only for Chennai",
+            "current status of Kavalan SOS app Tamil Nadu police",
+            "Kavalan SOS app Tamil Nadu coverage area"
+          ],
+          "citation_urls": [
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE1VqTYcs1DixfO1onmdl6-nKB9Fb_hDNyqTM4m6vLc6uiC__GAouwWI3GRy6rOagTmB6M8QqqbmdBkNMHCPfU_4G8iaKr8v9BU70Ue5Iz9WqwFzyqi2fN_IjRHHjRZQoON",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHjHZevDgO-qTwCIRLJsCRjZzrjkV5a-VnbfM7eGk6H2GzAciU7z1m4gJG3Dy1CWvK0kXKDXrbCb6LkaaMqoNBu0Pr24IGtdkX6leC6O3oOEnECSkWiAn8zVmS5YZwobCYh4r7NWhWxiIOtoIrq59UBWWFk4AFTHMBGe2w68Aq1EKK-m2pvsL8ReeRqmDqioVa9OVkMpLL7IzyrbiitRQ==",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFJW8R_SiA0FaBoBO3aqv-gspjLEo7lDgCw-ZGZQQA9l9B9asw6ZuGxYvc4wkGt8dfDFXLsiHDCbzLGVOhRXI_Pr6PL_PJYRlEGkpo3VJ2CgJjI7fR-fjHi-bPE8fNrmZP5sUyWmMjAJQwa5FuzFe_5JmB_7MK8XlnNVPOFP-6QElnHWj4FlJygIBY=",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEmkfKX4SN4JfvInUdvDh4yL996sKhsm5ztqba8n9B60Wq57ivCcRyw18n_uaC9mBIFVJ_q0_VVMyEDxe55MFLcUZ6cAv6UTK3SHozbAjp3Wu9iZCT6u99pzUNKtgmBYES5-C1aHYZ_oq5OfkYWd-i7xDtARYlHUirg4RF9Knl9hTwfrjpfocUWhlgnE6Zx3XmyNZFQmFLlIUOWHQ==",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFqLMWWeYcZm3mOPAlZTTooVGq5hooGgdazlGicab55ML8HXY_bsMayy43XTzgi42YTRscA_6hhSDTY3j9Igzrfdy0GZcvLd9Zil_VRHax44J-78hgGneg6SiBtVnSRmvBMIhMoYw==",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHvLdA0lkeekooRvMxSPSkVaHuBD2hK5Dad4ZSbhJtrCfLafZ5QiVcVII360LIHC2LDnVW14imvI-coRbdDOuGo779HnxR8noukch9900oJycQ1STC2jc-LCfH48dsThtVl52AelWp3CzHbP3xHdZB0O6o2db0ihH8Ep99Gmjid6Inw_0xxYroxowuukdXW5-ziFS-BAL87OGzp3dEWL_kKjMc=",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEYBEZI0mro7cZl8AfjXAIMTobLiwflzgyDi5_Fif2sMYcWS1a9Nrz4MiPeD_7X2QU9tNh3Px8hwEVDMBj7oeZP82cLWJ0J36jX0VNHsyhZgTZq0XUUm0w4Cv029X4AI0KSMJvSk4zQ1mwmmKlg",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGR449n0vCNkEK4StI4RyhrAAoKcNT1OeducpzQV0bW9zFXeNqGMSx5wq93jbCi0BGgawChcjSMsovIamKqrBawijuvIGzQT41uFDRHrdQhUsOFYK_9zXRvdFmzJ6Og8v9uOGHqUKaVScLiig48WjwZx7gQo2jUbX4zj5MS6fHs0wS3zzYl_gmI9g==",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGgv7EWCjwmXylKWgzQ470ASjqMwgfJkjdOMviudkyAdwSo4vxzv4mOpLaq6zEOxh71BvPO7UY3y-J0l3UfGtgRvePgDTygBRmUk4IMhlLYFXvLJWbrSTSSZSyJ3qXx-RWnQbHK4iQYmJr_RT-2FxEFZBThM9KgJOfYpB5-sWCcdVrlCSNLJuEhBdYLGPsce8GoFIky0iWmq_pNkdm137hWSxr4z_p55zGHOFLCAb4uFeg=",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHUPtgJS-P5n2MupRpvcGEGFcwiCNZfdH1y4qZKbP1ORYuQw5VRGrBCOyOQXJoiU4x_WkXYuSUVVEmE865qHA2Ntr1L4SLo1uotqlSP4gcS0GfjWt-GvK3k9te10ZYKqXEr-mG9SvrFQ7wXAy3pkq1l2XTJYa1V",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFum-am4mICTTgtw23oYMiOyNOw7mEpn1nTebifpejxBhXuW3SSrO8KP3zVMU6-rqQTBF-c5_GjKLdmc4nG2dw3gsU14_dNACWPZN1SojjEojE9DzwzttcRVsV5P3Ab556QVlMcYKzDtdUHhJg0wnhlDYnvls6f1VKWm3saxya6gIhuQU7x_eU_L_j56fAnydDxdImtWkqqUQURu8FBDidBL9o9m0FvJW3v3S8gTyrBx2lRCio77r62mfCBP0shCaYGiiRULhfCSab0-fO3Fd-tlTcUG6icLLpbXzA3rOc9q4gIgcmJbI2B",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHJ-eUIeuZITnwKcvYuks5UWk7nUbOKPX6bbLRiGbhMOj6kBk6MMgbDw6T9AczgFdxfMtO65cE1XG05_Mp7bEgjvllqzFrBmaGZFcw19wWvDsDN3BLLH67vSKZFCfLtVrWdhJY4r-gSQ9lcmNZbIcBZOrARRb09D_DqsGpJGdaQNBRS42WPgsLE5baP57d7kQsI1ZEHS5PFN2sq0SeAcf5U6mnHUrjYAk7GTzp6",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE1tomkaFqkv_d5PjQOJbbPDqu6Ql9dZESYW-H-DLTKw2t6r6JBDeCGbxJAshrZeYC9Z3bvbPTu96QsPkDT5t58hQud7RZG0_3ptoaYQ5X79ekGbasgwHFH6xXNH_nVipFTn8r36ptn1uq8i0NcOvtMBzuXgWmTltN_k56I6xI0mowcJCOR0jfcOTlK5PA0HtZXgmwU1jQhPNcYfG1_XDdF_oXF8pPHf9ipntj1uJjTtEA=",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE6-436uDhBa69MlQOdfO1azJ86JwGnT98I7I3cXVXAA_NQkVswVH-fsz62A3BaA6x2m5MBbLTeODxFgX7ZWEDmqchv6S1eglvvgGF1aAM9OabfdAjYoAWvd5qblt4ltl_gqyy2nc3BjN63HlKHG2mp8w=="
+          ]
         },
         "_meta": {
           "model": "gemini-3-flash-preview",
           "tokens": {
-            "prompt_token_count": 2797,
-            "total_token_count": 4550,
-            "cached_content_token_count": 292
+            "prompt_token_count": 3041,
+            "candidates_token_count": 992,
+            "total_token_count": 6503
           },
           "attempts": 1
         },
-        "_parse_errors": [
-          "missing item 3 in response"
-        ]
+        "_repaired_at": "2026-04-21T17:47:47Z"
       }
     },
     {
@@ -19754,25 +20476,165 @@
         }
       ],
       "analysis": {
-        "beneficiary": null,
-        "plan_existence": null,
-        "feasibility": null,
+        "beneficiary": {
+          "geography": {
+            "scope": "multi",
+            "regions": [
+              {
+                "type": "city",
+                "name": "Coimbatore"
+              },
+              {
+                "type": "city",
+                "name": "Madurai"
+              },
+              {
+                "type": "city",
+                "name": "Tiruchirappalli"
+              },
+              {
+                "type": "city",
+                "name": "Salem"
+              },
+              {
+                "type": "city",
+                "name": "Tirunelveli"
+              },
+              {
+                "type": "city",
+                "name": "Erode"
+              },
+              {
+                "type": "city",
+                "name": "Vellore"
+              },
+              {
+                "type": "city",
+                "name": "Tiruppur"
+              },
+              {
+                "type": "city",
+                "name": "Thoothukudi"
+              }
+            ]
+          },
+          "gender": [
+            "women"
+          ],
+          "age_group": [
+            "children",
+            "youth",
+            "working_age",
+            "elderly"
+          ],
+          "community_category": [
+            "All"
+          ],
+          "minority": {
+            "religious": null,
+            "linguistic": null
+          },
+          "occupation_jobs": null,
+          "sector": [
+            "public"
+          ],
+          "income_class": [
+            "all"
+          ],
+          "education_level": [
+            "all"
+          ],
+          "disability": false,
+          "urban_rural": "urban",
+          "primary_theme": "women",
+          "beneficiary_count_estimate": null,
+          "tags": [
+            "women safety",
+            "police patrol",
+            "pink patrol",
+            "urban safety",
+            "crime prevention"
+          ]
+        },
+        "plan_existence": {
+          "already_exists": true,
+          "existing_scheme_names": [
+            "Amma Patrol",
+            "Pink Patrol"
+          ],
+          "jurisdiction": [
+            "tamil_nadu"
+          ],
+          "scheme_level": "both",
+          "relation_to_existing": "expansion",
+          "evidence": [
+            {
+              "title": "Amma Patrol kicks off, to ensure women feel safe in the city",
+              "url": "https://www.thehindu.com/news/cities/chennai/amma-patrol-kicks-off-to-ensure-women-feel-safe-in-the-city/article29262179.ece",
+              "snippet": "Launched in August 2019, 40 Amma Patrol vehicles were introduced in Chennai under the Nirbhaya Fund to prevent violence against women and children."
+            },
+            {
+              "title": "Tamil Nadu rolls out Amma Patrol vehicles to check crimes against women, kids",
+              "url": "https://indianexpress.com/article/cities/chennai/tamil-nadu-rolls-out-amma-patrol-vehicles-to-check-crimes-against-women-kids-5938501/",
+              "snippet": "The pink and white patrol vehicles were purchased at a cost of Rs 7.50 crore and are operated by All Women Police Stations."
+            }
+          ],
+          "notes": "The Amma Patrol was launched by the AIADMK government in 2019 specifically for Chennai. While the current DMK administration has maintained and expanded similar 'Pink Patrol' units to other cities like Coimbatore, this promise seeks to formally expand the 'Amma' branded fleet to all major urban centers in the state."
+        },
+        "feasibility": {
+          "fiscal": {
+            "score": 5,
+            "comments": "The initial launch of 40 vehicles cost approximately ₹7.5 crore. Expanding this to 10-15 more cities would require an outlay of roughly ₹100-150 crore, which is a negligible fraction of the state's ₹3 lakh crore+ budget and can be largely covered by the Central Nirbhaya Fund (60:40 ratio)."
+          },
+          "legal": {
+            "score": 5,
+            "comments": "Police and public order are State subjects under the Seventh Schedule of the Constitution. No legal impediments exist for expanding police patrol units."
+          },
+          "administrative": {
+            "score": 4,
+            "comments": "Requires the deployment of trained women police personnel from All Women Police Stations (AWPS). While the infrastructure (AWPS) exists in most districts, additional recruitment or reallocation of personnel may be needed for 24/7 coverage."
+          },
+          "timeline": {
+            "score": 5,
+            "comments": "Procurement of vehicles and installation of GPS/surveillance equipment can be completed within 12-18 months."
+          },
+          "political": {
+            "score": 5,
+            "comments": "Women's safety is a high-priority political issue with universal public support. Rebranding or expanding a popular existing scheme is politically advantageous."
+          },
+          "overall_score": 5,
+          "overall_comments": "This is a highly feasible, low-cost, and high-impact promise. It builds on an existing successful pilot in Chennai and utilizes established central funding mechanisms (Nirbhaya Fund). The administrative framework is already in place via the state's network of All Women Police Stations.",
+          "key_risks": [
+            "Shortage of women police personnel for 24/7 patrolling",
+            "Maintenance of high-tech surveillance equipment in vehicles",
+            "Potential overlap or rebranding friction with existing 'Pink Patrol' units"
+          ]
+        },
         "_grounding": {
-          "search_queries": [],
-          "citation_urls": []
+          "search_queries": [
+            "",
+            "cost of Amma Patrol vehicle scheme Tamil Nadu Nirbhaya Fund",
+            "Amma Patrol vehicles Chennai expansion other cities Tamil Nadu",
+            "current status of Amma Patrol in Tamil Nadu cities 2024 2025",
+            "Amma Patrol vs Pink Patrol Tamil Nadu"
+          ],
+          "citation_urls": [
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGjv3rvWXwH7OJPuVRBB3zJsnxcmOn9Qdy4o8hA_mUOKZOlDYwtLUwo8Jkl0oFeJZBu9-UhSjE-55q5pQAl-mtuYIA3UKZv0_dzW_KtE7-d5kg77Nu06xmSu4wzTzsKcXcjk4mC92IwNPYNu2MhB-MEv0uqoPJdqdbTydzk__pcYkHse7ye0glBkU3PvKwGSLTucPbYdwS8MYhacoANnDxP5EVgbAcyB5UIkcLOntICsn2qNOykjCYBklQ27XCbvOZEQwoHmwzM5i0=",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF5xERIgQyzHiIGAUPuy01mKjC5_KFPiZLXaHjom6WyhTCceAUScIpGeX9e--PSa9mZUqBhGVo2AV6iZEQE-Uz09HFYliOOBsDu_QqiQiR7_i_u8harZ14xnYAQ5LgJO0eZVPxnxoDV-ofXIPu5r5ZcqEL-LWrq5taTh_fqb2y90LOP3tdttpZhSz8iTCm3_u8pDC4Ca34Z9GPw7RoKHASolD2CbLNwNlrYXODyHJMuAbY=",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHWzh8WC_0gfXXGrLJBwmYdbiQ1W-ikQkk5lHqWwRthj4zC5mPqAdaDWKg7dmgJxgtD4G-m7QqhmZCYtPBA8sCLxMyVmHjcGL4oAJoEOqQp5m_RAOsJMKcbAk4f5OJ1CK5fEgg0HynbfwyVxlFPtXDdHE7m07J9AYJlj6aWdUeshXEaq3xk0vBwoXedgIM=",
+            "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHtewmVj6wN8TQ2r0SUdZZlz7srmG9ohFs75DwHbLx9gUwt-Eal26gfetyqnuJJHfCGJR5rn61Qz5vMxa_ljw4S-5XdYN5W2GMs8cSvpMvp_h7HE9_JojRA7k3SZ4Z5RaFH2tpnrcMkZurhlh4vkcgRl6A4MiT1IXRWq-9NxztdXYhUwpA_Eqx0OIqr8dK5uXRqlK89DROmbhAbxELeR0OWOb0BAmEmxEXrSoeUykLGy82bBvLdO7LvxNNoS99goPZ9pwg2lT8rgg=="
+          ]
         },
         "_meta": {
           "model": "gemini-3-flash-preview",
           "tokens": {
-            "prompt_token_count": 2797,
-            "total_token_count": 4550,
-            "cached_content_token_count": 292
+            "prompt_token_count": 3014,
+            "candidates_token_count": 1279,
+            "total_token_count": 5229
           },
           "attempts": 1
         },
-        "_parse_errors": [
-          "missing item 4 in response"
-        ]
+        "_repaired_at": "2026-04-21T17:47:47Z"
       }
     },
     {
@@ -44214,9 +45076,11 @@
     "total_points": 297,
     "batches": 75,
     "failures": 0,
-    "parse_errors": 8,
+    "parse_errors": 0,
     "total_tokens_estimate": 553730,
     "started_at": "2026-04-21T16:51:29Z",
-    "finished_at": "2026-04-21T16:57:18Z"
+    "finished_at": "2026-04-21T16:57:18Z",
+    "last_repaired_at": "2026-04-21T18:06:55Z",
+    "last_repair_batch_k": 1
   }
 }
