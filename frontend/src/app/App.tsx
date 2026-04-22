@@ -3,6 +3,7 @@ import { DonutChart } from "./components/DonutChart";
 import { CompareGrid } from "./components/CompareGrid";
 import { DemographyExplorer } from "./components/DemographyExplorer";
 import { FactCheckPanel } from "./components/FactCheckPanel";
+import { MapExplorer } from "./components/MapExplorer";
 import imgHero from "../assets/MANIFESTO_IMAGE.png";
 import {
   allPoints,
@@ -33,7 +34,7 @@ const admkColor = "#547c5b";
 const dmkColor = "#c94d48";
 const tvkColor = "#E5A000";
 
-const tabs = ["Dashboard", "Compare", "Demography", "Fact Check"];
+const tabs = ["Dashboard", "Compare", "Demography", "Map", "Fact Check"];
 
 // Editorial descriptions for each feasibility dimension in feasibilityRadarData.
 const FEASIBILITY_DESCRIPTIONS: Record<string, string> = {
@@ -436,6 +437,7 @@ export default function App() {
         {activeTab === "Dashboard" && <DashboardTab />}
         {activeTab === "Compare" && <section style={{ padding: "0px 0" }}><CompareGrid /></section>}
         {activeTab === "Demography" && <DemographyTab />}
+        {activeTab === "Map" && <MapExplorer />}
         {activeTab === "Fact Check" && <FactCheckPanel />}
 
         {/* Global Footer / Disclaimer */}
