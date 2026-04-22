@@ -359,6 +359,7 @@ export function MapExplorer() {
   const [selectedDistrict, setSelectedDistrict] = useState<string | null>(null);
   const [showStatewide, setShowStatewide] = useState(false);
   const [tooltipPos, setTooltipPos] = useState({ x: 0, y: 0 });
+  const [containerSize, setContainerSize] = useState({ w: 0, h: 0 });
   const mapRef = useRef<HTMLDivElement>(null);
 
   const { districts: districtMap, statewide } = useMemo(
@@ -408,6 +409,7 @@ export function MapExplorer() {
     if (mapRef.current) {
       const rect = mapRef.current.getBoundingClientRect();
       setTooltipPos({ x: e.clientX - rect.left, y: e.clientY - rect.top });
+      setContainerSize({ w: rect.width, h: rect.height });
     }
   }, []);
 
@@ -776,13 +778,28 @@ export function MapExplorer() {
             })}
           </svg>
 
-          {/* Tooltip */}
-          {hoveredDistrict && hoveredData && (
+          {/* Tooltip — flips to the opposite side of the cursor when it
+              would overflow the map container, so it's never clipped. */}
+          {hoveredDistrict && hoveredData && (() => {
+            const TOOLTIP_W = 220; // approx width (minWidth 160, maxWidth 240)
+            const TOOLTIP_H = 130; // approx height incl. padding
+            const EDGE_PAD = 8;
+            const flipRight =
+              tooltipPos.x + 12 + TOOLTIP_W > containerSize.w - EDGE_PAD;
+            const flipBottom =
+              tooltipPos.y + TOOLTIP_H > containerSize.h - EDGE_PAD;
+            const positionStyle: React.CSSProperties = {
+              left: flipRight ? undefined : tooltipPos.x + 12,
+              right: flipRight ? Math.max(EDGE_PAD, containerSize.w - tooltipPos.x + 12) : undefined,
+              top: flipBottom ? undefined : Math.max(EDGE_PAD, tooltipPos.y - 10),
+              bottom: flipBottom ? Math.max(EDGE_PAD, containerSize.h - tooltipPos.y + 10) : undefined,
+            };
+
+            return (
             <div
               style={{
                 position: "absolute",
-                left: tooltipPos.x + 12,
-                top: tooltipPos.y - 10,
+                ...positionStyle,
                 background: "rgba(18,18,18,0.92)",
                 color: "#fff",
                 padding: "10px 14px",
@@ -857,7 +874,8 @@ export function MapExplorer() {
                 </span>
               </div>
             </div>
-          )}
+            );
+          })()}
 
           {/* Legend */}
           <div
