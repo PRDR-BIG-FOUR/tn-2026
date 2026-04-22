@@ -1,4 +1,6 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
+
+declare const __LAST_UPDATED__: string;
 import { DonutChart } from "./components/DonutChart";
 import { CompareGrid } from "./components/CompareGrid";
 import { DemographyExplorer } from "./components/DemographyExplorer";
@@ -47,6 +49,65 @@ const FEASIBILITY_DESCRIPTIONS: Record<string, string> = {
 
 
 // ── Small shared components ───────────────────────────────────────────────
+
+// Live-ticking "last updated" badge. Ticks every 30s so relative labels
+// like "2 minutes ago" roll forward without a page refresh. Absolute
+// timestamp is shown on hover via the `title` attribute.
+function LastUpdatedBadge({ iso }: { iso: string }) {
+  const [now, setNow] = useState(() => Date.now());
+  useEffect(() => {
+    const id = window.setInterval(() => setNow(Date.now()), 30_000);
+    return () => window.clearInterval(id);
+  }, []);
+
+  const then = new Date(iso).getTime();
+  if (!Number.isFinite(then)) return null;
+
+  const diffSec = Math.max(0, Math.floor((now - then) / 1000));
+  let label: string;
+  if (diffSec < 45) label = "just now";
+  else if (diffSec < 90) label = "1 minute ago";
+  else if (diffSec < 3600) label = `${Math.round(diffSec / 60)} minutes ago`;
+  else if (diffSec < 5400) label = "1 hour ago";
+  else if (diffSec < 86400) label = `${Math.round(diffSec / 3600)} hours ago`;
+  else if (diffSec < 172800) label = "yesterday";
+  else if (diffSec < 604800) label = `${Math.round(diffSec / 86400)} days ago`;
+  else
+    label = new Date(iso).toLocaleDateString(undefined, {
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+    });
+
+  const absolute = new Date(iso).toLocaleString();
+  return (
+    <span
+      title={`Data last updated: ${absolute}`}
+      style={{
+        display: "inline-flex",
+        alignItems: "center",
+        gap: 5,
+        fontFamily: mono,
+        fontSize: 10,
+        color: gray,
+        whiteSpace: "nowrap",
+        flexShrink: 0,
+      }}
+    >
+      <span
+        aria-hidden
+        style={{
+          width: 6,
+          height: 6,
+          borderRadius: "50%",
+          background: "#1C804C",
+          boxShadow: "0 0 0 2px rgba(28,128,76,0.18)",
+        }}
+      />
+      Updated {label}
+    </span>
+  );
+}
 
 function Pill({ text, color }: { text: string; color: string }) {
   return (
@@ -442,9 +503,12 @@ export default function App() {
 
         {/* Global Footer / Disclaimer */}
         <div style={{ position: "fixed", bottom: 0, left: 0, width: "100%", background: "#fcfbf9", borderTop: `1px solid ${border}`, padding: "8px 24px", zIndex: 1000, boxShadow: "0 -2px 10px rgba(0,0,0,0.03)" }}>
-          <p style={{ fontFamily: sans, fontSize: 11, color: gray, margin: 0, fontStyle: "italic", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis", textAlign: "center" }}>
-            Disclaimer: The information, classifications, and fact-checks on this dashboard were parsed and analysed using Large Language Models (LLMs). While efforts have been made to ensure accuracy, AI can sometimes hallucinate or misinterpret text, meaning some information may be incorrect or lack full context. Please verify critical claims directly from the official manifestos.
-          </p>
+          <div style={{ display: "flex", alignItems: "center", gap: 16, maxWidth: 1176, margin: "0 auto" }}>
+            <LastUpdatedBadge iso={__LAST_UPDATED__} />
+            <p style={{ fontFamily: sans, fontSize: 11, color: gray, margin: 0, fontStyle: "italic", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis", textAlign: "center", flex: 1, minWidth: 0 }}>
+              Disclaimer: The information, classifications, and fact-checks on this dashboard were parsed and analysed using Large Language Models (LLMs). While efforts have been made to ensure accuracy, AI can sometimes hallucinate or misinterpret text, meaning some information may be incorrect or lack full context. Please verify critical claims directly from the official manifestos.
+            </p>
+          </div>
         </div>
       </div>
     </div>
