@@ -12,6 +12,9 @@ import { DemographyExplorer } from "./components/DemographyExplorer";
 import { FactCheckPanel } from "./components/FactCheckPanel";
 import { MapExplorer } from "./components/MapExplorer";
 import { SIRMap } from "./components/SIRMap";
+import { ConstituencyExplorer } from "./components/ConstituencyExplorer";
+import { LivePollDay } from "./components/LivePollDay";
+import { state2021 } from "./elections2021";
 import imgHero from "../assets/MANIFESTO_IMAGE.png";
 import {
   allPoints,
@@ -42,7 +45,7 @@ const admkColor = "#547c5b";
 const dmkColor = "#c94d48";
 const tvkColor = "#E5A000";
 
-const tabs = ["Dashboard", "Compare", "Demography", "Fact Check", "Map", "Voters"];
+const tabs = ["Dashboard", "Constituency", "Live Poll", "Compare", "Demography", "Fact Check", "Map"];
 
 // Editorial descriptions for each feasibility dimension in feasibilityRadarData.
 const FEASIBILITY_DESCRIPTIONS: Record<string, string> = {
@@ -123,6 +126,23 @@ function Pill({ text, color }: { text: string; color: string }) {
       fontFamily: sans, fontSize: 10, fontWeight: 600,
       letterSpacing: "0.08em", textTransform: "uppercase" as const, color,
     }}>{text}</span>
+  );
+}
+
+// Plain-English lede shown above a chart. Editorial headline that tells
+// the story in one sentence so a non-expert reader gets the takeaway
+// before they parse the visual.
+function StoryHeadline({ text }: { text: string }) {
+  return (
+    <div style={{
+      background: "#faf9f6", borderLeft: `3px solid ${brown}`,
+      padding: "12px 16px", borderRadius: 4, margin: "0 0 18px",
+      maxWidth: 760,
+    }}>
+      <div style={{ fontFamily: serif, fontSize: 17, fontWeight: 500, color: dark, lineHeight: 1.5 }}>
+        {text}
+      </div>
+    </div>
   );
 }
 
@@ -316,21 +336,60 @@ function DashboardTab() {
     return allPoints.filter(p => p.party === drill.party && p.relation?.toLowerCase() === drill.label.toLowerCase());
   }, [drill]);
 
+  // Headlines derived live from the data.
+  const noveltyLead = useMemo(() => {
+    const newRow = noveltyData.find(r => r.label.toLowerCase() === "new");
+    if (!newRow) return "Most promises are continuations or expansions of existing schemes — little is entirely new.";
+    const parties: Array<["admk"|"dmk"|"tvk", string, number]> = [
+      ["admk", "AIADMK", newRow.admk],
+      ["dmk", "DMK", newRow.dmk],
+      ["tvk", "TVK", newRow.tvk],
+    ];
+    parties.sort((a, b) => b[2] - a[2]);
+    const [top, second] = parties;
+    return `${top[1]} is putting the most new ideas on the table — ${top[2]}% of its manifesto is genuinely new, versus ${second[2]}% for ${second[1]}. The rest is largely expansions and continuations.`;
+  }, []);
+
+  const feasibilityLead = useMemo(() => {
+    const avg = (p: "ADMK"|"DMK"|"TVK") => {
+      const sum = feasibilityRadarData.reduce((s, r: any) => s + (r[p] ?? 0), 0);
+      return sum / feasibilityRadarData.length;
+    };
+    const scores: Array<[string, number]> = [["AIADMK", avg("ADMK")], ["DMK", avg("DMK")], ["TVK", avg("TVK")]];
+    scores.sort((a, b) => b[1] - a[1]);
+    return `On feasibility, ${scores[0][0]} scores highest overall (${scores[0][1].toFixed(1)}/5), followed by ${scores[1][0]} (${scores[1][1].toFixed(1)}) and ${scores[2][0]} (${scores[2][1].toFixed(1)}). Higher means easier to actually deliver.`;
+  }, []);
+
   return (
     <>
       {/* Hero */}
       <section className="mobile-col-reverse mobile-py-sm" style={{ padding: "56px 0 80px", display: "flex", justifyContent: "space-between", alignItems: "center", gap: 40 }}>
         <div className="mobile-w-full mobile-text-center" style={{ maxWidth: 586 }}>
-          <h1 className="mobile-hero-title" style={{ fontFamily: serif, fontWeight: 400, fontSize: 64, lineHeight: 1.115, letterSpacing: "-1.7px", color: dark, margin: 0 }}>
-            Tamil Nadu's parties{" "}
-            <span style={{ fontWeight: 500, color: brown }}>Manifesto</span>{" "}
-            Analysis
+          <h1 className="mobile-hero-title" style={{ fontFamily: serif, fontWeight: 400, fontSize: 60, lineHeight: 1.115, letterSpacing: "-1.7px", color: dark, margin: 0 }}>
+            Tamil Nadu{" "}
+            <span style={{ fontWeight: 500, color: brown }}>2026</span>{" "}
+            Election Dashboard
           </h1>
-          <p className="mobile-hero-subtitle" style={{ fontFamily: serif, fontSize: 20, lineHeight: "30px", color: "#2e2e2e", marginTop: 19, maxWidth: 586 }}>
-            A structured reading of the {PARTY_LABELS.slice(0, -1).join(", ")} and {PARTY_LABELS.slice(-1)[0]} manifestos for the 2026 Legislative Assembly election.
-            Every promise parsed, classified by theme, beneficiary, sector and feasibility.
+          <p className="mobile-hero-subtitle" style={{ fontFamily: serif, fontSize: 18, lineHeight: "28px", color: "#2e2e2e", marginTop: 18, maxWidth: 586 }}>
+            One place to read the manifestos, explore the voters of each constituency,
+            compare today's turnout to 2021, and see what every party is promising — told as a story, not a spreadsheet.
           </p>
-
+          <div style={{ display: "flex", gap: 10, flexWrap: "wrap", marginTop: 16 }}>
+            {[
+              { k: "Manifestos", v: `${PARTY_LABELS.length} parties` },
+              { k: "Constituencies", v: "234" },
+              { k: "Voters (SIR 2026)", v: "5.67 Cr" },
+              { k: "2021 turnout", v: `${state2021.turnoutPct.toFixed(1)}%` },
+            ].map(s => (
+              <div key={s.k} style={{
+                padding: "6px 12px", border: `1px solid ${border}`, borderRadius: 20,
+                background: "#faf9f6",
+              }}>
+                <span style={{ fontFamily: mono, fontSize: 10, color: gray, letterSpacing: "0.08em", textTransform: "uppercase" }}>{s.k}</span>
+                <span style={{ fontFamily: mono, fontSize: 11, fontWeight: 700, color: dark, marginLeft: 6 }}>{s.v}</span>
+              </div>
+            ))}
+          </div>
         </div>
         <div className="mobile-w-full" style={{ width: 533, borderRadius: 8, overflow: "hidden", borderWidth: 1, borderStyle: "solid", borderColor: border, flexShrink: 0, background: "#fff", display: "flex", alignItems: "center", justifyContent: "center" }}>
           <img src={imgHero} alt="Tamil Nadu Election" style={{ width: "100%", height: "auto", display: "block", objectFit: "cover" }} />
@@ -369,10 +428,11 @@ function DashboardTab() {
         <h2 style={{ fontFamily: serif, fontSize: 28, fontWeight: 400, color: dark, margin: "0 0 6px", lineHeight: 1.2 }}>
           How much is genuinely new?
         </h2>
-        <p style={{ fontFamily: serif, fontSize: 15, lineHeight: "28px", color: "#2e2e2e", margin: "0 0 24px" }}>
+        <p style={{ fontFamily: serif, fontSize: 15, lineHeight: "28px", color: "#2e2e2e", margin: "0 0 18px" }}>
           Each promise classified against existing schemes: truly new, an expansion, an amendment or a continuation.
           Click any bar to see the specific promises.
         </p>
+        <StoryHeadline text={noveltyLead} />
         <div style={{ height: 240 }}>
           <ResponsiveContainer width="100%" height="100%">
             <BarChart data={noveltyData} barCategoryGap="28%" barGap={3}>
@@ -393,10 +453,11 @@ function DashboardTab() {
         <h2 style={{ fontFamily: serif, fontSize: 28, fontWeight: 400, color: dark, margin: "0 0 6px" }}>
           How feasible are the promises?
         </h2>
-        <p style={{ fontFamily: serif, fontSize: 15, lineHeight: "28px", color: "#2e2e2e", margin: "0 0 28px", maxWidth: 600 }}>
+        <p style={{ fontFamily: serif, fontSize: 15, lineHeight: "28px", color: "#2e2e2e", margin: "0 0 18px", maxWidth: 600 }}>
           Each promise was scored 1–5 across {feasibilityRadarData.length} dimensions using LLM analysis grounded in real policy data.
           Higher score = more feasible.
         </p>
+        <StoryHeadline text={feasibilityLead} />
         <div className="mobile-col mobile-gap-sm" style={{ display: "flex", gap: 40, alignItems: "flex-start" }}>
           <div className="mobile-w-full mobile-h-auto mobile-basis-initial" style={{ flex: "0 0 400px", height: 320 }}>
             <ResponsiveContainer width="100%" height={320}>
@@ -514,6 +575,8 @@ export default function App() {
         <NavBar activeTab={activeTab} setActiveTab={setActiveTab} searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
         {activeTab === "Search" && <SearchTab query={searchQuery} />}
         {activeTab === "Dashboard" && <DashboardTab />}
+        {activeTab === "Constituency" && <ConstituencyExplorer />}
+        {activeTab === "Live Poll" && <LivePollDay />}
         {activeTab === "Compare" && <section style={{ padding: "0px 0" }}><CompareGrid /></section>}
         {activeTab === "Demography" && <DemographyTab />}
         {activeTab === "Map" && <MapExplorer />}
