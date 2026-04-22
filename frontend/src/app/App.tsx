@@ -34,7 +34,7 @@ const admkColor = "#547c5b";
 const dmkColor = "#c94d48";
 const tvkColor = "#E5A000";
 
-const tabs = ["Dashboard", "Compare", "Demography", "Map", "Fact Check"];
+const tabs = ["Dashboard", "Compare", "Demography", "Fact Check", "Map"];
 
 // Editorial descriptions for each feasibility dimension in feasibilityRadarData.
 const FEASIBILITY_DESCRIPTIONS: Record<string, string> = {
