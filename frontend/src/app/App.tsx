@@ -1,6 +1,11 @@
 import React, { useState, useMemo, useEffect } from "react";
 
 declare const __LAST_UPDATED__: string;
+declare global {
+  interface Window {
+    gtag?: (...args: any[]) => void;
+  }
+}
 import { DonutChart } from "./components/DonutChart";
 import { CompareGrid } from "./components/CompareGrid";
 import { DemographyExplorer } from "./components/DemographyExplorer";
@@ -489,6 +494,18 @@ function DemographyTab() {
 export default function App() {
   const [activeTab, setActiveTab] = useState("Dashboard");
   const [searchQuery, setSearchQuery] = useState("");
+
+  // Fire a GA4 page_view every time the active tab changes so each tab
+  // registers as its own page in Google Analytics.
+  useEffect(() => {
+    if (typeof window === "undefined" || !window.gtag) return;
+    const path = `/${activeTab.toLowerCase().replace(/\s+/g, "-")}`;
+    window.gtag("event", "page_view", {
+      page_title: `Manifesto Analysis — ${activeTab}`,
+      page_path: path,
+      page_location: window.location.origin + window.location.pathname + "#" + path.slice(1),
+    });
+  }, [activeTab]);
 
   return (
     <div style={{ background: "#fff", paddingBottom: 40, overflowX: "hidden" }}>
