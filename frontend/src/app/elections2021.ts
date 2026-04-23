@@ -1,4 +1,6 @@
-import csvRaw from "../../../data/IndiaVotes_AC__Tamil_Nadu_2021.csv?raw";
+// Corrected AC-level CSV regenerated from ECI's 2021.xlsx detailed-results sheet.
+// See manifesto/scripts/build_elections2021_corr.py for the regeneration step.
+import csvRaw from "../../../data/IndiaVotes_AC__Tamil_Nadu_2021_corr.csv?raw";
 
 export interface Result2021 {
   acName: string;
@@ -27,14 +29,16 @@ const PARTY_SHORT: Record<string, string> = {
 };
 
 export const PARTY_COLORS_2021: Record<string, string> = {
-  AIADMK: "#547c5b",
-  DMK: "#c94d48",
-  BJP: "#f57c00",
-  INC: "#1976d2",
-  PMK: "#8e6e53",
-  CPI: "#b71c1c",
-  CPM: "#b71c1c",
-  VCK: "#1a237e",
+  AIADMK: "#547C5B",
+  DMK:    "#C94D48",
+  TVK:    "#F5AC01",
+  BJP:    "#E0660E",
+  INC:    "#2A8BE1",
+  PMK:    "#EBE301",
+  CPI:    "#FA4545",
+  CPM:    "#F61900",
+  CPIM:   "#F61900",
+  VCK:    "#55C4E9",
 };
 
 // Minimal CSV splitter: supports quoted fields.

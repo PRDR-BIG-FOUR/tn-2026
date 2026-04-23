@@ -453,37 +453,7 @@ export function MapExplorer() {
   const step = Math.ceil(maxCount / legendSteps);
 
   return (
-    <section style={{ padding: "32px 0" }}>
-      {/* Header */}
-      <div style={{ marginBottom: 24 }}>
-        <h2
-          style={{
-            fontFamily: serif,
-            fontSize: 34,
-            fontWeight: 400,
-            color: dark,
-            margin: "0 0 6px",
-            lineHeight: 1.2,
-          }}
-        >
-          Promise Geography
-        </h2>
-        <p
-          style={{
-            fontFamily: serif,
-            fontSize: 16,
-            lineHeight: "28px",
-            color: "#2e2e2e",
-            marginTop: 4,
-            marginBottom: 0,
-            maxWidth: 640,
-          }}
-        >
-          Where are the manifestos focused? Explore promises geographically — each
-          district is shaded by the number of promises targeting it. Toggle between
-          parties to see their regional priorities.
-        </p>
-      </div>
+    <section style={{ padding: "8px 0 32px" }}>
 
       {/* Party Filters */}
       <div
@@ -719,10 +689,16 @@ export function MapExplorer() {
             viewBox={`0 0 ${MAP_WIDTH} ${MAP_HEIGHT}`}
             width="100%"
             height="auto"
-            style={{ display: "block", maxWidth: MAP_WIDTH, margin: "0 auto" }}
+            style={{ display: "block", maxWidth: MAP_WIDTH, margin: "0 auto", overflow: "visible" }}
           >
-            {/* District polygons */}
-            {features.map((feature) => {
+            {/* District polygons — render the selected (clicked) district last
+                 so the zoomed-in shape draws above its neighbours. */}
+            {[...features]
+              .sort((a, b) => {
+                const rank = (n: string) => (n === selectedDistrict ? 1 : 0);
+                return rank(a.properties.name) - rank(b.properties.name);
+              })
+              .map((feature) => {
               const name = feature.properties.name;
               const data = districtMap.get(name);
               const count = data ? getCount(data) : 0;
@@ -737,10 +713,24 @@ export function MapExplorer() {
                 : isHovered
                 ? brown
                 : "#c4c0b8";
-              const sw = isSelected ? 2.5 : isHovered ? 1.8 : 0.8;
+              const sw = isSelected ? 1.2 : isHovered ? 1.8 : 0.8;
+              const [cx, cy] = rings.length > 0 ? getDistrictCenter(rings) : [0, 0];
 
               return (
-                <g key={name}>
+                <g
+                  key={name}
+                  style={{
+                    transformBox: "view-box" as React.CSSProperties["transformBox"],
+                    transformOrigin: `${cx}px ${cy}px`,
+                    transform: isSelected ? "scale(1.9)" : "scale(1)",
+                    filter: isSelected
+                      ? "drop-shadow(0 8px 20px rgba(0,0,0,0.3))"
+                      : "none",
+                    transition:
+                      "transform 0.28s cubic-bezier(.2,.7,.3,1), filter 0.28s ease",
+                    willChange: isSelected ? "transform" : "auto",
+                  }}
+                >
                   {rings.map((ring, ri) => (
                     <path
                       key={ri}
@@ -748,10 +738,10 @@ export function MapExplorer() {
                       fill={fillColor}
                       stroke={strokeColor}
                       strokeWidth={sw}
+                      vectorEffect="non-scaling-stroke"
                       style={{
                         cursor: "pointer",
                         transition: "fill 0.3s ease, stroke-width 0.2s ease",
-                        filter: isHovered ? "brightness(0.95)" : "none",
                       }}
                       onMouseEnter={() => setHoveredDistrict(name)}
                       onMouseLeave={() => setHoveredDistrict(null)}
@@ -765,8 +755,8 @@ export function MapExplorer() {
                   {/* Count label on district (placed on largest ring) */}
                   {count > 0 && rings.length > 0 && (
                     <text
-                      x={getDistrictCenter(rings)[0]}
-                      y={getDistrictCenter(rings)[1]}
+                      x={cx}
+                      y={cy}
                       textAnchor="middle"
                       dominantBaseline="central"
                       fill={count > maxCount * 0.5 ? "#fff" : dark}

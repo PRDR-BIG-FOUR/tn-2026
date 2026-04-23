@@ -333,31 +333,60 @@ export function SIRMap() {
               border: `1px solid ${border}`, borderRadius: 8,
               background: "#faf9f6", display: "block",
               maxWidth: "100%", height: "auto",
+              overflow: "visible",
             }}
           >
-            {kmlConstituencies.map((c) => {
-              const stats = statsByNo.get(c.no) ?? statsMap.get(c.name.toLowerCase());
-              const val = stats ? getVal(stats) : 0;
-              const isHov = hovered === c.name;
-              const isSel = selected === c.name;
-              const isDimmed = highlightedNos !== null && !highlightedNos.has(c.no);
-              const fill = isDimmed ? "#ede9e3" : voterColor(val, maxVal, filter);
-              return (
-                <path
-                  key={c.no}
-                  d={c.path}
-                  fill={fill}
-                  fillRule="evenodd"
-                  stroke={isSel ? dark : isHov ? "#444" : "#bbb"}
-                  strokeWidth={isSel ? 1.8 : isHov ? 1.2 : 0.4}
-                  opacity={isDimmed ? 0.45 : 1}
-                  style={{ cursor: "pointer", transition: "stroke 0.1s, opacity 0.2s" }}
-                  onMouseEnter={() => setHovered(c.name)}
-                  onMouseLeave={() => setHovered(null)}
-                  onClick={() => setSelected(selected === c.name ? null : c.name)}
-                />
-              );
-            })}
+            {(() => {
+              // Render the selected constituency last so the zoomed-in shape
+              // draws above its neighbours and isn't clipped.
+              const ordered = [...kmlConstituencies].sort((a, b) => {
+                const rank = (n: string) => (n === selected ? 1 : 0);
+                return rank(a.name) - rank(b.name);
+              });
+              return ordered.map((c) => {
+                const stats = statsByNo.get(c.no) ?? statsMap.get(c.name.toLowerCase());
+                const val = stats ? getVal(stats) : 0;
+                const isHov = hovered === c.name;
+                const isSel = selected === c.name;
+                const isDimmed = highlightedNos !== null && !highlightedNos.has(c.no);
+                const fill = isDimmed ? "#ede9e3" : voterColor(val, maxVal, filter);
+                // Only the *selected* (clicked) constituency zooms.  We wrap
+                // the path in a <g> and use CSS transform with an explicit
+                // pixel transform-origin in the SVG viewBox coordinate system.
+                return (
+                  <g
+                    key={c.no}
+                    style={{
+                      transformOrigin: `${c.cx}px ${c.cy}px`,
+                      transformBox: "view-box" as React.CSSProperties["transformBox"],
+                      transform: isSel ? "scale(2.2)" : "scale(1)",
+                      transition: "transform 0.28s cubic-bezier(.2,.7,.3,1), filter 0.28s ease",
+                      filter: isSel
+                        ? "drop-shadow(0 8px 18px rgba(0,0,0,0.35))"
+                        : "none",
+                      willChange: isSel ? "transform" : "auto",
+                    }}
+                  >
+                    <path
+                      d={c.path}
+                      fill={fill}
+                      fillRule="evenodd"
+                      stroke={isSel ? dark : isHov ? "#444" : "#bbb"}
+                      strokeWidth={isSel ? 0.8 : isHov ? 1.2 : 0.4}
+                      vectorEffect="non-scaling-stroke"
+                      opacity={isDimmed ? 0.45 : 1}
+                      style={{
+                        cursor: "pointer",
+                        transition: "stroke 0.12s, stroke-width 0.12s, opacity 0.2s",
+                      }}
+                      onMouseEnter={() => setHovered(c.name)}
+                      onMouseLeave={() => setHovered(null)}
+                      onClick={() => setSelected(selected === c.name ? null : c.name)}
+                    />
+                  </g>
+                );
+              });
+            })()}
           </svg>
 
           {/* Hover tooltip */}

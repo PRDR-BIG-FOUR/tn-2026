@@ -2,6 +2,7 @@ import React, { useState, useMemo } from "react";
 import { Wheat, GraduationCap, Briefcase, Landmark, Factory, HardHat, HandCoins, Users, Palette, Scale, TrendingUp, MoreHorizontal } from "lucide-react";
 import { sectorData, TOTALS, THEME_COUNT, PARTY_LABELS, allPoints } from "../manifestoData";
 import { PromiseModal } from "./PromiseModal";
+import { MapExplorer } from "./MapExplorer";
 import {
   ResponsiveContainer, Tooltip,
 } from "recharts";
@@ -39,7 +40,7 @@ const topicIcons: Record<string, React.ReactNode> = {
   "Other":                  <MoreHorizontal size={14} strokeWidth={1.5} />,
 };
 
-type ViewMode = "verdicts" | "priorities" | "duels";
+type ViewMode = "verdicts" | "priorities" | "duels" | "geography";
 
 // ── Data helpers ────────────────────────────────────────────────────────────
 
@@ -465,9 +466,10 @@ function DuelsView({ rows, onDrill }: { rows: ThemeRow[], onDrill: (p: PartyKey,
 
 
 const VIEW_MODES: { key: ViewMode; label: string; desc: string }[] = [
-  { key: "verdicts",   label: "Verdicts",       desc: "One-line verdict per theme — who owns what" },
+  { key: "verdicts",   label: "Verdicts",         desc: "One-line verdict per theme — who owns what" },
   { key: "priorities", label: "Party Priorities", desc: "What each party actually cares about most" },
-  { key: "duels",      label: "Head-to-Head",   desc: "Pick two parties, see biggest gaps" },
+  { key: "duels",      label: "Head-to-Head",     desc: "Pick two parties, see biggest gaps" },
+  { key: "geography",  label: "Geography",        desc: "Where each party is focusing — promises by district" },
 ];
 
 export function CompareGrid() {
@@ -514,6 +516,7 @@ export function CompareGrid() {
       {viewMode === "verdicts"   && <VerdictsView rows={rows} onDrill={(p, t) => setDrill({ party: p, theme: t })} />}
       {viewMode === "priorities" && <PrioritiesView rows={rows} onDrill={(p, t) => setDrill({ party: p, theme: t })} />}
       {viewMode === "duels"      && <DuelsView rows={rows} onDrill={(p, t) => setDrill({ party: p, theme: t })} />}
+      {viewMode === "geography"  && <MapExplorer />}
 
       {drill && drillPts.length > 0 && (
         <PromiseModal

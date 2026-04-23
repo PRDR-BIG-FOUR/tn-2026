@@ -10,10 +10,8 @@ import { DonutChart } from "./components/DonutChart";
 import { CompareGrid } from "./components/CompareGrid";
 import { DemographyExplorer } from "./components/DemographyExplorer";
 import { FactCheckPanel } from "./components/FactCheckPanel";
-import { MapExplorer } from "./components/MapExplorer";
 import { SIRMap } from "./components/SIRMap";
 import { ConstituencyExplorer } from "./components/ConstituencyExplorer";
-import { LivePollDay } from "./components/LivePollDay";
 import { state2021 } from "./elections2021";
 import imgHero from "../assets/MANIFESTO_IMAGE.png";
 import {
@@ -45,7 +43,7 @@ const admkColor = "#547c5b";
 const dmkColor = "#c94d48";
 const tvkColor = "#E5A000";
 
-const tabs = ["Dashboard", "Constituency", "Live Poll", "Compare", "Demography", "Fact Check", "Map"];
+const tabs = ["Dashboard", "Poll Maps", "Compare", "Demography", "Fact Check"];
 
 // Editorial descriptions for each feasibility dimension in feasibilityRadarData.
 const FEASIBILITY_DESCRIPTIONS: Record<string, string> = {
@@ -176,13 +174,22 @@ function NavBar({
       <div className="mobile-logo" style={{
         background: brown, padding: "12px 8px", height: 18,
         display: "flex", alignItems: "center", justifyContent: "center",
-        flexShrink: 0, marginRight: 160,
+        flexShrink: 0, marginRight: 32,
       }}>
         <span style={{ fontFamily: serif, fontStyle: "italic", fontSize: 14, color: "#fff", letterSpacing: "2px" }}>
           PRDR
         </span>
       </div>
-      <div className="mobile-nav mobile-w-full" style={{ display: "flex", alignItems: "center", gap: 24, flex: 1 }}>
+      <div
+        className="mobile-nav mobile-w-full"
+        style={{
+          display: "flex", alignItems: "center", gap: 18,
+          flex: 1, minWidth: 0,
+          overflowX: "auto", overflowY: "hidden",
+          scrollbarWidth: "none",
+          padding: "2px 4px",
+        }}
+      >
         {tabs.map(t => (
           <button key={t} onClick={(e) => {
             setActiveTab(t);
@@ -193,7 +200,7 @@ function NavBar({
             letterSpacing: "0.58px", textTransform: "uppercase" as const,
             color: activeTab === t ? brown : dark,
             boxShadow: activeTab === t ? `inset 0 -2px 0 0 ${brown}` : "none",
-            flexShrink: 0,
+            flexShrink: 0, whiteSpace: "nowrap",
           }}>{t}</button>
         ))}
       </div>
@@ -202,7 +209,8 @@ function NavBar({
         borderWidth: 1, borderStyle: "solid",
         borderColor: searchQuery ? brown : border,
         borderRadius: 4, padding: "6px 11px", background: "#faf9f6",
-        width: 280, flexShrink: 0, transition: "border-color 0.2s",
+        width: 240, flexShrink: 0, marginLeft: 16,
+        transition: "border-color 0.2s",
       }}>
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
           <circle cx="5.7" cy="6.2" r="4.2" stroke={searchQuery ? brown : dark} strokeWidth="0.98" />
@@ -575,11 +583,9 @@ export default function App() {
         <NavBar activeTab={activeTab} setActiveTab={setActiveTab} searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
         {activeTab === "Search" && <SearchTab query={searchQuery} />}
         {activeTab === "Dashboard" && <DashboardTab />}
-        {activeTab === "Constituency" && <ConstituencyExplorer />}
-        {activeTab === "Live Poll" && <LivePollDay />}
+        {activeTab === "Poll Maps" && <ConstituencyExplorer />}
         {activeTab === "Compare" && <section style={{ padding: "0px 0" }}><CompareGrid /></section>}
         {activeTab === "Demography" && <DemographyTab />}
-        {activeTab === "Map" && <MapExplorer />}
         {activeTab === "Voters" && <SIRMap />}
         {activeTab === "Fact Check" && <FactCheckPanel />}
 
