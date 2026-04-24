@@ -1,6 +1,6 @@
 # manifesto
 
-v2
+v1
 Embed and semantically search Tamil Nadu party manifestos (AIADMK, DMK, TVK)
 with `Qwen/Qwen3-Embedding-0.6B` on vLLM.
 
