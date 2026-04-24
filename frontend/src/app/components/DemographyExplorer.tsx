@@ -15,7 +15,7 @@ const tvkColor  = "#E5A000";
 type PartyKey = "admk" | "dmk" | "tvk";
 
 const PARTIES: { key: PartyKey; label: string; color: string }[] = [
-  { key: "admk", label: "AIADMK", color: admkColor },
+  { key: "admk", label: "ADMK", color: admkColor },
   { key: "dmk",  label: "DMK",  color: dmkColor  },
   { key: "tvk",  label: "TVK",  color: tvkColor  },
 ];

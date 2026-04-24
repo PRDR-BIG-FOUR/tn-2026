@@ -79,7 +79,7 @@ export interface ManifestoPoint {
 // ── Parse raw docs ────────────────────────────────────────────────────────
 
 const PARTY_META = {
-  admk: { label: "AIADMK", color: "#547c5b" },
+  admk: { label: "ADMK", color: "#547c5b" },
   dmk: { label: "DMK", color: "#c94d48" },
   tvk: { label: "TVK", color: "#E5A000" },
 } as const;

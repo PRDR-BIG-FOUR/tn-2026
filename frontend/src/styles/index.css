@@ -2,10 +2,6 @@
 @import './tailwind.css';
 @import './theme.css';
 
-/* Hide horizontal scrollbar on the nav (visible in both desktop and mobile). */
-.mobile-nav::-webkit-scrollbar { display: none; }
-.mobile-nav { scrollbar-width: none; }
-
 @media (max-width: 900px) {
   .mobile-col { flex-direction: column !important; }
   .mobile-col-reverse { flex-direction: column-reverse !important; }
