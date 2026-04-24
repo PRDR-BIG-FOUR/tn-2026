@@ -40,7 +40,7 @@ function figmaAssetResolver() {
 }
 
 export default defineConfig({
-  base: '/tn-2026/',
+  base: '/manifesto/',
   define: {
     __LAST_UPDATED__: JSON.stringify(latestDataMtimeISO()),
   },

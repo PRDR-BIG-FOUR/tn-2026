@@ -57,7 +57,7 @@ export function DonutChart({ title, subtitle, total, admk, dmk, tvk, admkTotal, 
   const displayTvk = shareMode ? `${tvkShare.toFixed(1)}%` : String(tvk);
 
   const segments: { key: "admk" | "dmk" | "tvk"; label: string; display: string; color: string; start: number; end: number }[] = [
-    { key: "admk", label: "AIADMK", display: displayAdmk, color: "#547c5b", start: 0, end: admkAngle },
+    { key: "admk", label: "ADMK", display: displayAdmk, color: "#547c5b", start: 0, end: admkAngle },
     { key: "dmk", label: "DMK", display: displayDmk, color: "#c94d48", start: admkAngle, end: admkAngle + dmkAngle },
     { key: "tvk", label: "TVK", display: displayTvk, color: "#E5A000", start: admkAngle + dmkAngle, end: admkAngle + dmkAngle + tvkAngle },
   ];
@@ -125,7 +125,7 @@ export function DonutChart({ title, subtitle, total, admk, dmk, tvk, admkTotal, 
         </div>
         <div style={{ display: "flex", gap: 56, marginTop: 16 }}>
           {[
-            { label: "AIADMK", display: displayAdmk, color: "#547c5b" },
+            { label: "ADMK", display: displayAdmk, color: "#547c5b" },
             { label: "DMK", display: displayDmk, color: "#c94d48" },
             { label: "TVK", display: displayTvk, color: "#E5A000" },
           ].map(p => (

@@ -18,7 +18,7 @@ const border = "#d9d7d2";
 const brown = "#a16749";
 
 const PARTY_COLORS: Record<string, { base: string; light: string; dark: string }> = {
-  AIADMK: { base: "#547c5b", light: "#d4e8d4", dark: "#2f4a34" },
+  ADMK: { base: "#547c5b", light: "#d4e8d4", dark: "#2f4a34" },
   DMK: { base: "#c94d48", light: "#f5d4d2", dark: "#7a2624" },
   TVK: { base: "#E5A000", light: "#fef0c7", dark: "#8a5e00" },
 };
@@ -362,17 +362,6 @@ export function MapExplorer() {
   const [containerSize, setContainerSize] = useState({ w: 0, h: 0 });
   const mapRef = useRef<HTMLDivElement>(null);
 
-  // Click outside the map container resets selection
-  React.useEffect(() => {
-    function handleClickOutside(e: MouseEvent) {
-      if (mapRef.current && !mapRef.current.contains(e.target as Node)) {
-        setSelectedDistrict(null);
-      }
-    }
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
-
   const { districts: districtMap, statewide } = useMemo(
     () => buildDistrictMap(allPoints, partyFilter),
     [partyFilter]
@@ -382,7 +371,7 @@ export function MapExplorer() {
     let max = 0;
     for (const d of districtMap.values()) {
       const val = partyFilter
-        ? d[partyFilter === "AIADMK" ? "admk" : partyFilter === "DMK" ? "dmk" : "tvk"]
+        ? d[partyFilter === "ADMK" ? "admk" : partyFilter === "DMK" ? "dmk" : "tvk"]
         : d.total;
       if (val > max) max = val;
     }
@@ -399,7 +388,7 @@ export function MapExplorer() {
     let sum = 0;
     for (const d of districtMap.values()) {
       sum += partyFilter
-        ? d[partyFilter === "AIADMK" ? "admk" : partyFilter === "DMK" ? "dmk" : "tvk"]
+        ? d[partyFilter === "ADMK" ? "admk" : partyFilter === "DMK" ? "dmk" : "tvk"]
         : d.total;
     }
     return sum;
@@ -409,7 +398,7 @@ export function MapExplorer() {
     let count = 0;
     for (const d of districtMap.values()) {
       const val = partyFilter
-        ? d[partyFilter === "AIADMK" ? "admk" : partyFilter === "DMK" ? "dmk" : "tvk"]
+        ? d[partyFilter === "ADMK" ? "admk" : partyFilter === "DMK" ? "dmk" : "tvk"]
         : d.total;
       if (val > 0) count++;
     }
@@ -427,7 +416,7 @@ export function MapExplorer() {
   const getCount = useCallback(
     (data: DistrictData) => {
       if (!partyFilter) return data.total;
-      return data[partyFilter === "AIADMK" ? "admk" : partyFilter === "DMK" ? "dmk" : "tvk"];
+      return data[partyFilter === "ADMK" ? "admk" : partyFilter === "DMK" ? "dmk" : "tvk"];
     },
     [partyFilter]
   );
@@ -453,7 +442,37 @@ export function MapExplorer() {
   const step = Math.ceil(maxCount / legendSteps);
 
   return (
-    <section style={{ padding: "8px 0 32px" }}>
+    <section style={{ padding: "32px 0" }}>
+      {/* Header */}
+      <div style={{ marginBottom: 24 }}>
+        <h2
+          style={{
+            fontFamily: serif,
+            fontSize: 34,
+            fontWeight: 400,
+            color: dark,
+            margin: "0 0 6px",
+            lineHeight: 1.2,
+          }}
+        >
+          Promise Geography
+        </h2>
+        <p
+          style={{
+            fontFamily: serif,
+            fontSize: 16,
+            lineHeight: "28px",
+            color: "#2e2e2e",
+            marginTop: 4,
+            marginBottom: 0,
+            maxWidth: 640,
+          }}
+        >
+          Where are the manifestos focused? Explore promises geographically — each
+          district is shaded by the number of promises targeting it. Toggle between
+          parties to see their regional priorities.
+        </p>
+      </div>
 
       {/* Party Filters */}
       <div
@@ -615,7 +634,7 @@ export function MapExplorer() {
         </div>
         <div style={{ display: "flex", gap: 10, alignItems: "center" }}>
           {[
-            { l: "AIADMK", v: statewide.admk, c: PARTY_COLORS.AIADMK.base },
+            { l: "ADMK", v: statewide.admk, c: PARTY_COLORS.ADMK.base },
             { l: "DMK", v: statewide.dmk, c: PARTY_COLORS.DMK.base },
             { l: "TVK", v: statewide.tvk, c: PARTY_COLORS.TVK.base },
           ].map((r) => (
@@ -689,16 +708,10 @@ export function MapExplorer() {
             viewBox={`0 0 ${MAP_WIDTH} ${MAP_HEIGHT}`}
             width="100%"
             height="auto"
-            style={{ display: "block", maxWidth: MAP_WIDTH, margin: "0 auto", overflow: "visible" }}
+            style={{ display: "block", maxWidth: MAP_WIDTH, margin: "0 auto" }}
           >
-            {/* District polygons — render the selected (clicked) district last
-                 so the zoomed-in shape draws above its neighbours. */}
-            {[...features]
-              .sort((a, b) => {
-                const rank = (n: string) => (n === selectedDistrict ? 1 : 0);
-                return rank(a.properties.name) - rank(b.properties.name);
-              })
-              .map((feature) => {
+            {/* District polygons */}
+            {features.map((feature) => {
               const name = feature.properties.name;
               const data = districtMap.get(name);
               const count = data ? getCount(data) : 0;
@@ -713,24 +726,10 @@ export function MapExplorer() {
                 : isHovered
                 ? brown
                 : "#c4c0b8";
-              const sw = isSelected ? 1.2 : isHovered ? 1.8 : 0.8;
-              const [cx, cy] = rings.length > 0 ? getDistrictCenter(rings) : [0, 0];
+              const sw = isSelected ? 2.5 : isHovered ? 1.8 : 0.8;
 
               return (
-                <g
-                  key={name}
-                  style={{
-                    transformBox: "view-box" as React.CSSProperties["transformBox"],
-                    transformOrigin: `${cx}px ${cy}px`,
-                    transform: isSelected ? "scale(1.9)" : "scale(1)",
-                    filter: isSelected
-                      ? "drop-shadow(0 8px 20px rgba(0,0,0,0.3))"
-                      : "none",
-                    transition:
-                      "transform 0.28s cubic-bezier(.2,.7,.3,1), filter 0.28s ease",
-                    willChange: isSelected ? "transform" : "auto",
-                  }}
-                >
+                <g key={name}>
                   {rings.map((ring, ri) => (
                     <path
                       key={ri}
@@ -738,10 +737,10 @@ export function MapExplorer() {
                       fill={fillColor}
                       stroke={strokeColor}
                       strokeWidth={sw}
-                      vectorEffect="non-scaling-stroke"
                       style={{
                         cursor: "pointer",
                         transition: "fill 0.3s ease, stroke-width 0.2s ease",
+                        filter: isHovered ? "brightness(0.95)" : "none",
                       }}
                       onMouseEnter={() => setHoveredDistrict(name)}
                       onMouseLeave={() => setHoveredDistrict(null)}
@@ -755,8 +754,8 @@ export function MapExplorer() {
                   {/* Count label on district (placed on largest ring) */}
                   {count > 0 && rings.length > 0 && (
                     <text
-                      x={cx}
-                      y={cy}
+                      x={getDistrictCenter(rings)[0]}
+                      y={getDistrictCenter(rings)[1]}
                       textAnchor="middle"
                       dominantBaseline="central"
                       fill={count > maxCount * 0.5 ? "#fff" : dark}
@@ -833,7 +832,7 @@ export function MapExplorer() {
                 }}
               >
                 {[
-                  { label: "AIADMK", val: hoveredData.admk, c: PARTY_COLORS.AIADMK.base },
+                  { label: "ADMK", val: hoveredData.admk, c: PARTY_COLORS.ADMK.base },
                   { label: "DMK", val: hoveredData.dmk, c: PARTY_COLORS.DMK.base },
                   { label: "TVK", val: hoveredData.tvk, c: PARTY_COLORS.TVK.base },
                 ].map((r) => (
@@ -1063,9 +1062,9 @@ function StatewideDetail({
 
       {/* Party bars */}
       <div style={{ padding: "16px 24px" }}>
-        {(["AIADMK", "DMK", "TVK"] as const).map((label) => {
+        {(["ADMK", "DMK", "TVK"] as const).map((label) => {
           const count =
-            data[label === "AIADMK" ? "admk" : label === "DMK" ? "dmk" : "tvk"];
+            data[label === "ADMK" ? "admk" : label === "DMK" ? "dmk" : "tvk"];
           const pct = (count / barMax) * 100;
           const pc = PARTY_COLORS[label];
           return (
@@ -1355,8 +1354,8 @@ function DistrictDetail({
 
       {/* Party bars */}
       <div style={{ padding: "16px 24px" }}>
-        {(["AIADMK", "DMK", "TVK"] as const).map((label) => {
-          const count = data[label === "AIADMK" ? "admk" : label === "DMK" ? "dmk" : "tvk"];
+        {(["ADMK", "DMK", "TVK"] as const).map((label) => {
+          const count = data[label === "ADMK" ? "admk" : label === "DMK" ? "dmk" : "tvk"];
           const pct = (count / barMax) * 100;
           const pc = PARTY_COLORS[label];
           return (
@@ -1577,7 +1576,7 @@ function DistrictRanking({
       .map(([name, data]) => {
         const count = partyFilter
           ? data[
-              partyFilter === "AIADMK"
+              partyFilter === "ADMK"
                 ? "admk"
                 : partyFilter === "DMK"
                 ? "dmk"
@@ -1729,7 +1728,7 @@ function DistrictRanking({
                     }}
                   >
                     {[
-                      { l: "A", v: data.admk, c: PARTY_COLORS.AIADMK.base },
+                      { l: "A", v: data.admk, c: PARTY_COLORS.ADMK.base },
                       { l: "D", v: data.dmk, c: PARTY_COLORS.DMK.base },
                       { l: "T", v: data.tvk, c: PARTY_COLORS.TVK.base },
                     ].map((r) => (

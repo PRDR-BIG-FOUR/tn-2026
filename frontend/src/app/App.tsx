@@ -10,9 +10,7 @@ import { DonutChart } from "./components/DonutChart";
 import { CompareGrid } from "./components/CompareGrid";
 import { DemographyExplorer } from "./components/DemographyExplorer";
 import { FactCheckPanel } from "./components/FactCheckPanel";
-import { SIRMap } from "./components/SIRMap";
-import { ConstituencyExplorer } from "./components/ConstituencyExplorer";
-import { state2021 } from "./elections2021";
+import { MapExplorer } from "./components/MapExplorer";
 import imgHero from "../assets/MANIFESTO_IMAGE.png";
 import {
   allPoints,
@@ -43,44 +41,7 @@ const admkColor = "#547c5b";
 const dmkColor = "#c94d48";
 const tvkColor = "#E5A000";
 
-const tabs = ["Dashboard", "Poll Maps", "Compare", "Demography", "Fact Check"];
-
-// ── URL routing ────────────────────────────────────────────────────────────
-// Each nav tab gets its own path under the Vite base (`/tn-2026/`):
-//   /tn-2026/dashboard, /tn-2026/poll-maps, /tn-2026/compare,
-//   /tn-2026/demography, /tn-2026/fact-check.  Hitting the bare base URL
-//   redirects to /tn-2026/dashboard.  A hidden "search" slug covers the
-//   in-app Search tab that opens when the header input is used.
-
-const BASE_URL: string =
-  typeof import.meta !== "undefined" && (import.meta as any).env?.BASE_URL
-    ? (import.meta as any).env.BASE_URL
-    : "/";
-
-const TAB_TO_SLUG: Record<string, string> = {
-  Dashboard: "dashboard",
-  "Poll Maps": "poll-maps",
-  Compare: "compare",
-  Demography: "demography",
-  "Fact Check": "fact-check",
-  Search: "search",
-};
-const SLUG_TO_TAB: Record<string, string> = Object.fromEntries(
-  Object.entries(TAB_TO_SLUG).map(([tab, slug]) => [slug, tab])
-);
-
-function tabFromLocation(): string {
-  if (typeof window === "undefined") return "Dashboard";
-  let p = window.location.pathname;
-  if (p.startsWith(BASE_URL)) p = p.slice(BASE_URL.length);
-  const slug = p.replace(/^\/+|\/+$/g, "").split("/")[0] || "";
-  return SLUG_TO_TAB[slug] ?? "Dashboard";
-}
-
-function buildPath(tab: string): string {
-  const slug = TAB_TO_SLUG[tab] ?? "dashboard";
-  return BASE_URL.replace(/\/?$/, "/") + slug;
-}
+const tabs = ["Dashboard", "Compare", "Demography", "Fact Check", "Map"];
 
 // Editorial descriptions for each feasibility dimension in feasibilityRadarData.
 const FEASIBILITY_DESCRIPTIONS: Record<string, string> = {
@@ -164,23 +125,6 @@ function Pill({ text, color }: { text: string; color: string }) {
   );
 }
 
-// Plain-English lede shown above a chart. Editorial headline that tells
-// the story in one sentence so a non-expert reader gets the takeaway
-// before they parse the visual.
-function StoryHeadline({ text }: { text: string }) {
-  return (
-    <div style={{
-      background: "#faf9f6", borderLeft: `3px solid ${brown}`,
-      padding: "12px 16px", borderRadius: 4, margin: "0 0 18px",
-      maxWidth: 760,
-    }}>
-      <div style={{ fontFamily: serif, fontSize: 17, fontWeight: 500, color: dark, lineHeight: 1.5 }}>
-        {text}
-      </div>
-    </div>
-  );
-}
-
 function FeasibilityDots({ score }: { score: number | null }) {
   if (score === null) return <span style={{ fontFamily: mono, fontSize: 11, color: gray }}>—</span>;
   const color = score >= 4 ? "#1C804C" : score >= 3 ? brown : "#d43d51";
@@ -211,48 +155,25 @@ function NavBar({
       <div className="mobile-logo" style={{
         background: brown, padding: "12px 8px", height: 18,
         display: "flex", alignItems: "center", justifyContent: "center",
-        flexShrink: 0, marginRight: 32,
+        flexShrink: 0, marginRight: 160,
       }}>
         <span style={{ fontFamily: serif, fontStyle: "italic", fontSize: 14, color: "#fff", letterSpacing: "2px" }}>
           PRDR
         </span>
       </div>
-      <div
-        className="mobile-nav mobile-w-full"
-        style={{
-          display: "flex", alignItems: "center", gap: 18,
-          flex: 1, minWidth: 0,
-          overflowX: "auto", overflowY: "hidden",
-          scrollbarWidth: "none",
-          padding: "2px 4px",
-        }}
-      >
+      <div className="mobile-nav mobile-w-full" style={{ display: "flex", alignItems: "center", gap: 24, flex: 1 }}>
         {tabs.map(t => (
-          <a
-            key={t}
-            href={buildPath(t)}
-            onClick={(e) => {
-              // Let modifier-clicks (cmd/ctrl/middle/shift) behave like a
-              // normal anchor — open in a new tab, copy link, etc.
-              if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button === 1) return;
-              e.preventDefault();
-              setActiveTab(t);
-              (e.currentTarget as HTMLAnchorElement).scrollIntoView({
-                behavior: "smooth", block: "nearest", inline: "center",
-              });
-            }}
-            style={{
-              background: "none", border: "none", cursor: "pointer", padding: "4px 4px",
-              fontFamily: sans, fontSize: 14, fontWeight: activeTab === t ? 700 : 500,
-              letterSpacing: "0.58px", textTransform: "uppercase" as const,
-              color: activeTab === t ? brown : dark,
-              boxShadow: activeTab === t ? `inset 0 -2px 0 0 ${brown}` : "none",
-              flexShrink: 0, whiteSpace: "nowrap",
-              textDecoration: "none",
-            }}
-          >
-            {t}
-          </a>
+          <button key={t} onClick={(e) => {
+            setActiveTab(t);
+            e.currentTarget.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+          }} style={{
+            background: "none", border: "none", cursor: "pointer", padding: "4px 4px",
+            fontFamily: sans, fontSize: 14, fontWeight: activeTab === t ? 700 : 500,
+            letterSpacing: "0.58px", textTransform: "uppercase" as const,
+            color: activeTab === t ? brown : dark,
+            boxShadow: activeTab === t ? `inset 0 -2px 0 0 ${brown}` : "none",
+            flexShrink: 0,
+          }}>{t}</button>
         ))}
       </div>
       <div className="mobile-w-full" style={{
@@ -260,8 +181,7 @@ function NavBar({
         borderWidth: 1, borderStyle: "solid",
         borderColor: searchQuery ? brown : border,
         borderRadius: 4, padding: "6px 11px", background: "#faf9f6",
-        width: 240, flexShrink: 0, marginLeft: 16,
-        transition: "border-color 0.2s",
+        width: 280, flexShrink: 0, transition: "border-color 0.2s",
       }}>
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
           <circle cx="5.7" cy="6.2" r="4.2" stroke={searchQuery ? brown : dark} strokeWidth="0.98" />
@@ -395,60 +315,21 @@ function DashboardTab() {
     return allPoints.filter(p => p.party === drill.party && p.relation?.toLowerCase() === drill.label.toLowerCase());
   }, [drill]);
 
-  // Headlines derived live from the data.
-  const noveltyLead = useMemo(() => {
-    const newRow = noveltyData.find(r => r.label.toLowerCase() === "new");
-    if (!newRow) return "Most promises are continuations or expansions of existing schemes — little is entirely new.";
-    const parties: Array<["admk"|"dmk"|"tvk", string, number]> = [
-      ["admk", "AIADMK", newRow.admk],
-      ["dmk", "DMK", newRow.dmk],
-      ["tvk", "TVK", newRow.tvk],
-    ];
-    parties.sort((a, b) => b[2] - a[2]);
-    const [top, second] = parties;
-    return `${top[1]} is putting the most new ideas on the table — ${top[2]}% of its manifesto is genuinely new, versus ${second[2]}% for ${second[1]}. The rest is largely expansions and continuations.`;
-  }, []);
-
-  const feasibilityLead = useMemo(() => {
-    const avg = (p: "ADMK"|"DMK"|"TVK") => {
-      const sum = feasibilityRadarData.reduce((s, r: any) => s + (r[p] ?? 0), 0);
-      return sum / feasibilityRadarData.length;
-    };
-    const scores: Array<[string, number]> = [["AIADMK", avg("ADMK")], ["DMK", avg("DMK")], ["TVK", avg("TVK")]];
-    scores.sort((a, b) => b[1] - a[1]);
-    return `On feasibility, ${scores[0][0]} scores highest overall (${scores[0][1].toFixed(1)}/5), followed by ${scores[1][0]} (${scores[1][1].toFixed(1)}) and ${scores[2][0]} (${scores[2][1].toFixed(1)}). Higher means easier to actually deliver.`;
-  }, []);
-
   return (
     <>
       {/* Hero */}
       <section className="mobile-col-reverse mobile-py-sm" style={{ padding: "56px 0 80px", display: "flex", justifyContent: "space-between", alignItems: "center", gap: 40 }}>
         <div className="mobile-w-full mobile-text-center" style={{ maxWidth: 586 }}>
-          <h1 className="mobile-hero-title" style={{ fontFamily: serif, fontWeight: 400, fontSize: 60, lineHeight: 1.115, letterSpacing: "-1.7px", color: dark, margin: 0 }}>
-            Tamil Nadu{" "}
-            <span style={{ fontWeight: 500, color: brown }}>2026</span>{" "}
-            Election Dashboard
+          <h1 className="mobile-hero-title" style={{ fontFamily: serif, fontWeight: 400, fontSize: 64, lineHeight: 1.115, letterSpacing: "-1.7px", color: dark, margin: 0 }}>
+            Tamil Nadu's parties{" "}
+            <span style={{ fontWeight: 500, color: brown }}>Manifesto</span>{" "}
+            Analysis
           </h1>
-          <p className="mobile-hero-subtitle" style={{ fontFamily: serif, fontSize: 18, lineHeight: "28px", color: "#2e2e2e", marginTop: 18, maxWidth: 586 }}>
-            One place to read the manifestos, explore the voters of each constituency,
-            compare today's turnout to 2021, and see what every party is promising — told as a story, not a spreadsheet.
+          <p className="mobile-hero-subtitle" style={{ fontFamily: serif, fontSize: 20, lineHeight: "30px", color: "#2e2e2e", marginTop: 19, maxWidth: 586 }}>
+            A structured reading of the {PARTY_LABELS.slice(0, -1).join(", ")} and {PARTY_LABELS.slice(-1)[0]} manifestos for the 2026 Legislative Assembly election.
+            Every promise parsed, classified by theme, beneficiary, sector and feasibility.
           </p>
-          <div style={{ display: "flex", gap: 10, flexWrap: "wrap", marginTop: 16 }}>
-            {[
-              { k: "Manifestos", v: `${PARTY_LABELS.length} parties` },
-              { k: "Constituencies", v: "234" },
-              { k: "Voters (SIR 2026)", v: "5.67 Cr" },
-              { k: "2021 turnout", v: `${state2021.turnoutPct.toFixed(1)}%` },
-            ].map(s => (
-              <div key={s.k} style={{
-                padding: "6px 12px", border: `1px solid ${border}`, borderRadius: 20,
-                background: "#faf9f6",
-              }}>
-                <span style={{ fontFamily: mono, fontSize: 10, color: gray, letterSpacing: "0.08em", textTransform: "uppercase" }}>{s.k}</span>
-                <span style={{ fontFamily: mono, fontSize: 11, fontWeight: 700, color: dark, marginLeft: 6 }}>{s.v}</span>
-              </div>
-            ))}
-          </div>
+
         </div>
         <div className="mobile-w-full" style={{ width: 533, borderRadius: 8, overflow: "hidden", borderWidth: 1, borderStyle: "solid", borderColor: border, flexShrink: 0, background: "#fff", display: "flex", alignItems: "center", justifyContent: "center" }}>
           <img src={imgHero} alt="Tamil Nadu Election" style={{ width: "100%", height: "auto", display: "block", objectFit: "cover" }} />
@@ -487,11 +368,10 @@ function DashboardTab() {
         <h2 style={{ fontFamily: serif, fontSize: 28, fontWeight: 400, color: dark, margin: "0 0 6px", lineHeight: 1.2 }}>
           How much is genuinely new?
         </h2>
-        <p style={{ fontFamily: serif, fontSize: 15, lineHeight: "28px", color: "#2e2e2e", margin: "0 0 18px" }}>
+        <p style={{ fontFamily: serif, fontSize: 15, lineHeight: "28px", color: "#2e2e2e", margin: "0 0 24px" }}>
           Each promise classified against existing schemes: truly new, an expansion, an amendment or a continuation.
           Click any bar to see the specific promises.
         </p>
-        <StoryHeadline text={noveltyLead} />
         <div style={{ height: 240 }}>
           <ResponsiveContainer width="100%" height="100%">
             <BarChart data={noveltyData} barCategoryGap="28%" barGap={3}>
@@ -499,7 +379,7 @@ function DashboardTab() {
               <YAxis tick={{ fontFamily: mono, fontSize: 11, fill: gray }} axisLine={false} tickLine={false} />
               <Tooltip contentStyle={{ fontFamily: sans, fontSize: 12, border: `1px solid ${border}`, borderRadius: 4 }} cursor={{ fill: "#f5f3ee" }} />
               <Legend iconType="circle" iconSize={8} wrapperStyle={{ fontFamily: sans, fontSize: 12 }} />
-              <Bar dataKey="admk" name="AIADMK" fill={PARTY_COLORS_BY_LABEL["AIADMK"]} radius={[3, 3, 0, 0]} style={{ cursor: "pointer" }} onClick={(data) => data.admk > 0 && setDrill({ party: "admk", label: data.label })} />
+              <Bar dataKey="admk" name="ADMK" fill={PARTY_COLORS_BY_LABEL["ADMK"]} radius={[3, 3, 0, 0]} style={{ cursor: "pointer" }} onClick={(data) => data.admk > 0 && setDrill({ party: "admk", label: data.label })} />
               <Bar dataKey="dmk" name="DMK" fill={PARTY_COLORS_BY_LABEL["DMK"]} radius={[3, 3, 0, 0]} style={{ cursor: "pointer" }} onClick={(data) => data.dmk > 0 && setDrill({ party: "dmk", label: data.label })} />
               <Bar dataKey="tvk" name="TVK" fill={PARTY_COLORS_BY_LABEL["TVK"]} radius={[3, 3, 0, 0]} style={{ cursor: "pointer" }} onClick={(data) => data.tvk > 0 && setDrill({ party: "tvk", label: data.label })} />
             </BarChart>
@@ -512,18 +392,17 @@ function DashboardTab() {
         <h2 style={{ fontFamily: serif, fontSize: 28, fontWeight: 400, color: dark, margin: "0 0 6px" }}>
           How feasible are the promises?
         </h2>
-        <p style={{ fontFamily: serif, fontSize: 15, lineHeight: "28px", color: "#2e2e2e", margin: "0 0 18px", maxWidth: 600 }}>
+        <p style={{ fontFamily: serif, fontSize: 15, lineHeight: "28px", color: "#2e2e2e", margin: "0 0 28px", maxWidth: 600 }}>
           Each promise was scored 1–5 across {feasibilityRadarData.length} dimensions using LLM analysis grounded in real policy data.
           Higher score = more feasible.
         </p>
-        <StoryHeadline text={feasibilityLead} />
         <div className="mobile-col mobile-gap-sm" style={{ display: "flex", gap: 40, alignItems: "flex-start" }}>
           <div className="mobile-w-full mobile-h-auto mobile-basis-initial" style={{ flex: "0 0 400px", height: 320 }}>
             <ResponsiveContainer width="100%" height={320}>
               <RadarChart data={feasibilityRadarData}>
                 <PolarGrid stroke={border} />
                 <PolarAngleAxis dataKey="dim" tick={{ fontFamily: sans, fontSize: 12, fill: gray }} />
-                <Radar name="AIADMK" dataKey="AIADMK" stroke={admkColor} fill={admkColor} fillOpacity={0.12} strokeWidth={2} dot />
+                <Radar name="ADMK" dataKey="ADMK" stroke={admkColor} fill={admkColor} fillOpacity={0.12} strokeWidth={2} dot />
                 <Radar name="DMK" dataKey="DMK" stroke={dmkColor} fill={dmkColor} fillOpacity={0.12} strokeWidth={2} dot />
                 <Radar name="TVK" dataKey="TVK" stroke={tvkColor} fill={tvkColor} fillOpacity={0.12} strokeWidth={2} dot />
                 <Legend iconType="circle" iconSize={8} wrapperStyle={{ fontFamily: sans, fontSize: 12 }} />
@@ -598,7 +477,7 @@ function DemographyTab() {
                   cursor={{ fill: "#f5f3ee" }}
                 />
                 <Legend iconType="circle" iconSize={8} wrapperStyle={{ fontFamily: sans, fontSize: 12 }} />
-                <Bar dataKey="admk" name="AIADMK" fill={admkColor} radius={[3, 3, 0, 0]} />
+                <Bar dataKey="admk" name="ADMK" fill={admkColor} radius={[3, 3, 0, 0]} />
                 <Bar dataKey="dmk" name="DMK" fill={dmkColor} radius={[3, 3, 0, 0]} />
                 <Bar dataKey="tvk" name="TVK" fill={tvkColor} radius={[3, 3, 0, 0]} />
               </BarChart>
@@ -613,50 +492,18 @@ function DemographyTab() {
 // ── App Root ──────────────────────────────────────────────────────────────
 
 export default function App() {
-  const [activeTab, setActiveTab] = useState<string>(() => tabFromLocation());
+  const [activeTab, setActiveTab] = useState("Dashboard");
   const [searchQuery, setSearchQuery] = useState("");
-
-  // On first mount: if the user hit the bare base URL ("/tn-2026/"),
-  // rewrite the URL to "/tn-2026/dashboard" without adding history.
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-    const p = window.location.pathname;
-    const stripped = p.startsWith(BASE_URL) ? p.slice(BASE_URL.length) : p;
-    const bare = stripped.replace(/^\/+|\/+$/g, "");
-    if (!bare) {
-      window.history.replaceState({ tab: "Dashboard" }, "", buildPath("Dashboard"));
-    }
-  }, []);
-
-  // Keep the URL in sync with the active tab.  Uses `pushState` so the
-  // browser back/forward buttons work across tabs.
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-    const desired = buildPath(activeTab);
-    if (window.location.pathname !== desired) {
-      window.history.pushState({ tab: activeTab }, "", desired);
-    }
-  }, [activeTab]);
-
-  // Respond to back/forward navigation by reading the tab out of the URL.
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-    function onPop() {
-      setActiveTab(tabFromLocation());
-    }
-    window.addEventListener("popstate", onPop);
-    return () => window.removeEventListener("popstate", onPop);
-  }, []);
 
   // Fire a GA4 page_view every time the active tab changes so each tab
   // registers as its own page in Google Analytics.
   useEffect(() => {
     if (typeof window === "undefined" || !window.gtag) return;
-    const path = `/${TAB_TO_SLUG[activeTab] ?? activeTab.toLowerCase().replace(/\s+/g, "-")}`;
+    const path = `/${activeTab.toLowerCase().replace(/\s+/g, "-")}`;
     window.gtag("event", "page_view", {
-      page_title: `TN Elections 2026 — ${activeTab}`,
+      page_title: `Manifesto Analysis — ${activeTab}`,
       page_path: path,
-      page_location: window.location.origin + window.location.pathname,
+      page_location: window.location.origin + window.location.pathname + "#" + path.slice(1),
     });
   }, [activeTab]);
 
@@ -666,10 +513,9 @@ export default function App() {
         <NavBar activeTab={activeTab} setActiveTab={setActiveTab} searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
         {activeTab === "Search" && <SearchTab query={searchQuery} />}
         {activeTab === "Dashboard" && <DashboardTab />}
-        {activeTab === "Poll Maps" && <ConstituencyExplorer />}
         {activeTab === "Compare" && <section style={{ padding: "0px 0" }}><CompareGrid /></section>}
         {activeTab === "Demography" && <DemographyTab />}
-        {activeTab === "Voters" && <SIRMap />}
+        {activeTab === "Map" && <MapExplorer />}
         {activeTab === "Fact Check" && <FactCheckPanel />}
 
         {/* Global Footer / Disclaimer */}
