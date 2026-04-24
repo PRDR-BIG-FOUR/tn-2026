@@ -1,0 +1,2817 @@
+{
+  "source": "TN CEO — AC wise Electors as on Electoral Roll (06/01/2025)",
+  "as_of": "2025-01-06",
+  "columns": [
+    "sl_no",
+    "district",
+    "ac",
+    "male",
+    "female",
+    "third_gender",
+    "total"
+  ],
+  "districts": [
+    {
+      "district_no": 1,
+      "district_name": "Thiruvallur",
+      "acs": [
+        {
+          "sl_no": 1,
+          "ac_no": 1,
+          "ac_name": "Gummidipoondi",
+          "reservation": null,
+          "male": 136912,
+          "female": 144931,
+          "third_gender": 40,
+          "total": 281883
+        },
+        {
+          "sl_no": 2,
+          "ac_no": 2,
+          "ac_name": "Ponneri",
+          "reservation": "SC",
+          "male": 130462,
+          "female": 137555,
+          "third_gender": 33,
+          "total": 268050
+        },
+        {
+          "sl_no": 3,
+          "ac_no": 3,
+          "ac_name": "Tiruttani",
+          "reservation": null,
+          "male": 138048,
+          "female": 142626,
+          "third_gender": 32,
+          "total": 280706
+        },
+        {
+          "sl_no": 4,
+          "ac_no": 4,
+          "ac_name": "Thiruvallur",
+          "reservation": null,
+          "male": 131765,
+          "female": 138857,
+          "third_gender": 40,
+          "total": 270662
+        },
+        {
+          "sl_no": 5,
+          "ac_no": 5,
+          "ac_name": "Poonamallee",
+          "reservation": "SC",
+          "male": 189066,
+          "female": 197677,
+          "third_gender": 80,
+          "total": 386823
+        },
+        {
+          "sl_no": 6,
+          "ac_no": 6,
+          "ac_name": "Avadi",
+          "reservation": null,
+          "male": 226653,
+          "female": 233663,
+          "third_gender": 92,
+          "total": 460408
+        },
+        {
+          "sl_no": 7,
+          "ac_no": 7,
+          "ac_name": "Maduravoyal",
+          "reservation": null,
+          "male": 221230,
+          "female": 220320,
+          "third_gender": 119,
+          "total": 441669
+        },
+        {
+          "sl_no": 8,
+          "ac_no": 8,
+          "ac_name": "Ambattur",
+          "reservation": null,
+          "male": 183234,
+          "female": 185337,
+          "third_gender": 81,
+          "total": 368652
+        },
+        {
+          "sl_no": 9,
+          "ac_no": 9,
+          "ac_name": "Madavaram",
+          "reservation": null,
+          "male": 240773,
+          "female": 245645,
+          "third_gender": 118,
+          "total": 486536
+        },
+        {
+          "sl_no": 10,
+          "ac_no": 10,
+          "ac_name": "Thiruvottiyur",
+          "reservation": null,
+          "male": 140252,
+          "female": 145252,
+          "third_gender": 152,
+          "total": 285656
+        }
+      ],
+      "totals": {
+        "male": 1738395,
+        "female": 1791863,
+        "third_gender": 787,
+        "total": 3531045
+      }
+    },
+    {
+      "district_no": 2,
+      "district_name": "Chennai",
+      "acs": [
+        {
+          "sl_no": 11,
+          "ac_no": 11,
+          "ac_name": "Dr.Radhakrishnan Nagar",
+          "reservation": null,
+          "male": 120727,
+          "female": 130082,
+          "third_gender": 121,
+          "total": 250930
+        },
+        {
+          "sl_no": 12,
+          "ac_no": 12,
+          "ac_name": "Perambur",
+          "reservation": null,
+          "male": 145072,
+          "female": 150696,
+          "third_gender": 92,
+          "total": 295860
+        },
+        {
+          "sl_no": 13,
+          "ac_no": 13,
+          "ac_name": "Kolathur",
+          "reservation": null,
+          "male": 140790,
+          "female": 148074,
+          "third_gender": 73,
+          "total": 288937
+        },
+        {
+          "sl_no": 14,
+          "ac_no": 14,
+          "ac_name": "Villivakkam",
+          "reservation": null,
+          "male": 119733,
+          "female": 124730,
+          "third_gender": 65,
+          "total": 244528
+        },
+        {
+          "sl_no": 15,
+          "ac_no": 15,
+          "ac_name": "Thiru-Vi-Ka-Nagar",
+          "reservation": "SC",
+          "male": 108105,
+          "female": 114547,
+          "third_gender": 75,
+          "total": 222727
+        },
+        {
+          "sl_no": 16,
+          "ac_no": 16,
+          "ac_name": "Egmore",
+          "reservation": "SC",
+          "male": 96546,
+          "female": 98535,
+          "third_gender": 70,
+          "total": 195151
+        },
+        {
+          "sl_no": 17,
+          "ac_no": 17,
+          "ac_name": "Royapuram",
+          "reservation": null,
+          "male": 96217,
+          "female": 100745,
+          "third_gender": 73,
+          "total": 197035
+        },
+        {
+          "sl_no": 18,
+          "ac_no": 18,
+          "ac_name": "Harbour",
+          "reservation": null,
+          "male": 92615,
+          "female": 86296,
+          "third_gender": 69,
+          "total": 178980
+        },
+        {
+          "sl_no": 19,
+          "ac_no": 19,
+          "ac_name": "Chepauk-Thiruvallikeni",
+          "reservation": null,
+          "male": 117597,
+          "female": 122180,
+          "third_gender": 63,
+          "total": 239840
+        },
+        {
+          "sl_no": 20,
+          "ac_no": 20,
+          "ac_name": "Thousand Lights",
+          "reservation": null,
+          "male": 116363,
+          "female": 121998,
+          "third_gender": 114,
+          "total": 238475
+        },
+        {
+          "sl_no": 21,
+          "ac_no": 21,
+          "ac_name": "Anna Nagar",
+          "reservation": null,
+          "male": 137140,
+          "female": 143248,
+          "third_gender": 102,
+          "total": 280490
+        },
+        {
+          "sl_no": 22,
+          "ac_no": 22,
+          "ac_name": "Virugampakkam",
+          "reservation": null,
+          "male": 142634,
+          "female": 144692,
+          "third_gender": 91,
+          "total": 287417
+        },
+        {
+          "sl_no": 23,
+          "ac_no": 23,
+          "ac_name": "Saidapet",
+          "reservation": null,
+          "male": 134153,
+          "female": 139382,
+          "third_gender": 88,
+          "total": 273623
+        },
+        {
+          "sl_no": 24,
+          "ac_no": 24,
+          "ac_name": "Thiyagarayanagar",
+          "reservation": null,
+          "male": 115975,
+          "female": 119588,
+          "third_gender": 53,
+          "total": 235616
+        },
+        {
+          "sl_no": 25,
+          "ac_no": 25,
+          "ac_name": "Mylapore",
+          "reservation": null,
+          "male": 130527,
+          "female": 139055,
+          "third_gender": 45,
+          "total": 269627
+        },
+        {
+          "sl_no": 26,
+          "ac_no": 26,
+          "ac_name": "Velachery",
+          "reservation": null,
+          "male": 156085,
+          "female": 160475,
+          "third_gender": 82,
+          "total": 316642
+        }
+      ],
+      "totals": {
+        "male": 1970279,
+        "female": 2044323,
+        "third_gender": 1276,
+        "total": 4015878
+      }
+    },
+    {
+      "district_no": 3,
+      "district_name": "Kancheepuram",
+      "acs": [
+        {
+          "sl_no": 27,
+          "ac_no": 28,
+          "ac_name": "Alandur",
+          "reservation": null,
+          "male": 194407,
+          "female": 200088,
+          "third_gender": 62,
+          "total": 394557
+        },
+        {
+          "sl_no": 28,
+          "ac_no": 29,
+          "ac_name": "Sriperumbudur",
+          "reservation": "SC",
+          "male": 193913,
+          "female": 206199,
+          "third_gender": 68,
+          "total": 400180
+        },
+        {
+          "sl_no": 29,
+          "ac_no": 36,
+          "ac_name": "Uthiramerur",
+          "reservation": null,
+          "male": 130715,
+          "female": 141193,
+          "third_gender": 54,
+          "total": 271962
+        },
+        {
+          "sl_no": 30,
+          "ac_no": 37,
+          "ac_name": "Kancheepuram",
+          "reservation": null,
+          "male": 151897,
+          "female": 163081,
+          "third_gender": 33,
+          "total": 315011
+        }
+      ],
+      "totals": {
+        "male": 670932,
+        "female": 710561,
+        "third_gender": 217,
+        "total": 1381710
+      }
+    },
+    {
+      "district_no": 4,
+      "district_name": "Vellore",
+      "acs": [
+        {
+          "sl_no": 31,
+          "ac_no": 40,
+          "ac_name": "Katpadi",
+          "reservation": null,
+          "male": 120992,
+          "female": 130642,
+          "third_gender": 40,
+          "total": 251674
+        },
+        {
+          "sl_no": 32,
+          "ac_no": 43,
+          "ac_name": "Vellore",
+          "reservation": null,
+          "male": 120680,
+          "female": 131233,
+          "third_gender": 52,
+          "total": 251965
+        },
+        {
+          "sl_no": 33,
+          "ac_no": 44,
+          "ac_name": "Anaikattu",
+          "reservation": null,
+          "male": 127769,
+          "female": 136908,
+          "third_gender": 37,
+          "total": 264714
+        },
+        {
+          "sl_no": 34,
+          "ac_no": 45,
+          "ac_name": "Kilvaithinankuppam",
+          "reservation": "SC",
+          "male": 116018,
+          "female": 122414,
+          "third_gender": 10,
+          "total": 238442
+        },
+        {
+          "sl_no": 35,
+          "ac_no": 46,
+          "ac_name": "Gudiyattam",
+          "reservation": "SC",
+          "male": 145757,
+          "female": 156956,
+          "third_gender": 45,
+          "total": 302758
+        }
+      ],
+      "totals": {
+        "male": 631216,
+        "female": 678153,
+        "third_gender": 184,
+        "total": 1309553
+      }
+    },
+    {
+      "district_no": 5,
+      "district_name": "Krishnagiri",
+      "acs": [
+        {
+          "sl_no": 36,
+          "ac_no": 51,
+          "ac_name": "Uthangarai",
+          "reservation": "SC",
+          "male": 124256,
+          "female": 124686,
+          "third_gender": 54,
+          "total": 248996
+        },
+        {
+          "sl_no": 37,
+          "ac_no": 52,
+          "ac_name": "Bargur",
+          "reservation": null,
+          "male": 125155,
+          "female": 128809,
+          "third_gender": 19,
+          "total": 253983
+        },
+        {
+          "sl_no": 38,
+          "ac_no": 53,
+          "ac_name": "Krishnagiri",
+          "reservation": null,
+          "male": 137139,
+          "female": 143060,
+          "third_gender": 56,
+          "total": 280255
+        },
+        {
+          "sl_no": 39,
+          "ac_no": 54,
+          "ac_name": "Veppanahalli",
+          "reservation": null,
+          "male": 133099,
+          "female": 129747,
+          "third_gender": 40,
+          "total": 262886
+        },
+        {
+          "sl_no": 40,
+          "ac_no": 55,
+          "ac_name": "Hosur",
+          "reservation": null,
+          "male": 182482,
+          "female": 178836,
+          "third_gender": 93,
+          "total": 361411
+        },
+        {
+          "sl_no": 41,
+          "ac_no": 56,
+          "ac_name": "Thalli",
+          "reservation": null,
+          "male": 129274,
+          "female": 124001,
+          "third_gender": 44,
+          "total": 253319
+        }
+      ],
+      "totals": {
+        "male": 831405,
+        "female": 829139,
+        "third_gender": 306,
+        "total": 1660850
+      }
+    },
+    {
+      "district_no": 6,
+      "district_name": "Dharmapuri",
+      "acs": [
+        {
+          "sl_no": 42,
+          "ac_no": 57,
+          "ac_name": "Palacodu",
+          "reservation": null,
+          "male": 122998,
+          "female": 121224,
+          "third_gender": 21,
+          "total": 244243
+        },
+        {
+          "sl_no": 43,
+          "ac_no": 58,
+          "ac_name": "Pennagaram",
+          "reservation": null,
+          "male": 129613,
+          "female": 122421,
+          "third_gender": 9,
+          "total": 252043
+        },
+        {
+          "sl_no": 44,
+          "ac_no": 59,
+          "ac_name": "Dharmapuri",
+          "reservation": null,
+          "male": 135019,
+          "female": 133298,
+          "third_gender": 107,
+          "total": 268424
+        },
+        {
+          "sl_no": 45,
+          "ac_no": 60,
+          "ac_name": "Pappireddippatti",
+          "reservation": null,
+          "male": 131349,
+          "female": 131508,
+          "third_gender": 16,
+          "total": 262873
+        },
+        {
+          "sl_no": 46,
+          "ac_no": 61,
+          "ac_name": "Harur",
+          "reservation": "SC",
+          "male": 124983,
+          "female": 125332,
+          "third_gender": 19,
+          "total": 250334
+        }
+      ],
+      "totals": {
+        "male": 643962,
+        "female": 633783,
+        "third_gender": 172,
+        "total": 1277917
+      }
+    },
+    {
+      "district_no": 7,
+      "district_name": "Tiruvannamalai",
+      "acs": [
+        {
+          "sl_no": 47,
+          "ac_no": 62,
+          "ac_name": "Chengam",
+          "reservation": "SC",
+          "male": 140679,
+          "female": 143680,
+          "third_gender": 12,
+          "total": 284371
+        },
+        {
+          "sl_no": 48,
+          "ac_no": 63,
+          "ac_name": "Tiruvannamalai",
+          "reservation": null,
+          "male": 134401,
+          "female": 143904,
+          "third_gender": 42,
+          "total": 278347
+        },
+        {
+          "sl_no": 49,
+          "ac_no": 64,
+          "ac_name": "Kilpennathur",
+          "reservation": null,
+          "male": 126782,
+          "female": 132661,
+          "third_gender": 12,
+          "total": 259455
+        },
+        {
+          "sl_no": 50,
+          "ac_no": 65,
+          "ac_name": "Kalasapakkam",
+          "reservation": null,
+          "male": 124862,
+          "female": 129307,
+          "third_gender": 13,
+          "total": 254182
+        },
+        {
+          "sl_no": 51,
+          "ac_no": 66,
+          "ac_name": "Polur",
+          "reservation": null,
+          "male": 119874,
+          "female": 125234,
+          "third_gender": 10,
+          "total": 245118
+        },
+        {
+          "sl_no": 52,
+          "ac_no": 67,
+          "ac_name": "Arani",
+          "reservation": null,
+          "male": 137008,
+          "female": 145769,
+          "third_gender": 29,
+          "total": 282806
+        },
+        {
+          "sl_no": 53,
+          "ac_no": 68,
+          "ac_name": "Cheyyar",
+          "reservation": null,
+          "male": 128880,
+          "female": 135357,
+          "third_gender": 8,
+          "total": 264245
+        },
+        {
+          "sl_no": 54,
+          "ac_no": 69,
+          "ac_name": "Vandavasi",
+          "reservation": "SC",
+          "male": 121462,
+          "female": 126173,
+          "third_gender": 4,
+          "total": 247639
+        }
+      ],
+      "totals": {
+        "male": 1033948,
+        "female": 1082085,
+        "third_gender": 130,
+        "total": 2116163
+      }
+    },
+    {
+      "district_no": 8,
+      "district_name": "Viluppuram",
+      "acs": [
+        {
+          "sl_no": 55,
+          "ac_no": 70,
+          "ac_name": "Gingee",
+          "reservation": null,
+          "male": 127865,
+          "female": 132073,
+          "third_gender": 34,
+          "total": 259972
+        },
+        {
+          "sl_no": 56,
+          "ac_no": 71,
+          "ac_name": "Mailam",
+          "reservation": null,
+          "male": 108394,
+          "female": 109371,
+          "third_gender": 20,
+          "total": 217785
+        },
+        {
+          "sl_no": 57,
+          "ac_no": 72,
+          "ac_name": "Tindivanam",
+          "reservation": "SC",
+          "male": 114714,
+          "female": 119443,
+          "third_gender": 17,
+          "total": 234174
+        },
+        {
+          "sl_no": 58,
+          "ac_no": 73,
+          "ac_name": "Vanur",
+          "reservation": "SC",
+          "male": 114114,
+          "female": 119541,
+          "third_gender": 20,
+          "total": 233675
+        },
+        {
+          "sl_no": 59,
+          "ac_no": 74,
+          "ac_name": "Viluppuram",
+          "reservation": null,
+          "male": 129286,
+          "female": 136104,
+          "third_gender": 79,
+          "total": 265469
+        },
+        {
+          "sl_no": 60,
+          "ac_no": 75,
+          "ac_name": "Vikravandi",
+          "reservation": null,
+          "male": 119216,
+          "female": 123377,
+          "third_gender": 29,
+          "total": 242622
+        },
+        {
+          "sl_no": 61,
+          "ac_no": 76,
+          "ac_name": "Tirukkoyilur",
+          "reservation": null,
+          "male": 131543,
+          "female": 131446,
+          "third_gender": 32,
+          "total": 263021
+        }
+      ],
+      "totals": {
+        "male": 845132,
+        "female": 871355,
+        "third_gender": 231,
+        "total": 1716718
+      }
+    },
+    {
+      "district_no": 9,
+      "district_name": "Salem",
+      "acs": [
+        {
+          "sl_no": 62,
+          "ac_no": 81,
+          "ac_name": "Gangavalli",
+          "reservation": "SC",
+          "male": 112591,
+          "female": 119065,
+          "third_gender": 9,
+          "total": 231665
+        },
+        {
+          "sl_no": 63,
+          "ac_no": 82,
+          "ac_name": "Attur",
+          "reservation": "SC",
+          "male": 117645,
+          "female": 125473,
+          "third_gender": 20,
+          "total": 243138
+        },
+        {
+          "sl_no": 64,
+          "ac_no": 83,
+          "ac_name": "Yercaud",
+          "reservation": "ST",
+          "male": 139714,
+          "female": 146584,
+          "third_gender": 16,
+          "total": 286314
+        },
+        {
+          "sl_no": 65,
+          "ac_no": 84,
+          "ac_name": "Omalur",
+          "reservation": null,
+          "male": 154258,
+          "female": 148350,
+          "third_gender": 14,
+          "total": 302622
+        },
+        {
+          "sl_no": 66,
+          "ac_no": 85,
+          "ac_name": "Mettur",
+          "reservation": null,
+          "male": 139997,
+          "female": 137747,
+          "third_gender": 18,
+          "total": 277762
+        },
+        {
+          "sl_no": 67,
+          "ac_no": 86,
+          "ac_name": "Edappadi",
+          "reservation": null,
+          "male": 146507,
+          "female": 143628,
+          "third_gender": 23,
+          "total": 290158
+        },
+        {
+          "sl_no": 68,
+          "ac_no": 87,
+          "ac_name": "Sankari",
+          "reservation": null,
+          "male": 137313,
+          "female": 135519,
+          "third_gender": 17,
+          "total": 272849
+        },
+        {
+          "sl_no": 69,
+          "ac_no": 88,
+          "ac_name": "Salem (West)",
+          "reservation": null,
+          "male": 151857,
+          "female": 153973,
+          "third_gender": 78,
+          "total": 305908
+        },
+        {
+          "sl_no": 70,
+          "ac_no": 89,
+          "ac_name": "Salem (North)",
+          "reservation": null,
+          "male": 131992,
+          "female": 139580,
+          "third_gender": 48,
+          "total": 271620
+        },
+        {
+          "sl_no": 71,
+          "ac_no": 90,
+          "ac_name": "Salem (South)",
+          "reservation": null,
+          "male": 123957,
+          "female": 130387,
+          "third_gender": 59,
+          "total": 254403
+        },
+        {
+          "sl_no": 72,
+          "ac_no": 91,
+          "ac_name": "Veerapandi",
+          "reservation": null,
+          "male": 131876,
+          "female": 131616,
+          "third_gender": 22,
+          "total": 263514
+        }
+      ],
+      "totals": {
+        "male": 1487707,
+        "female": 1511922,
+        "third_gender": 324,
+        "total": 2999953
+      }
+    },
+    {
+      "district_no": 10,
+      "district_name": "Namakkal",
+      "acs": [
+        {
+          "sl_no": 73,
+          "ac_no": 92,
+          "ac_name": "Rasipuram",
+          "reservation": "SC",
+          "male": 114027,
+          "female": 120412,
+          "third_gender": 11,
+          "total": 234450
+        },
+        {
+          "sl_no": 74,
+          "ac_no": 93,
+          "ac_name": "Senthamangalam",
+          "reservation": "ST",
+          "male": 120244,
+          "female": 126827,
+          "third_gender": 33,
+          "total": 247104
+        },
+        {
+          "sl_no": 75,
+          "ac_no": 94,
+          "ac_name": "Namakkal",
+          "reservation": null,
+          "male": 125608,
+          "female": 135876,
+          "third_gender": 56,
+          "total": 261540
+        },
+        {
+          "sl_no": 76,
+          "ac_no": 95,
+          "ac_name": "Paramathi-Velur",
+          "reservation": null,
+          "male": 105471,
+          "female": 115438,
+          "third_gender": 11,
+          "total": 220920
+        },
+        {
+          "sl_no": 77,
+          "ac_no": 96,
+          "ac_name": "Tiruchengodu",
+          "reservation": null,
+          "male": 111497,
+          "female": 119144,
+          "third_gender": 63,
+          "total": 230704
+        },
+        {
+          "sl_no": 78,
+          "ac_no": 97,
+          "ac_name": "Kumarapalayam",
+          "reservation": null,
+          "male": 125708,
+          "female": 133768,
+          "third_gender": 78,
+          "total": 259554
+        }
+      ],
+      "totals": {
+        "male": 702555,
+        "female": 751465,
+        "third_gender": 252,
+        "total": 1454272
+      }
+    },
+    {
+      "district_no": 11,
+      "district_name": "Erode",
+      "acs": [
+        {
+          "sl_no": 79,
+          "ac_no": 98,
+          "ac_name": "Erode (East)",
+          "reservation": null,
+          "male": 109636,
+          "female": 116760,
+          "third_gender": 37,
+          "total": 226433
+        },
+        {
+          "sl_no": 80,
+          "ac_no": 99,
+          "ac_name": "Erode (West)",
+          "reservation": null,
+          "male": 146354,
+          "female": 154714,
+          "third_gender": 48,
+          "total": 301116
+        },
+        {
+          "sl_no": 81,
+          "ac_no": 100,
+          "ac_name": "Modakkurichi",
+          "reservation": null,
+          "male": 108839,
+          "female": 119829,
+          "third_gender": 12,
+          "total": 228680
+        },
+        {
+          "sl_no": 82,
+          "ac_no": 103,
+          "ac_name": "Perundurai",
+          "reservation": null,
+          "male": 114478,
+          "female": 123367,
+          "third_gender": 9,
+          "total": 237854
+        },
+        {
+          "sl_no": 83,
+          "ac_no": 104,
+          "ac_name": "Bhavani",
+          "reservation": null,
+          "male": 118110,
+          "female": 124088,
+          "third_gender": 20,
+          "total": 242218
+        },
+        {
+          "sl_no": 84,
+          "ac_no": 105,
+          "ac_name": "Anthiyur",
+          "reservation": null,
+          "male": 108230,
+          "female": 112662,
+          "third_gender": 30,
+          "total": 220922
+        },
+        {
+          "sl_no": 85,
+          "ac_no": 106,
+          "ac_name": "Gobichettipalayam",
+          "reservation": null,
+          "male": 122059,
+          "female": 134148,
+          "third_gender": 13,
+          "total": 256220
+        },
+        {
+          "sl_no": 86,
+          "ac_no": 107,
+          "ac_name": "Bhavanisagar",
+          "reservation": "SC",
+          "male": 127650,
+          "female": 136303,
+          "third_gender": 23,
+          "total": 263976
+        }
+      ],
+      "totals": {
+        "male": 955356,
+        "female": 1021871,
+        "third_gender": 192,
+        "total": 1977419
+      }
+    },
+    {
+      "district_no": 12,
+      "district_name": "The Nilgiris",
+      "acs": [
+        {
+          "sl_no": 87,
+          "ac_no": 108,
+          "ac_name": "Udhagamandalam",
+          "reservation": null,
+          "male": 94581,
+          "female": 103813,
+          "third_gender": 11,
+          "total": 198405
+        },
+        {
+          "sl_no": 88,
+          "ac_no": 109,
+          "ac_name": "Gudalur",
+          "reservation": "SC",
+          "male": 94582,
+          "female": 100727,
+          "third_gender": 3,
+          "total": 195312
+        },
+        {
+          "sl_no": 89,
+          "ac_no": 110,
+          "ac_name": "Coonoor",
+          "reservation": null,
+          "male": 90038,
+          "female": 100501,
+          "third_gender": 4,
+          "total": 190543
+        }
+      ],
+      "totals": {
+        "male": 279201,
+        "female": 305041,
+        "third_gender": 18,
+        "total": 584260
+      }
+    },
+    {
+      "district_no": 13,
+      "district_name": "Coimbatore",
+      "acs": [
+        {
+          "sl_no": 90,
+          "ac_no": 111,
+          "ac_name": "Mettuppalayam",
+          "reservation": null,
+          "male": 149826,
+          "female": 162018,
+          "third_gender": 47,
+          "total": 311891
+        },
+        {
+          "sl_no": 91,
+          "ac_no": 116,
+          "ac_name": "Sulur",
+          "reservation": null,
+          "male": 162086,
+          "female": 172126,
+          "third_gender": 99,
+          "total": 334311
+        },
+        {
+          "sl_no": 92,
+          "ac_no": 117,
+          "ac_name": "Kavundampalayam",
+          "reservation": null,
+          "male": 243839,
+          "female": 247153,
+          "third_gender": 151,
+          "total": 491143
+        },
+        {
+          "sl_no": 93,
+          "ac_no": 118,
+          "ac_name": "Coimbatore (North)",
+          "reservation": null,
+          "male": 173043,
+          "female": 172855,
+          "third_gender": 36,
+          "total": 345934
+        },
+        {
+          "sl_no": 94,
+          "ac_no": 119,
+          "ac_name": "Thondamuthur",
+          "reservation": null,
+          "male": 168227,
+          "female": 174557,
+          "third_gender": 144,
+          "total": 342928
+        },
+        {
+          "sl_no": 95,
+          "ac_no": 120,
+          "ac_name": "Coimbatore (South)",
+          "reservation": null,
+          "male": 121431,
+          "female": 123398,
+          "third_gender": 34,
+          "total": 244863
+        },
+        {
+          "sl_no": 96,
+          "ac_no": 121,
+          "ac_name": "Singanallur",
+          "reservation": null,
+          "male": 166199,
+          "female": 170611,
+          "third_gender": 32,
+          "total": 336842
+        },
+        {
+          "sl_no": 97,
+          "ac_no": 122,
+          "ac_name": "Kinathukadavu",
+          "reservation": null,
+          "male": 170808,
+          "female": 178963,
+          "third_gender": 44,
+          "total": 349815
+        },
+        {
+          "sl_no": 98,
+          "ac_no": 123,
+          "ac_name": "Pollachi",
+          "reservation": null,
+          "male": 108969,
+          "female": 120073,
+          "third_gender": 44,
+          "total": 229086
+        },
+        {
+          "sl_no": 99,
+          "ac_no": 124,
+          "ac_name": "Valparai",
+          "reservation": "SC",
+          "male": 94250,
+          "female": 104505,
+          "third_gender": 26,
+          "total": 198781
+        }
+      ],
+      "totals": {
+        "male": 1558678,
+        "female": 1626259,
+        "third_gender": 657,
+        "total": 3185594
+      }
+    },
+    {
+      "district_no": 14,
+      "district_name": "Dindigul",
+      "acs": [
+        {
+          "sl_no": 100,
+          "ac_no": 127,
+          "ac_name": "Palani",
+          "reservation": null,
+          "male": 134604,
+          "female": 141454,
+          "third_gender": 63,
+          "total": 276121
+        },
+        {
+          "sl_no": 101,
+          "ac_no": 128,
+          "ac_name": "Oddanchatram",
+          "reservation": null,
+          "male": 115958,
+          "female": 124876,
+          "third_gender": 7,
+          "total": 240841
+        },
+        {
+          "sl_no": 102,
+          "ac_no": 129,
+          "ac_name": "Athoor",
+          "reservation": null,
+          "male": 142311,
+          "female": 154020,
+          "third_gender": 24,
+          "total": 296355
+        },
+        {
+          "sl_no": 103,
+          "ac_no": 130,
+          "ac_name": "Nilakkottai",
+          "reservation": "SC",
+          "male": 122395,
+          "female": 128060,
+          "third_gender": 18,
+          "total": 250473
+        },
+        {
+          "sl_no": 104,
+          "ac_no": 131,
+          "ac_name": "Natham",
+          "reservation": null,
+          "male": 142557,
+          "female": 149875,
+          "third_gender": 75,
+          "total": 292507
+        },
+        {
+          "sl_no": 105,
+          "ac_no": 132,
+          "ac_name": "Dindigul",
+          "reservation": null,
+          "male": 138182,
+          "female": 146884,
+          "third_gender": 43,
+          "total": 285109
+        },
+        {
+          "sl_no": 106,
+          "ac_no": 133,
+          "ac_name": "Vedasandur",
+          "reservation": null,
+          "male": 133699,
+          "female": 140456,
+          "third_gender": 3,
+          "total": 274158
+        }
+      ],
+      "totals": {
+        "male": 929706,
+        "female": 985625,
+        "third_gender": 233,
+        "total": 1915564
+      }
+    },
+    {
+      "district_no": 15,
+      "district_name": "Karur",
+      "acs": [
+        {
+          "sl_no": 107,
+          "ac_no": 134,
+          "ac_name": "Aravakurichi",
+          "reservation": null,
+          "male": 101141,
+          "female": 111410,
+          "third_gender": 4,
+          "total": 212555
+        },
+        {
+          "sl_no": 108,
+          "ac_no": 135,
+          "ac_name": "Karur",
+          "reservation": null,
+          "male": 113629,
+          "female": 127540,
+          "third_gender": 42,
+          "total": 241211
+        },
+        {
+          "sl_no": 109,
+          "ac_no": 136,
+          "ac_name": "Krishnarayapuram",
+          "reservation": "SC",
+          "male": 103852,
+          "female": 109773,
+          "third_gender": 33,
+          "total": 213658
+        },
+        {
+          "sl_no": 110,
+          "ac_no": 137,
+          "ac_name": "Kulithalai",
+          "reservation": null,
+          "male": 112112,
+          "female": 118198,
+          "third_gender": 5,
+          "total": 230315
+        }
+      ],
+      "totals": {
+        "male": 430734,
+        "female": 466921,
+        "third_gender": 84,
+        "total": 897739
+      }
+    },
+    {
+      "district_no": 16,
+      "district_name": "Tiruchirappalli",
+      "acs": [
+        {
+          "sl_no": 111,
+          "ac_no": 138,
+          "ac_name": "Manapparai",
+          "reservation": null,
+          "male": 139422,
+          "female": 144955,
+          "third_gender": 9,
+          "total": 284386
+        },
+        {
+          "sl_no": 112,
+          "ac_no": 139,
+          "ac_name": "Srirangam",
+          "reservation": null,
+          "male": 150799,
+          "female": 161179,
+          "third_gender": 51,
+          "total": 312029
+        },
+        {
+          "sl_no": 113,
+          "ac_no": 140,
+          "ac_name": "Tiruchirappalli (West)",
+          "reservation": null,
+          "male": 132857,
+          "female": 144126,
+          "third_gender": 35,
+          "total": 277018
+        },
+        {
+          "sl_no": 114,
+          "ac_no": 141,
+          "ac_name": "Tiruchirappalli (East)",
+          "reservation": null,
+          "male": 125646,
+          "female": 134337,
+          "third_gender": 73,
+          "total": 260056
+        },
+        {
+          "sl_no": 115,
+          "ac_no": 142,
+          "ac_name": "Thiruverumbur",
+          "reservation": null,
+          "male": 136301,
+          "female": 143352,
+          "third_gender": 68,
+          "total": 279721
+        },
+        {
+          "sl_no": 116,
+          "ac_no": 143,
+          "ac_name": "Lalgudi",
+          "reservation": null,
+          "male": 107375,
+          "female": 115455,
+          "third_gender": 23,
+          "total": 222853
+        },
+        {
+          "sl_no": 117,
+          "ac_no": 144,
+          "ac_name": "Manachanallur",
+          "reservation": null,
+          "male": 124426,
+          "female": 134225,
+          "third_gender": 49,
+          "total": 258700
+        },
+        {
+          "sl_no": 118,
+          "ac_no": 145,
+          "ac_name": "Musiri",
+          "reservation": null,
+          "male": 110060,
+          "female": 115834,
+          "third_gender": 23,
+          "total": 225917
+        },
+        {
+          "sl_no": 119,
+          "ac_no": 146,
+          "ac_name": "Thuraiyur",
+          "reservation": "SC",
+          "male": 109754,
+          "female": 117384,
+          "third_gender": 34,
+          "total": 227172
+        }
+      ],
+      "totals": {
+        "male": 1136640,
+        "female": 1210847,
+        "third_gender": 365,
+        "total": 2347852
+      }
+    },
+    {
+      "district_no": 17,
+      "district_name": "Perambalur",
+      "acs": [
+        {
+          "sl_no": 120,
+          "ac_no": 147,
+          "ac_name": "Perambalur",
+          "reservation": "SC",
+          "male": 149106,
+          "female": 158162,
+          "third_gender": 28,
+          "total": 307296
+        },
+        {
+          "sl_no": 121,
+          "ac_no": 148,
+          "ac_name": "Kunnam",
+          "reservation": null,
+          "male": 137485,
+          "female": 141290,
+          "third_gender": 2,
+          "total": 278777
+        }
+      ],
+      "totals": {
+        "male": 286591,
+        "female": 299452,
+        "third_gender": 30,
+        "total": 586073
+      }
+    },
+    {
+      "district_no": 18,
+      "district_name": "Cuddalore",
+      "acs": [
+        {
+          "sl_no": 122,
+          "ac_no": 151,
+          "ac_name": "Tittakudi",
+          "reservation": "SC",
+          "male": 108964,
+          "female": 113420,
+          "third_gender": 2,
+          "total": 222386
+        },
+        {
+          "sl_no": 123,
+          "ac_no": 152,
+          "ac_name": "Vriddhachalam",
+          "reservation": null,
+          "male": 128310,
+          "female": 130901,
+          "third_gender": 25,
+          "total": 259236
+        },
+        {
+          "sl_no": 124,
+          "ac_no": 153,
+          "ac_name": "Neyveli",
+          "reservation": null,
+          "male": 102033,
+          "female": 102064,
+          "third_gender": 18,
+          "total": 204115
+        },
+        {
+          "sl_no": 125,
+          "ac_no": 154,
+          "ac_name": "Panruti",
+          "reservation": null,
+          "male": 123283,
+          "female": 130506,
+          "third_gender": 66,
+          "total": 253855
+        },
+        {
+          "sl_no": 126,
+          "ac_no": 155,
+          "ac_name": "Cuddalore",
+          "reservation": null,
+          "male": 117710,
+          "female": 128212,
+          "third_gender": 82,
+          "total": 246004
+        },
+        {
+          "sl_no": 127,
+          "ac_no": 156,
+          "ac_name": "Kurinjipadi",
+          "reservation": null,
+          "male": 123665,
+          "female": 128445,
+          "third_gender": 51,
+          "total": 252161
+        },
+        {
+          "sl_no": 128,
+          "ac_no": 157,
+          "ac_name": "Bhuvanagiri",
+          "reservation": null,
+          "male": 126773,
+          "female": 129898,
+          "third_gender": 30,
+          "total": 256701
+        },
+        {
+          "sl_no": 129,
+          "ac_no": 158,
+          "ac_name": "Chidambaram",
+          "reservation": null,
+          "male": 122331,
+          "female": 127663,
+          "third_gender": 38,
+          "total": 250032
+        },
+        {
+          "sl_no": 130,
+          "ac_no": 159,
+          "ac_name": "Kattumannarkoil",
+          "reservation": "SC",
+          "male": 116866,
+          "female": 118635,
+          "third_gender": 13,
+          "total": 235514
+        }
+      ],
+      "totals": {
+        "male": 1069935,
+        "female": 1109744,
+        "third_gender": 325,
+        "total": 2180004
+      }
+    },
+    {
+      "district_no": 19,
+      "district_name": "Nagapattinam",
+      "acs": [
+        {
+          "sl_no": 131,
+          "ac_no": 163,
+          "ac_name": "Nagapattinam",
+          "reservation": null,
+          "male": 93517,
+          "female": 99934,
+          "third_gender": 27,
+          "total": 193478
+        },
+        {
+          "sl_no": 132,
+          "ac_no": 164,
+          "ac_name": "Kilvelur",
+          "reservation": "SC",
+          "male": 86456,
+          "female": 90045,
+          "third_gender": 4,
+          "total": 176505
+        },
+        {
+          "sl_no": 133,
+          "ac_no": 165,
+          "ac_name": "Vedaranyam",
+          "reservation": null,
+          "male": 94397,
+          "female": 98772,
+          "third_gender": 1,
+          "total": 193170
+        }
+      ],
+      "totals": {
+        "male": 274370,
+        "female": 288751,
+        "third_gender": 32,
+        "total": 563153
+      }
+    },
+    {
+      "district_no": 20,
+      "district_name": "Thiruvarur",
+      "acs": [
+        {
+          "sl_no": 134,
+          "ac_no": 166,
+          "ac_name": "Thiruthuraipoondi",
+          "reservation": "SC",
+          "male": 117501,
+          "female": 123521,
+          "third_gender": 15,
+          "total": 241037
+        },
+        {
+          "sl_no": 135,
+          "ac_no": 167,
+          "ac_name": "Mannargudi",
+          "reservation": null,
+          "male": 124594,
+          "female": 133738,
+          "third_gender": 8,
+          "total": 258340
+        },
+        {
+          "sl_no": 136,
+          "ac_no": 168,
+          "ac_name": "Thiruvarur",
+          "reservation": null,
+          "male": 137519,
+          "female": 146760,
+          "third_gender": 29,
+          "total": 284308
+        },
+        {
+          "sl_no": 137,
+          "ac_no": 169,
+          "ac_name": "Nannilam",
+          "reservation": null,
+          "male": 138543,
+          "female": 142395,
+          "third_gender": 17,
+          "total": 280955
+        }
+      ],
+      "totals": {
+        "male": 518157,
+        "female": 546414,
+        "third_gender": 69,
+        "total": 1064640
+      }
+    },
+    {
+      "district_no": 21,
+      "district_name": "Thanjavur",
+      "acs": [
+        {
+          "sl_no": 138,
+          "ac_no": 170,
+          "ac_name": "Thiruvidaimarudur",
+          "reservation": "SC",
+          "male": 131888,
+          "female": 135512,
+          "third_gender": 11,
+          "total": 267411
+        },
+        {
+          "sl_no": 139,
+          "ac_no": 171,
+          "ac_name": "Kumbakonam",
+          "reservation": null,
+          "male": 132334,
+          "female": 140029,
+          "third_gender": 15,
+          "total": 272378
+        },
+        {
+          "sl_no": 140,
+          "ac_no": 172,
+          "ac_name": "Papanasam",
+          "reservation": null,
+          "male": 129864,
+          "female": 136429,
+          "third_gender": 22,
+          "total": 266315
+        },
+        {
+          "sl_no": 141,
+          "ac_no": 173,
+          "ac_name": "Thiruvaiyaru",
+          "reservation": null,
+          "male": 133376,
+          "female": 140422,
+          "third_gender": 20,
+          "total": 273818
+        },
+        {
+          "sl_no": 142,
+          "ac_no": 174,
+          "ac_name": "Thanjavur",
+          "reservation": null,
+          "male": 133962,
+          "female": 146236,
+          "third_gender": 69,
+          "total": 280267
+        },
+        {
+          "sl_no": 143,
+          "ac_no": 175,
+          "ac_name": "Orathanadu",
+          "reservation": null,
+          "male": 121654,
+          "female": 129576,
+          "third_gender": 5,
+          "total": 251235
+        },
+        {
+          "sl_no": 144,
+          "ac_no": 176,
+          "ac_name": "Pattukkottai",
+          "reservation": null,
+          "male": 119199,
+          "female": 129500,
+          "third_gender": 25,
+          "total": 248724
+        },
+        {
+          "sl_no": 145,
+          "ac_no": 177,
+          "ac_name": "Peravurani",
+          "reservation": null,
+          "male": 107648,
+          "female": 111286,
+          "third_gender": 14,
+          "total": 218948
+        }
+      ],
+      "totals": {
+        "male": 1009925,
+        "female": 1068990,
+        "third_gender": 181,
+        "total": 2079096
+      }
+    },
+    {
+      "district_no": 22,
+      "district_name": "Pudukkottai",
+      "acs": [
+        {
+          "sl_no": 146,
+          "ac_no": 178,
+          "ac_name": "Gandharvakottai",
+          "reservation": "SC",
+          "male": 104441,
+          "female": 104224,
+          "third_gender": 13,
+          "total": 208678
+        },
+        {
+          "sl_no": 147,
+          "ac_no": 179,
+          "ac_name": "Viralimalai",
+          "reservation": null,
+          "male": 113044,
+          "female": 115802,
+          "third_gender": 15,
+          "total": 228861
+        },
+        {
+          "sl_no": 148,
+          "ac_no": 180,
+          "ac_name": "Pudukkottai",
+          "reservation": null,
+          "male": 122681,
+          "female": 128549,
+          "third_gender": 32,
+          "total": 251262
+        },
+        {
+          "sl_no": 149,
+          "ac_no": 181,
+          "ac_name": "Thirumayam",
+          "reservation": null,
+          "male": 115723,
+          "female": 122516,
+          "third_gender": 3,
+          "total": 238242
+        },
+        {
+          "sl_no": 150,
+          "ac_no": 182,
+          "ac_name": "Alangudi",
+          "reservation": null,
+          "male": 107284,
+          "female": 109489,
+          "third_gender": 4,
+          "total": 216777
+        },
+        {
+          "sl_no": 151,
+          "ac_no": 183,
+          "ac_name": "Aranthangi",
+          "reservation": null,
+          "male": 115950,
+          "female": 118743,
+          "third_gender": 1,
+          "total": 234694
+        }
+      ],
+      "totals": {
+        "male": 679123,
+        "female": 699323,
+        "third_gender": 68,
+        "total": 1378514
+      }
+    },
+    {
+      "district_no": 23,
+      "district_name": "Sivaganga",
+      "acs": [
+        {
+          "sl_no": 152,
+          "ac_no": 184,
+          "ac_name": "Karaikudi",
+          "reservation": null,
+          "male": 157432,
+          "female": 163582,
+          "third_gender": 54,
+          "total": 321068
+        },
+        {
+          "sl_no": 153,
+          "ac_no": 185,
+          "ac_name": "Tiruppattur",
+          "reservation": null,
+          "male": 148104,
+          "female": 154958,
+          "third_gender": 3,
+          "total": 303065
+        },
+        {
+          "sl_no": 154,
+          "ac_no": 186,
+          "ac_name": "Sivaganga",
+          "reservation": null,
+          "male": 149418,
+          "female": 155423,
+          "third_gender": 2,
+          "total": 304843
+        },
+        {
+          "sl_no": 155,
+          "ac_no": 187,
+          "ac_name": "Manamadurai",
+          "reservation": "SC",
+          "male": 140307,
+          "female": 145710,
+          "third_gender": 4,
+          "total": 286021
+        }
+      ],
+      "totals": {
+        "male": 595261,
+        "female": 619673,
+        "third_gender": 63,
+        "total": 1214997
+      }
+    },
+    {
+      "district_no": 24,
+      "district_name": "Madurai",
+      "acs": [
+        {
+          "sl_no": 156,
+          "ac_no": 188,
+          "ac_name": "Melur",
+          "reservation": null,
+          "male": 122660,
+          "female": 125424,
+          "third_gender": 9,
+          "total": 248093
+        },
+        {
+          "sl_no": 157,
+          "ac_no": 189,
+          "ac_name": "Madurai East",
+          "reservation": null,
+          "male": 171017,
+          "female": 178527,
+          "third_gender": 68,
+          "total": 349612
+        },
+        {
+          "sl_no": 158,
+          "ac_no": 190,
+          "ac_name": "Sholavandan",
+          "reservation": "SC",
+          "male": 111832,
+          "female": 116780,
+          "third_gender": 17,
+          "total": 228629
+        },
+        {
+          "sl_no": 159,
+          "ac_no": 191,
+          "ac_name": "Madurai North",
+          "reservation": null,
+          "male": 119507,
+          "female": 125326,
+          "third_gender": 46,
+          "total": 244879
+        },
+        {
+          "sl_no": 160,
+          "ac_no": 192,
+          "ac_name": "Madurai South",
+          "reservation": null,
+          "male": 110141,
+          "female": 113922,
+          "third_gender": 51,
+          "total": 224114
+        },
+        {
+          "sl_no": 161,
+          "ac_no": 193,
+          "ac_name": "Madurai Central",
+          "reservation": null,
+          "male": 110089,
+          "female": 115362,
+          "third_gender": 27,
+          "total": 225478
+        },
+        {
+          "sl_no": 162,
+          "ac_no": 194,
+          "ac_name": "Madurai West",
+          "reservation": null,
+          "male": 152154,
+          "female": 156524,
+          "third_gender": 11,
+          "total": 308689
+        },
+        {
+          "sl_no": 163,
+          "ac_no": 195,
+          "ac_name": "Thiruparankundram",
+          "reservation": null,
+          "male": 163243,
+          "female": 168923,
+          "third_gender": 35,
+          "total": 332201
+        },
+        {
+          "sl_no": 164,
+          "ac_no": 196,
+          "ac_name": "Thirumangalam",
+          "reservation": null,
+          "male": 137293,
+          "female": 145928,
+          "third_gender": 17,
+          "total": 283238
+        },
+        {
+          "sl_no": 165,
+          "ac_no": 197,
+          "ac_name": "Usilampatti",
+          "reservation": null,
+          "male": 142223,
+          "female": 142508,
+          "third_gender": 7,
+          "total": 284738
+        }
+      ],
+      "totals": {
+        "male": 1340159,
+        "female": 1389224,
+        "third_gender": 288,
+        "total": 2729671
+      }
+    },
+    {
+      "district_no": 25,
+      "district_name": "Theni",
+      "acs": [
+        {
+          "sl_no": 166,
+          "ac_no": 198,
+          "ac_name": "Andipatti",
+          "reservation": null,
+          "male": 138081,
+          "female": 142852,
+          "third_gender": 35,
+          "total": 280968
+        },
+        {
+          "sl_no": 167,
+          "ac_no": 199,
+          "ac_name": "Periyakulam",
+          "reservation": "SC",
+          "male": 143125,
+          "female": 149181,
+          "third_gender": 123,
+          "total": 292429
+        },
+        {
+          "sl_no": 168,
+          "ac_no": 200,
+          "ac_name": "Bodinayakanur",
+          "reservation": null,
+          "male": 135837,
+          "female": 143192,
+          "third_gender": 19,
+          "total": 279048
+        },
+        {
+          "sl_no": 169,
+          "ac_no": 201,
+          "ac_name": "Cumbum",
+          "reservation": null,
+          "male": 139075,
+          "female": 147051,
+          "third_gender": 28,
+          "total": 286154
+        }
+      ],
+      "totals": {
+        "male": 556118,
+        "female": 582276,
+        "third_gender": 205,
+        "total": 1138599
+      }
+    },
+    {
+      "district_no": 26,
+      "district_name": "Virudhunagar",
+      "acs": [
+        {
+          "sl_no": 170,
+          "ac_no": 202,
+          "ac_name": "Rajapalayam",
+          "reservation": null,
+          "male": 111520,
+          "female": 116598,
+          "third_gender": 37,
+          "total": 228155
+        },
+        {
+          "sl_no": 171,
+          "ac_no": 203,
+          "ac_name": "Srivilliputhur",
+          "reservation": "SC",
+          "male": 117050,
+          "female": 123310,
+          "third_gender": 42,
+          "total": 240402
+        },
+        {
+          "sl_no": 172,
+          "ac_no": 204,
+          "ac_name": "Sattur",
+          "reservation": null,
+          "male": 115950,
+          "female": 122266,
+          "third_gender": 63,
+          "total": 238279
+        },
+        {
+          "sl_no": 173,
+          "ac_no": 205,
+          "ac_name": "Sivakasi",
+          "reservation": null,
+          "male": 117414,
+          "female": 123034,
+          "third_gender": 27,
+          "total": 240475
+        },
+        {
+          "sl_no": 174,
+          "ac_no": 206,
+          "ac_name": "Virudhunagar",
+          "reservation": null,
+          "male": 109015,
+          "female": 114592,
+          "third_gender": 49,
+          "total": 223656
+        },
+        {
+          "sl_no": 175,
+          "ac_no": 207,
+          "ac_name": "Aruppukkottai",
+          "reservation": null,
+          "male": 107404,
+          "female": 113865,
+          "third_gender": 26,
+          "total": 221295
+        },
+        {
+          "sl_no": 176,
+          "ac_no": 208,
+          "ac_name": "Tiruchuli",
+          "reservation": null,
+          "male": 106779,
+          "female": 110171,
+          "third_gender": 12,
+          "total": 216962
+        }
+      ],
+      "totals": {
+        "male": 785132,
+        "female": 823836,
+        "third_gender": 256,
+        "total": 1609224
+      }
+    },
+    {
+      "district_no": 27,
+      "district_name": "Ramanathapuram",
+      "acs": [
+        {
+          "sl_no": 177,
+          "ac_no": 209,
+          "ac_name": "Paramakudi",
+          "reservation": "SC",
+          "male": 126751,
+          "female": 129997,
+          "third_gender": 23,
+          "total": 256771
+        },
+        {
+          "sl_no": 178,
+          "ac_no": 210,
+          "ac_name": "Tiruvadanai",
+          "reservation": null,
+          "male": 148971,
+          "female": 150608,
+          "third_gender": 27,
+          "total": 299606
+        },
+        {
+          "sl_no": 179,
+          "ac_no": 211,
+          "ac_name": "Ramanathapuram",
+          "reservation": null,
+          "male": 159490,
+          "female": 163311,
+          "third_gender": 13,
+          "total": 322814
+        },
+        {
+          "sl_no": 180,
+          "ac_no": 212,
+          "ac_name": "Mudhukulathur",
+          "reservation": null,
+          "male": 158380,
+          "female": 159654,
+          "third_gender": 3,
+          "total": 318037
+        }
+      ],
+      "totals": {
+        "male": 593592,
+        "female": 603570,
+        "third_gender": 66,
+        "total": 1197228
+      }
+    },
+    {
+      "district_no": 28,
+      "district_name": "Thoothukudi",
+      "acs": [
+        {
+          "sl_no": 181,
+          "ac_no": 213,
+          "ac_name": "Vilathikulam",
+          "reservation": null,
+          "male": 105405,
+          "female": 109597,
+          "third_gender": 20,
+          "total": 215022
+        },
+        {
+          "sl_no": 182,
+          "ac_no": 214,
+          "ac_name": "Thoothukkudi",
+          "reservation": null,
+          "male": 139465,
+          "female": 146495,
+          "third_gender": 81,
+          "total": 286041
+        },
+        {
+          "sl_no": 183,
+          "ac_no": 215,
+          "ac_name": "Tiruchendur",
+          "reservation": null,
+          "male": 119733,
+          "female": 126368,
+          "third_gender": 31,
+          "total": 246132
+        },
+        {
+          "sl_no": 184,
+          "ac_no": 216,
+          "ac_name": "Srivaikuntam",
+          "reservation": null,
+          "male": 111992,
+          "female": 115910,
+          "third_gender": 2,
+          "total": 227904
+        },
+        {
+          "sl_no": 185,
+          "ac_no": 217,
+          "ac_name": "Ottapidaram",
+          "reservation": "SC",
+          "male": 123930,
+          "female": 129599,
+          "third_gender": 64,
+          "total": 253593
+        },
+        {
+          "sl_no": 186,
+          "ac_no": 218,
+          "ac_name": "Kovilpatti",
+          "reservation": null,
+          "male": 127501,
+          "female": 134197,
+          "third_gender": 35,
+          "total": 261733
+        }
+      ],
+      "totals": {
+        "male": 728026,
+        "female": 762166,
+        "third_gender": 233,
+        "total": 1490425
+      }
+    },
+    {
+      "district_no": 29,
+      "district_name": "Tirunelveli",
+      "acs": [
+        {
+          "sl_no": 187,
+          "ac_no": 224,
+          "ac_name": "Tirunelveli",
+          "reservation": null,
+          "male": 147016,
+          "female": 155616,
+          "third_gender": 83,
+          "total": 302715
+        },
+        {
+          "sl_no": 188,
+          "ac_no": 225,
+          "ac_name": "Ambasamudram",
+          "reservation": null,
+          "male": 124976,
+          "female": 133657,
+          "third_gender": 8,
+          "total": 258641
+        },
+        {
+          "sl_no": 189,
+          "ac_no": 226,
+          "ac_name": "Palayamkottai",
+          "reservation": null,
+          "male": 135179,
+          "female": 141355,
+          "third_gender": 27,
+          "total": 276561
+        },
+        {
+          "sl_no": 190,
+          "ac_no": 227,
+          "ac_name": "Nanguneri",
+          "reservation": null,
+          "male": 144008,
+          "female": 150779,
+          "third_gender": 13,
+          "total": 294800
+        },
+        {
+          "sl_no": 191,
+          "ac_no": 228,
+          "ac_name": "Radhapuram",
+          "reservation": null,
+          "male": 132639,
+          "female": 137829,
+          "third_gender": 23,
+          "total": 270491
+        }
+      ],
+      "totals": {
+        "male": 683818,
+        "female": 719236,
+        "third_gender": 154,
+        "total": 1403208
+      }
+    },
+    {
+      "district_no": 30,
+      "district_name": "Kanniyakumari",
+      "acs": [
+        {
+          "sl_no": 192,
+          "ac_no": 229,
+          "ac_name": "Kanniyakumari",
+          "reservation": null,
+          "male": 148095,
+          "female": 152322,
+          "third_gender": 78,
+          "total": 300495
+        },
+        {
+          "sl_no": 193,
+          "ac_no": 230,
+          "ac_name": "Nagercoil",
+          "reservation": null,
+          "male": 132161,
+          "female": 136637,
+          "third_gender": 11,
+          "total": 268809
+        },
+        {
+          "sl_no": 194,
+          "ac_no": 231,
+          "ac_name": "Colachal",
+          "reservation": null,
+          "male": 138064,
+          "female": 136208,
+          "third_gender": 13,
+          "total": 274285
+        },
+        {
+          "sl_no": 195,
+          "ac_no": 232,
+          "ac_name": "Padmanabhapuram",
+          "reservation": null,
+          "male": 122882,
+          "female": 123003,
+          "third_gender": 23,
+          "total": 245908
+        },
+        {
+          "sl_no": 196,
+          "ac_no": 233,
+          "ac_name": "Vilavancode",
+          "reservation": null,
+          "male": 120042,
+          "female": 122724,
+          "third_gender": 1,
+          "total": 242767
+        },
+        {
+          "sl_no": 197,
+          "ac_no": 234,
+          "ac_name": "Killiyoor",
+          "reservation": null,
+          "male": 127337,
+          "female": 124743,
+          "third_gender": 18,
+          "total": 252098
+        }
+      ],
+      "totals": {
+        "male": 788581,
+        "female": 795637,
+        "third_gender": 144,
+        "total": 1584362
+      }
+    },
+    {
+      "district_no": 31,
+      "district_name": "Ariyalur",
+      "acs": [
+        {
+          "sl_no": 198,
+          "ac_no": 149,
+          "ac_name": "Ariyalur",
+          "reservation": null,
+          "male": 131291,
+          "female": 132760,
+          "third_gender": 9,
+          "total": 264060
+        },
+        {
+          "sl_no": 199,
+          "ac_no": 150,
+          "ac_name": "Jayankondam",
+          "reservation": null,
+          "male": 131149,
+          "female": 133472,
+          "third_gender": 10,
+          "total": 264631
+        }
+      ],
+      "totals": {
+        "male": 262440,
+        "female": 266232,
+        "third_gender": 19,
+        "total": 528691
+      }
+    },
+    {
+      "district_no": 32,
+      "district_name": "Tiruppur",
+      "acs": [
+        {
+          "sl_no": 200,
+          "ac_no": 101,
+          "ac_name": "Dharapuram",
+          "reservation": "SC",
+          "male": 127443,
+          "female": 136336,
+          "third_gender": 11,
+          "total": 263790
+        },
+        {
+          "sl_no": 201,
+          "ac_no": 102,
+          "ac_name": "Kangayam",
+          "reservation": null,
+          "male": 128669,
+          "female": 137555,
+          "third_gender": 24,
+          "total": 266248
+        },
+        {
+          "sl_no": 202,
+          "ac_no": 112,
+          "ac_name": "Avanashi",
+          "reservation": "SC",
+          "male": 141637,
+          "female": 151172,
+          "third_gender": 8,
+          "total": 292817
+        },
+        {
+          "sl_no": 203,
+          "ac_no": 113,
+          "ac_name": "Tiruppur (North)",
+          "reservation": null,
+          "male": 202061,
+          "female": 199688,
+          "third_gender": 171,
+          "total": 401920
+        },
+        {
+          "sl_no": 204,
+          "ac_no": 114,
+          "ac_name": "Tiruppur (South)",
+          "reservation": null,
+          "male": 135688,
+          "female": 136029,
+          "third_gender": 32,
+          "total": 271749
+        },
+        {
+          "sl_no": 205,
+          "ac_no": 115,
+          "ac_name": "Palladam",
+          "reservation": null,
+          "male": 201897,
+          "female": 208117,
+          "third_gender": 57,
+          "total": 410071
+        },
+        {
+          "sl_no": 206,
+          "ac_no": 125,
+          "ac_name": "Udumalpet",
+          "reservation": null,
+          "male": 128771,
+          "female": 140116,
+          "third_gender": 31,
+          "total": 268918
+        },
+        {
+          "sl_no": 207,
+          "ac_no": 126,
+          "ac_name": "Madathukulam",
+          "reservation": null,
+          "male": 116739,
+          "female": 123338,
+          "third_gender": 18,
+          "total": 240095
+        }
+      ],
+      "totals": {
+        "male": 1182905,
+        "female": 1232351,
+        "third_gender": 352,
+        "total": 2415608
+      }
+    },
+    {
+      "district_no": 33,
+      "district_name": "Kallakurichi",
+      "acs": [
+        {
+          "sl_no": 208,
+          "ac_no": 77,
+          "ac_name": "Ulundurpettai",
+          "reservation": null,
+          "male": 151894,
+          "female": 149867,
+          "third_gender": 54,
+          "total": 301815
+        },
+        {
+          "sl_no": 209,
+          "ac_no": 78,
+          "ac_name": "Rishivandiyam",
+          "reservation": null,
+          "male": 140121,
+          "female": 139034,
+          "third_gender": 60,
+          "total": 279215
+        },
+        {
+          "sl_no": 210,
+          "ac_no": 79,
+          "ac_name": "Sankarapuram",
+          "reservation": null,
+          "male": 137106,
+          "female": 139637,
+          "third_gender": 51,
+          "total": 276794
+        },
+        {
+          "sl_no": 211,
+          "ac_no": 80,
+          "ac_name": "Kallakurichi",
+          "reservation": "SC",
+          "male": 142754,
+          "female": 146192,
+          "third_gender": 80,
+          "total": 289026
+        }
+      ],
+      "totals": {
+        "male": 571875,
+        "female": 574730,
+        "third_gender": 245,
+        "total": 1146850
+      }
+    },
+    {
+      "district_no": 34,
+      "district_name": "Tenkasi",
+      "acs": [
+        {
+          "sl_no": 212,
+          "ac_no": 219,
+          "ac_name": "Sankarankovil",
+          "reservation": "SC",
+          "male": 122960,
+          "female": 130128,
+          "third_gender": 12,
+          "total": 253100
+        },
+        {
+          "sl_no": 213,
+          "ac_no": 220,
+          "ac_name": "Vasudevanallur",
+          "reservation": "SC",
+          "male": 122185,
+          "female": 128331,
+          "third_gender": 7,
+          "total": 250523
+        },
+        {
+          "sl_no": 214,
+          "ac_no": 221,
+          "ac_name": "Kadayanallur",
+          "reservation": null,
+          "male": 142738,
+          "female": 145968,
+          "third_gender": 15,
+          "total": 288721
+        },
+        {
+          "sl_no": 215,
+          "ac_no": 222,
+          "ac_name": "Tenkasi",
+          "reservation": null,
+          "male": 147242,
+          "female": 154568,
+          "third_gender": 120,
+          "total": 301930
+        },
+        {
+          "sl_no": 216,
+          "ac_no": 223,
+          "ac_name": "Alangulam",
+          "reservation": null,
+          "male": 129930,
+          "female": 137216,
+          "third_gender": 21,
+          "total": 267167
+        }
+      ],
+      "totals": {
+        "male": 665055,
+        "female": 696211,
+        "third_gender": 175,
+        "total": 1361441
+      }
+    },
+    {
+      "district_no": 35,
+      "district_name": "Chengalpattu",
+      "acs": [
+        {
+          "sl_no": 217,
+          "ac_no": 27,
+          "ac_name": "Shozhinganallur",
+          "reservation": null,
+          "male": 345184,
+          "female": 345645,
+          "third_gender": 129,
+          "total": 690958
+        },
+        {
+          "sl_no": 218,
+          "ac_no": 30,
+          "ac_name": "Pallavaram",
+          "reservation": null,
+          "male": 218573,
+          "female": 221859,
+          "third_gender": 45,
+          "total": 440477
+        },
+        {
+          "sl_no": 219,
+          "ac_no": 31,
+          "ac_name": "Tambaram",
+          "reservation": null,
+          "male": 203675,
+          "female": 207481,
+          "third_gender": 71,
+          "total": 411227
+        },
+        {
+          "sl_no": 220,
+          "ac_no": 32,
+          "ac_name": "Chengalpattu",
+          "reservation": null,
+          "male": 213950,
+          "female": 222125,
+          "third_gender": 66,
+          "total": 436141
+        },
+        {
+          "sl_no": 221,
+          "ac_no": 33,
+          "ac_name": "Thiruporur",
+          "reservation": null,
+          "male": 153425,
+          "female": 159458,
+          "third_gender": 56,
+          "total": 312939
+        },
+        {
+          "sl_no": 222,
+          "ac_no": 34,
+          "ac_name": "Cheyyur",
+          "reservation": "SC",
+          "male": 110931,
+          "female": 115219,
+          "third_gender": 23,
+          "total": 226173
+        },
+        {
+          "sl_no": 223,
+          "ac_no": 35,
+          "ac_name": "Madurantakam",
+          "reservation": "SC",
+          "male": 112185,
+          "female": 117359,
+          "third_gender": 91,
+          "total": 229635
+        }
+      ],
+      "totals": {
+        "male": 1357923,
+        "female": 1389146,
+        "third_gender": 481,
+        "total": 2747550
+      }
+    },
+    {
+      "district_no": 36,
+      "district_name": "Tirupathur",
+      "acs": [
+        {
+          "sl_no": 224,
+          "ac_no": 47,
+          "ac_name": "Vaniyambadi",
+          "reservation": null,
+          "male": 127702,
+          "female": 132666,
+          "third_gender": 60,
+          "total": 260428
+        },
+        {
+          "sl_no": 225,
+          "ac_no": 48,
+          "ac_name": "Ambur",
+          "reservation": null,
+          "male": 117694,
+          "female": 126935,
+          "third_gender": 47,
+          "total": 244676
+        },
+        {
+          "sl_no": 226,
+          "ac_no": 49,
+          "ac_name": "Jolarpet",
+          "reservation": null,
+          "male": 120366,
+          "female": 123258,
+          "third_gender": 20,
+          "total": 243644
+        },
+        {
+          "sl_no": 227,
+          "ac_no": 50,
+          "ac_name": "Tirupattur",
+          "reservation": null,
+          "male": 118052,
+          "female": 119968,
+          "third_gender": 28,
+          "total": 238048
+        }
+      ],
+      "totals": {
+        "male": 483814,
+        "female": 502827,
+        "third_gender": 155,
+        "total": 986796
+      }
+    },
+    {
+      "district_no": 37,
+      "district_name": "Ranipet",
+      "acs": [
+        {
+          "sl_no": 228,
+          "ac_no": 38,
+          "ac_name": "Arakkonam",
+          "reservation": "SC",
+          "male": 113588,
+          "female": 120791,
+          "third_gender": 29,
+          "total": 234408
+        },
+        {
+          "sl_no": 229,
+          "ac_no": 39,
+          "ac_name": "Sholingur",
+          "reservation": null,
+          "male": 139449,
+          "female": 146283,
+          "third_gender": 15,
+          "total": 285747
+        },
+        {
+          "sl_no": 230,
+          "ac_no": 41,
+          "ac_name": "Ranipet",
+          "reservation": null,
+          "male": 131012,
+          "female": 140451,
+          "third_gender": 36,
+          "total": 271499
+        },
+        {
+          "sl_no": 231,
+          "ac_no": 42,
+          "ac_name": "Arcot",
+          "reservation": null,
+          "male": 129789,
+          "female": 137407,
+          "third_gender": 25,
+          "total": 267221
+        }
+      ],
+      "totals": {
+        "male": 513838,
+        "female": 544932,
+        "third_gender": 105,
+        "total": 1058875
+      }
+    },
+    {
+      "district_no": 38,
+      "district_name": "Mayiladuthurai",
+      "acs": [
+        {
+          "sl_no": 232,
+          "ac_no": 160,
+          "ac_name": "Sirkazhi",
+          "reservation": "SC",
+          "male": 125686,
+          "female": 129356,
+          "third_gender": 13,
+          "total": 255055
+        },
+        {
+          "sl_no": 233,
+          "ac_no": 161,
+          "ac_name": "Mayiladuthurai",
+          "reservation": null,
+          "male": 119395,
+          "female": 122772,
+          "third_gender": 22,
+          "total": 242189
+        },
+        {
+          "sl_no": 234,
+          "ac_no": 162,
+          "ac_name": "Poompuhar",
+          "reservation": null,
+          "male": 136462,
+          "female": 141741,
+          "third_gender": 11,
+          "total": 278214
+        }
+      ],
+      "totals": {
+        "male": 381543,
+        "female": 393869,
+        "third_gender": 46,
+        "total": 775458
+      }
+    }
+  ],
+  "grand_total": {
+    "male": 31174027,
+    "female": 32429803,
+    "third_gender": 9120,
+    "total": 63612950
+  }
+}
